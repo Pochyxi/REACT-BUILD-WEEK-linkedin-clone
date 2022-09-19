@@ -1,7 +1,4 @@
-
-
 import './MyCard.css'
-
 
 const MyCard = () => {
     return (
@@ -37,7 +34,7 @@ const MyCard = () => {
                     <span>2 comparse nei motori di ricerca</span>
                     <span>Vedi quante volte compari nei risultati di ricerca</span>
                 </div>
-            </div>    
+            </div>
             <div className='analisiRisorse'>
                 <span>Risorse</span>
                 <div>
@@ -64,63 +61,63 @@ const MyCard = () => {
                     <span>Mostra tutte le attività</span>
                 </div>
                 <div>
-                </div>        
-                    <span>Esperienza</span>
+                </div>
+                <span>Esperienza</span>
+                <div>
+                    <span>web developer</span>
+                    <span>epicode</span>
+                </div>
+                <hr />
+                <div className='attTwo'>
+                    <span>Mostra tutte le esperienze</span>
+                </div>
+                <div>
+                    <span>Formazione</span>
                     <div>
                         <span>web developer</span>
                         <span>epicode</span>
                     </div>
                     <hr />
                     <div className='attTwo'>
-                    <span>Mostra tutte le esperienze</span>
-                </div>
-                <div>
-                    <span>Formazione</span>
-                        <div>
-                            <span>web developer</span>
-                            <span>epicode</span>
-                        </div>
-                        <hr />
-                        <div className='attTwo'>
                         <span>Mostra tutti i titoli di studio</span>
                     </div>
                 </div>
                 <div>
                     <span>Competenze</span>
-                        <div>
-                            <span>lavoro di squadra</span>
-                        </div>
-                        <hr />
-                        <div className='attTwo'>
+                    <div>
+                        <span>lavoro di squadra</span>
+                    </div>
+                    <hr />
+                    <div className='attTwo'>
                         <span>Mostra tutte le competenze</span>
                     </div>
                 </div>
                 <div>
                     <span>Corsi</span>
-                        <div>
-                            <span>epicode full stack</span>
-                        </div>
-                        <hr />
-                        <div className='attTwo'>
+                    <div>
+                        <span>epicode full stack</span>
+                    </div>
+                    <hr />
+                    <div className='attTwo'>
                         <span>Mostra tutte le competenze</span>
                     </div>
                 </div>
                 <div>
                     <span>Lingue</span>
-                        <div>
-                            <span>Inglese</span>
-                            <span>Conoscenza lavorativa</span>
-                        </div>
-                        <hr />
+                    <div>
+                        <span>Inglese</span>
+                        <span>Conoscenza lavorativa</span>
+                    </div>
+                    <hr />
                 </div>
                 <div>
                     <span>Interessi</span>
-                        <div>
-                            <span>Epicode school</span>
-                            <span>2000 follower</span>
-                            <div className='bt4'>Già segui</div>
-                        </div>
-                        <hr />
+                    <div>
+                        <span>Epicode school</span>
+                        <span>2000 follower</span>
+                        <div className='bt4'>Già segui</div>
+                    </div>
+                    <hr />
                 </div>
                 <div>
                     <span>Altre aziende consultate</span>
@@ -141,9 +138,9 @@ const MyCard = () => {
                     </div>
                 </div>
             </div>
-                
+
         </div>
-        
+
     )
 }
 
