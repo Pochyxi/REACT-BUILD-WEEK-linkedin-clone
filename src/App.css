@@ -5,9 +5,23 @@
 }
 .NavBarAllLogo{
   color: #86888A;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
 } 
 .NavBarAllLogo:hover{
+  color: #313335;
+}
+.NavBarLinkedin {
+  display: flex!important;
+  justify-content: space-around!important;
+  align-items: center!important;
+}
+.NavbarForm{
+  height: 40px !important;
+}
+.NavBarSpan{
+  color: #86888A;
+}
+.NavBarSpan:hover {
   color: #313335;
 }
