@@ -74,7 +74,7 @@ const LinkedinNavbar = () => {
               <div><MdNotifications className="NavBarAllLogo" /> <span className="NavBarSpan text-center">Notifiche</span></div>
             </Nav.Link>
             <NavDropdown
-              title={<BsPersonCircle className="NavBarAllLogo" />}
+              title={<div className="d-flex flex-column"><BsPersonCircle className="NavBarAllLogo" /> <span className="NavBarSpan text-center">Notifiche</span></div>}
               id="navbarScrollingDropdown"
             > 
               <NavDropdown.Item href="#action3">
