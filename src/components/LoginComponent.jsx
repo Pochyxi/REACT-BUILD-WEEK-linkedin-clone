@@ -29,7 +29,12 @@ const LoginComponent = () => {
                             <FaUserAlt />
                             <p>Manuel</p>
                         </Col>
-                        <Col xs={3} className="loginUser">
+                        <Col
+                            onClick={() => {
+                                dispatch(fetchUser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MjJhNjZkNzlhNTAwMTUwOTAyZjEiLCJpYXQiOjE2NjM1NzQ2OTQsImV4cCI6MTY2NDc4NDI5NH0.ezK-E4uTEw3clUOKEVsiGo9Vvd_MWFTaScyrrTu1IF4'));
+                            }}
+                            xs={3}
+                            className="loginUser">
                             <FaUserAlt />
                             <p>Ruben</p>
                         </Col>
