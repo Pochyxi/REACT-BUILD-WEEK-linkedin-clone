@@ -1,0 +1,108 @@
+bodt {
+    background-color: beige;
+}
+.card {
+    margin-top: 0.5rem;
+}
+
+
+.cover {
+    background-color: rgb(0, 64, 255);
+    height: 12vh;
+    width: 100%;
+    padding: 0rem 1.5rem;
+}
+
+.foto {
+    height: 152px;
+    width: 152px;
+    background-color: blueviolet;
+    border: 3px solid white;
+    border-radius: 50%;
+    
+}
+
+.fisrtdiv {
+    background-color: white;
+    padding-bottom: 1.5rem;
+    background-color: beige;
+}
+
+.HeadDesc {
+    padding: 3rem 1.5rem 0rem 1.5rem;
+    text-align: left;
+}
+.HeadDesc p {
+    line-height: 0.8rem;
+}
+
+.buttons div {
+    border-radius: 20px;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    float: left; 
+}
+
+.bt1 {
+    margin-left: 1.5rem;
+    background-color: blue;
+}
+.bt2 {
+    margin-left: 0.6rem;
+    border: 1px solid blue;
+    background-color: white;
+}
+.disp {
+    margin: 7rem 1.5rem 0rem;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    line-height: 0.2rem;
+    background-color: bisque;
+    height: 5rem;
+    text-align: left;
+}
+
+.analisiRisorse {
+    text-align: left;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+    margin-top: 1rem;
+    background-color: beige;
+    line-height: 1.5rem;
+}
+.analisiRisorse span {
+    display: block;
+}
+.analisiRisorse div {padding-bottom: 1.5rem;}
+
+.attività {
+    text-align: left;
+    padding-left: 1.5rem;
+}
+.attività span {
+    display: block;
+}
+
+.bt3 {
+    border-radius: 20px;
+    display: block;
+    padding: 0.5rem 0.7rem 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-left: -0.2rem;
+    width: 25vw;
+}
+
+.attOne {
+    padding-bottom: 1rem;
+}
+.attTwo {
+    text-align: center;
+}
+
+.bt4 {
+    border: 1px solid gray;
+    border-radius: 20px;
+    display: block;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    margin-top: 1rem;
+    width: 20vw;
+}
