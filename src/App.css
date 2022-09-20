@@ -53,13 +53,9 @@
   width: 41px;
 }
 .NavBarAllLogo{
-  color: #86888A;
   height: 25px;
   width: 25px;
 } 
-.NavBarAllLogo:hover{
-  color: #313335;
-}
 .NavBarLinkedin {
   display: flex!important;
   justify-content: space-around!important;
@@ -68,14 +64,92 @@
 .NavbarForm{
   height: 40px !important;
 }
-.NavBarSpan{
+.NavbarUser{
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+}
+.dropdown-list{
+  list-style: none;
+}
+#navbarScrollingDropdown::after{
+  content: ''!important;
+  
+}
+.dropdown-toggle::after{
+  content: ''!important;
+  border-top: 0!important;
+}
+.nav-link{
+  display: flex;
+}
+.NavbarDiv{
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+@media  screen and (max-width: 700px) {
+  .NavBarSpan{
+    display: none;
+  }
+}
+@media screen and (max-width: 460px) {
+  .NavBarAllLogo{
+    width: 20px;
+    height: 20px;
+  }
+  .NavBarLogo{
+    width: 25px;
+    height: 25px;
+  }
+}
+.NavBarList{
   color: #86888A;
 }
-.NavBarSpan:hover {
+.NavBarList:hover{
   color: #313335;
+}
+.NavbarUserList{
+  width: 60px;
+  height: 60px;
+  margin-right: 6px;
+  border-radius: 30px;
+}
+.NavbarHover{
+  color: #86888A;
+}
+.NavbarHover:hover{
+  color: #313335 !important;
+}
+.CanvassDiv{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.canvassCardDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dddee0;
+  border-radius: 10px;
+  color: #86888A;
+}
+.canvassCardDiv:hover{
+  color: #313335;
+}
+.NavBarAllLogoCanvass{
+  height: 40px;
+  width: 40px;
+  color: #0077B5;
+}
+.canvassSmaller{
+  font-size: 12px;
+  color: #86888A;
 }
 
 /* ----------------------- */
+
 
 /* SEZIONE PROFILO  */
 .ProfilePrincipale {
