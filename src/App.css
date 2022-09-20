@@ -76,3 +76,94 @@
 }
 
 /* ----------------------- */
+
+/* SEZIONE PROFILO  */
+.ProfilePrincipale {
+    width: 450px;
+    flex: none;
+}
+
+.ProfileSecondaria {
+    width: 250px;
+    flex: none;
+    border: 1px solid gray;
+}
+
+
+.CardProfile {
+    min-height: 50vh;
+    border: 1px solid gainsboro;
+    border-radius: 10px;  
+}
+
+.CardProfileImages {
+    background-image: linear-gradient(to right, #0077B5, #0068a0 );
+    height: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;  
+    padding: 1em;
+}
+.CardProfileCerchio {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    position: relative;
+    left: 20px;
+    background-color: white;
+    top: -20px;
+    padding: 3px;
+}
+.CardProfileCerchioImg {
+    border-radius: 50%;
+}
+
+.CardProfileText {
+    padding: 0px 20px 10px;
+}
+
+.CardProfileButton1, .CardProfileButton2, .CardProfileButton3 {
+    line-height: 1.2;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+.CardProfileButton1 {
+    background-color: #0a66c2!important;
+}
+
+.CardProfileButton2 {
+    background-color: #ffffff!important;
+    color: #0077B5;
+    outline: 1px solid #0077B5;
+}
+.CardProfileButton2:hover {
+    border: 2px solid #0068a0!important;
+    color: #0077B5!important;
+    background-color: #0076b51f!important;
+}
+.CardProfileButton3 {
+    height: 35px;
+    width: 35px;
+    font-size: .7rem;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 1px solid rgb(63, 63, 63);
+}
+
+.CardProfileDisp {
+    background-color: rgba(128, 128, 128, 0.221);
+    border-radius: 15px;
+    padding: 1em;
+    font-size: .8rem;
+}
+.CardProfilePencil {
+    font-size: 1.5rem;
+}
+.CardProfileImagesPencil {
+    font-size: 2rem;
+    color: #0077B5;
+}
+.CardProfileImagesPenciBi {
+    border-radius: 50%;
+    padding: 7px;
+}

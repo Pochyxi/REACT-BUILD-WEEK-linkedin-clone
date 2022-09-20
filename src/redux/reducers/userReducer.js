@@ -1,7 +1,8 @@
-import { SET_USER } from "../actions/actions";
+import { SET_TOKEN, SET_USER } from "../actions/actions";
 
 const initialState = {
   user: {},
+  token: "",
 };
 
 const userReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
+      };
+    case SET_TOKEN:
+      return {
+        ...state,
+        token: action.payload,
       };
     default:
       return state;

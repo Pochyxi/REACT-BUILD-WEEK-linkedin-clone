@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginComponent from "./components/LoginComponent";
 import LinkedinNavbar from "./components/LinkedinNavBar";
 import MyFooter from "./components/footer/Footer";
-import MyCard from "./components/profilo/MyCard";
+import Profile from "./components/profilo/Profile";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Container fluid className="p-0">
         <Routes>
           <Route path="/" element={<LoginComponent />} />
-          <Route path="/profile" element={<MyCard />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </Container>
       <MyFooter />

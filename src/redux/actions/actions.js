@@ -1,8 +1,13 @@
 export const SET_USER = "SET_USER";
+export const SET_TOKEN = "SET_TOKEN";
 
 export const setUser = (user) => ({
   type: SET_USER,
   payload: user,
+});
+export const setToken = (token) => ({
+  type: SET_TOKEN,
+  payload: token,
 });
 
 export const fetchUser = (key) => {
@@ -21,6 +26,7 @@ export const fetchUser = (key) => {
       if (response.ok) {
         const data = await response.json();
         dispatch(setUser(data));
+        dispatch(setToken(key));
         console.log(data);
       } else {
         alert("Error fetching results");
