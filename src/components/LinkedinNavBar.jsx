@@ -142,8 +142,8 @@ const LinkedinNavbar = () => {
                     type: SET_USER,
                     payload: {}
                   })}
-                    className="NavBarList">
-                    Esci
+                  >
+                    <h6>Esci</h6>
                   </NavDropdown.Item>
                 </NavDropdown>
               )}
