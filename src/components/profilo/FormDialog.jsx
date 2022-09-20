@@ -17,9 +17,24 @@ export default function FormDialog() {
     const token = useSelector(state => state.user.token)
     const [open, setOpen] = React.useState(false);
     const [formObj, setFormObj] = React.useState(user)
+
     React.useEffect(() => {
         setFormObj(user)
     }, [user])
+
+    const formValidation = () => {
+        let validation = false
+        if (formObj.area.length > 0 &&
+            formObj.bio.length > 0 &&
+            formObj.email.length > 0 &&
+            formObj.image.length > 0 &&
+            formObj.surname.length > 0 &&
+            formObj.title.length > 0 &&
+            formObj.name.length > 0) {
+            validation = true
+        }
+        return validation
+    }
     const modifyUser = async (token, obj) => {
         const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/"
         const header = {
@@ -61,7 +76,7 @@ export default function FormDialog() {
     const handleClose = () => {
         setOpen(false);
     };
-    console.log(token)
+    console.log(formValidation())
     return (
         <Col xs={12} className='d-flex justify-content-end text-end p-3'>
             <Col xs={3}
@@ -163,8 +178,11 @@ export default function FormDialog() {
                 <DialogActions>
                     <Button onClick={handleClose}>ANNULLA</Button>
                     <Button onClick={() => {
-                        handleClose()
-                        modifyUser(token, formObj);
+                        if (formValidation() === true) {
+                            handleClose()
+                            modifyUser(token, formObj);
+                        }
+
                     }}>CONFERMA</Button>
                 </DialogActions>
             </Dialog>

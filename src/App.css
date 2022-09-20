@@ -267,3 +267,7 @@
   width: 90%;
   margin: 0 auto;
 }
+
+.CardCompetenzeImg {
+  border-radius: 50%!important;
+}

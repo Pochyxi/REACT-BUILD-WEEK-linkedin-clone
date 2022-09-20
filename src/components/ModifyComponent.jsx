@@ -1,9 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import CardCompetenze from './profilo/CardCompetenze'
-import { BiPencil, BiPlus } from "react-icons/bi";
-import { ListGroup } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import CardAziende from './profilo/CardAziende';
 
 const ModifyComponent = () => {
