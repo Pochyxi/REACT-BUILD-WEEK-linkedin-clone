@@ -9,23 +9,17 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { Col } from 'react-bootstrap';
 import { BiPencil } from 'react-icons/bi'
 import { useDispatch, useSelector } from 'react-redux';
-import { setToken, setUser } from '../../redux/actions/actions';
+import { setUser } from '../../redux/actions/actions';
 
 export default function FormDialog() {
     const user = useSelector(state => state.user.user)
     const dispatch = useDispatch()
     const token = useSelector(state => state.user.token)
     const [open, setOpen] = React.useState(false);
-    const [formObj, setFormObj] = React.useState({
-        name: user.name,
-        surname: user.surname,
-        email: user.email,
-        title: user.title,
-        bio: user.bio,
-        area: user.area,
-        image: user.image,
-
-    })
+    const [formObj, setFormObj] = React.useState(user)
+    React.useEffect(() => {
+        setFormObj(user)
+    }, [user])
     const modifyUser = async (token, obj) => {
         const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/"
         const header = {
@@ -76,11 +70,10 @@ export default function FormDialog() {
                 <BiPencil />
             </Col>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Subscribe</DialogTitle>
+                <DialogTitle>PROFILO</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        To subscribe to this website, please enter your email address here. We
-                        will send updates occasionally.
+                        Le tue informazioni
                     </DialogContentText>
                     <TextField
                         autoFocus
