@@ -24,6 +24,7 @@ import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_USER } from "../redux/actions/actions";
+import { useNavigate } from "react-router-dom";
 
 const LinkedinNavbar = () => {
   const [formToggle, setFormToggle] = useState(false);
@@ -32,8 +33,9 @@ const LinkedinNavbar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const dispatch = useDispatch() 
+  const dispatch = useDispatch()
   const selector = useSelector((state) => state.user.user);
+  const navigate = useNavigate()
 
   console.log(selector.name);
 
@@ -137,11 +139,15 @@ const LinkedinNavbar = () => {
                     </ul>
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item 
-                  onClick={() => dispatch({
-                    type: SET_USER,
-                    payload: {}
-                  })}
+                  <NavDropdown.Item
+                    onClick={() => {
+                      dispatch({
+                        type: SET_USER,
+                        payload: {}
+                      })
+                      navigate('/')
+                    }
+                    }
                   >
                     <h6>Esci</h6>
                   </NavDropdown.Item>

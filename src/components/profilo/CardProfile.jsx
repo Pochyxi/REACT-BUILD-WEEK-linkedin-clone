@@ -2,8 +2,17 @@ import { Button, Col } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { BsThreeDots } from 'react-icons/bs'
 import { BiPencil } from 'react-icons/bi'
+import { useState } from "react"
+import FormDialog from "./FormDialog"
+
 
 const CardProfile = () => {
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
 
     const user = useSelector(state => state.user.user)
     return (
@@ -14,18 +23,15 @@ const CardProfile = () => {
                 </Col>
                 <Col xs={3} className='CardProfileCerchio d-flex align-items-end'>
                     <img className="img-fluid CardProfileCerchioImg" src={user.image} alt="" />
+                </Col>
+            </Col>
 
-                </Col>
-            </Col>
-            <Col xs={12} className='d-flex justify-content-end text-end p-3'>
-                <Col xs={3} className='CardProfilePencil text-secondary'>
-                    <BiPencil />
-                </Col>
-            </Col>
+            <FormDialog open={open} setOpen={setOpen} />
+
             <Col xs={12} className='CardProfileText'>
                 <h3>{user.name} {user.surname}</h3>
                 <p>{user.title}</p>
-                <p className="text-secondary">{user.area}  <span className="text-primary">informazioni di contatto</span> </p>
+                <p className="text-secondary">{user.area}{' '}<span className="text-primary">informazioni di contatto</span> </p>
             </Col>
             <Col xs={12} className='d-flex justify-content-evenly '>
                 <Col xs={3}>
