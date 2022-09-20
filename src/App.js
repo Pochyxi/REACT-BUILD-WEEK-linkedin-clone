@@ -6,6 +6,7 @@ import LoginComponent from "./components/LoginComponent";
 import LinkedinNavbar from "./components/LinkedinNavBar";
 import MyFooter from "./components/footer/Footer";
 import Profile from "./components/profilo/Profile";
+import ModifyComponent from "./components/ModifyComponent";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginComponent />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/modify" element={<ModifyComponent />} />
         </Routes>
       </Container>
       <MyFooter />
