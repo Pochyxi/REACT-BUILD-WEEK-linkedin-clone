@@ -149,7 +149,9 @@ const LinkedinNavbar = () => {
                         type: SET_TOKEN,
                         payload: ''
                       })
-                      navigate('/')
+                      setTimeout(() => {
+                        navigate('/')
+                      }, 500);
                     }
                     }
                   >

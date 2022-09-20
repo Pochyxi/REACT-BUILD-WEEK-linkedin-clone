@@ -18,9 +18,10 @@ const CardCompetenze = () => {
   })
 
   useEffect(() => {
-    fetchExperiences()
-    console.log(experiences);
-  }, [])
+    if (token) {
+      fetchExperiences()
+    }
+  }, [token])
 
   const fetchExperiences = async () => {
     const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences"
