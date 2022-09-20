@@ -10,8 +10,11 @@ const CardCompetenze = () => {
     const token = useSelector(state => state.user.token)
     const [experienceObj, setExperienceObj] = useState({
         description: 'prova',
-        area: user.area,
-        username: user.username,
+        area: 'Italy',
+        role: 'Student',
+        company: 'Epicode',
+        startDate: '2020-10-22',
+        endDate: '2020-01-22',
     })
 
     useEffect(() => {
@@ -84,12 +87,12 @@ const CardCompetenze = () => {
             </Link>
           </div>
         </div>
-    {/*   <ListGroup variant="flush">
-        {experiences.map((experience, index) => {
+      <ListGroup variant="flush">
+        {experiences?.map((experience, index) => {
           return (
               <ListGroup.Item key={index}>{experience.description}</ListGroup.Item>
-          )
-      </ListGroup> */}
+          )})}
+      </ListGroup>
       </div>
     </div>
   );
