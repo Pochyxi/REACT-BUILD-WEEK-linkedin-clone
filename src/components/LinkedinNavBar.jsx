@@ -97,10 +97,10 @@ const LinkedinNavbar = () => {
                   }
                   id="navbarScrollingDropdown "
                 >
-                  <NavDropdown.Item href="#action3">
+                  <NavDropdown.Item>
                     <div className="d-flex justify-content-around">
                       <img
-                        className="NavbarUserList"
+                        className="NavbarUserList "
                         src={selector.image}
                         alt=""
                       />

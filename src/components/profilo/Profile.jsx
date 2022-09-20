@@ -1,4 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap"
+import CardAziende from "./CardAziende"
+import CardCompetenze from "./CardCompetenze"
+import CardPersone from "./CardPersone"
 import CardProfile from "./CardProfile"
 
 const Profile = () => {
@@ -9,7 +12,15 @@ const Profile = () => {
                     <CardProfile />
                 </Col>
                 <Col className="ProfileSecondaria" >
-                    <h2>qui va la sezione secondaria</h2>
+                   <CardAziende/>
+                </Col>
+            </Row>
+            <Row className="justify-content-center flex-nowrap px-4 pt-3 pb-2">
+                <Col className="ProfilePrincipale" >
+                    <CardCompetenze />
+                </Col>
+                <Col className="ProfileSecondaria" >
+                   <CardPersone/>
                 </Col>
             </Row>
         </Container>
