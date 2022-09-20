@@ -76,3 +76,20 @@
 }
 
 /* ----------------------- */
+
+/*PAGINA PROFILE*/
+
+.MyCardRow {
+  min-height: 100vh;
+  margin-top: 50px;
+}
+.CardProfileBG {
+  min-height: 20vh;
+  background-color: #0077B5;
+}
+.CardProfileUserImg {
+  background-color: red;
+  height: 100%!important;
+  min-height: 10vh;
+  border-radius: 25%;
+}
