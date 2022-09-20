@@ -155,12 +155,17 @@
 .ProfilePrincipale {
     width: 450px;
     flex: none;
+    
 }
 
 .ProfileSecondaria {
     width: 250px;
     flex: none;
-    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid gainsboro;
+    border-radius: 10px; 
 }
 
 
@@ -233,6 +238,13 @@
 }
 .CardProfilePencil {
     font-size: 1.5rem;
+    cursor: pointer;
+}
+.CardProfilePencil2{
+  font-size: 1.8rem;
+  margin-right: 10px;
+  cursor: pointer;
+
 }
 .CardProfileImagesPencil {
     font-size: 2rem;
@@ -241,4 +253,17 @@
 .CardProfileImagesPenciBi {
     border-radius: 50%;
     padding: 7px;
+}
+.CardAziendaButton{
+  border-radius: 15px;
+  padding: 3px 25px;
+}
+.CardAziendap{
+  color: #86888A;
+  font-size: 12px;
+  margin-left: 3px;
+}
+.CardCompetenze{
+  width: 90%;
+  margin: 0 auto;
 }
