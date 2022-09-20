@@ -5,68 +5,66 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const CardCompetenze = () => {
-    const user = useSelector(state => state.user.user)
-    const [experiences, setExperiences] = useState([])
-    const token = useSelector(state => state.user.token)
-    const [experienceObj, setExperienceObj] = useState({
-        description: 'prova',
-        area: user.area,
-        username: user.username,
-    })
+  const user = useSelector(state => state.user.user)
+  const [experiences, setExperiences] = useState([])
+  const token = useSelector(state => state.user.token)
+  const [experienceObj, setExperienceObj] = useState({
+    _id: user._id,
+  })
 
-    useEffect(() => {
-        fetchExperiences()
-        console.log(experiences);
-    }, [])
+  useEffect(() => {
+    fetchExperiences()
+    console.log(experiences);
+  }, [])
 
-    const fetchExperiences = async () => {
-        const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences" 
-        const header = {
-            "Content-type": "application/json",
-            Authorization: `Bearer ${token}`,
-        };
+  const fetchExperiences = async () => {
+    const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences"
+    const header = {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${token}`,
+    };
 
-        try {
-            const response = await fetch(baseEndpoint, {
-                headers: header,
-            });
-            if (response.ok) {
-                const data = await response.json();
-                setExperiences(data);
-                console.log(data);
-            } else {
-                alert("Error fetching results");
-            }
-        } catch (error) {
-            console.log(error);
-        }
+    try {
+      const response = await fetch(baseEndpoint, {
+        headers: header,
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setExperiences(data);
+        console.log(data);
+      } else {
+        alert("Error fetching results");
+      }
+    } catch (error) {
+      console.log(error);
     }
-        const addExperience = async (obj) => {
-            const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences" 
-            
-            const header = {
-                "Content-type": "application/json",
-                Authorization: `Bearer ${token}`,
-            };
-    
-            try {
-                const response = await fetch(baseEndpoint, {
-                    method: "POST",
-                    body: JSON.stringify(obj),
-                    headers: header,
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    setExperiences(data);
-                    console.log(data);
-                } else {
-                    alert("Error fetching results");
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }   
-    
+  }
+  const addExperience = async (obj) => {
+    const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences"
+
+    const header = {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${token}`,
+    };
+
+    try {
+      const response = await fetch(baseEndpoint, {
+        method: "POST",
+        body: JSON.stringify(obj),
+        headers: header,
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setExperiences(data);
+        console.log(data);
+      } else {
+        alert("Error fetching results");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className="CardProfile ">
       <div className="CardCompetenze mt-3">
@@ -74,17 +72,17 @@ const CardCompetenze = () => {
           <h4>Competenze</h4>
           <div>
             <BiPlus
-             onClick={() => {
-               addExperience(experienceObj);
+              onClick={() => {
+                addExperience(experienceObj);
               }}
 
-             className="CardProfilePencil2 text-secondary " />
+              className="CardProfilePencil2 text-secondary " />
             <Link to='/modify'>
-            <BiPencil className="CardProfilePencil text-secondary " />
+              <BiPencil className="CardProfilePencil text-secondary " />
             </Link>
           </div>
         </div>
-    {/*   <ListGroup variant="flush">
+        {/*   <ListGroup variant="flush">
         {experiences.map((experience, index) => {
           return (
               <ListGroup.Item key={index}>{experience.description}</ListGroup.Item>

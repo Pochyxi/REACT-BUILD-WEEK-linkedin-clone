@@ -19,7 +19,7 @@ const CardProfile = () => {
         <Col className='CardProfile'>
             <Col className="CardProfileImages" xs={12} >
                 <Col className="text-end d-flex justify-content-end  CardProfileImagesPencil" xs={12}>
-                    <BiPencil className="bg-light CardProfileImagesPenciBi" l />
+                    <BiPencil className="bg-light CardProfileImagesPenciBi" />
                 </Col>
                 <Col xs={3} className='CardProfileCerchio d-flex align-items-end'>
                     <img className="img-fluid CardProfileCerchioImg" src={user.image} alt="" />
