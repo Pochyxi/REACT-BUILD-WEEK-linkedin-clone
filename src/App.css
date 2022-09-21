@@ -309,9 +309,15 @@
 
 .HomeCardProfileCerchio {
   border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  padding: 2px;
   position: relative;
-  top: 10px;
+  top: 40px;
+  background-color: whitesmoke;
 }
-.HomeCardImg {
+
+.HomeCardProfileCerchioImg {
+  height: 100%;
   border-radius: 50%;
 }
