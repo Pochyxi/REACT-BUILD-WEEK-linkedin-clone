@@ -152,6 +152,7 @@
 
 
 /* SEZIONE PROFILO  */
+
 .ProfilePrincipale {
     width: 450px;
     flex: none;
@@ -300,4 +301,17 @@
 .CardAziende {
   border: 1px solid gainsboro;
   border-radius: 10px;
+}
+
+/* ---------------------- */
+
+/* HOME COMPONENT */
+
+.HomeCardProfileCerchio {
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+}
+.HomeCardImg {
+  border-radius: 50%;
 }
