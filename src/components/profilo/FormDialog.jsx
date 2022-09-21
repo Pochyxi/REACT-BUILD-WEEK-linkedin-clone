@@ -76,7 +76,8 @@ export default function FormDialog() {
     const handleClose = () => {
         setOpen(false);
     };
-    console.log(formValidation())
+
+
     return (
         <Col xs={12} className='d-flex justify-content-end text-end p-3'>
             <Col xs={3}
