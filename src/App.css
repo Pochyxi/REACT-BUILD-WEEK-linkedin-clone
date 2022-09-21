@@ -155,8 +155,8 @@
 .ProfilePrincipale {
     width: 450px;
     flex: none;
-    
 }
+
 
 .ProfileSecondaria {
     width: 250px;
@@ -164,11 +164,37 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 1px solid gainsboro;
     border-radius: 10px; 
 }
 
+@media screen and (max-width: 768px) {
+  .ProfilePrincipale {
+    width: 100%;
+    
+}
+  .ProfileSecondaria {
+    width: 100%;
+}
+}
+@media screen and (min-width: 1100px) {
+  .ProfilePrincipale {
+    width: 550px;
+    
+}
+  .ProfileSecondaria {
+    width: 350px;
+}
+}
 
+@media screen and (min-width: 1100px) {
+  .ProfilePrincipale {
+    width: 650px;
+    
+}
+  .ProfileSecondaria {
+    width: 450px;
+}
+}
 .CardProfile {
     min-height: 50vh;
     border: 1px solid gainsboro;
@@ -270,4 +296,8 @@
 
 .CardCompetenzeImg {
   border-radius: 50%!important;
+}
+.CardAziende {
+  border: 1px solid gainsboro;
+  border-radius: 10px;
 }

@@ -7,20 +7,20 @@ import CardProfile from "./CardProfile"
 const Profile = () => {
     return (
         <Container fluid>
-            <Row className="justify-content-center flex-nowrap px-4 pt-3 pb-2">
+            <Row className="justify-content-center align-items-start  flex-column flex-md-row flex-nowrap px-4 pt-3 pb-2">
                 <Col className="ProfilePrincipale" >
                     <CardProfile />
                 </Col>
                 <Col className="ProfileSecondaria" >
-                   <CardAziende/>
+                    <CardAziende />
                 </Col>
             </Row>
-            <Row className="justify-content-center flex-nowrap px-4 pt-3 pb-2">
+            <Row className="justify-content-center align-items-start flex-column flex-md-row flex-nowrap px-4 pt-3 pb-2">
                 <Col className="ProfilePrincipale" >
                     <CardCompetenze />
                 </Col>
                 <Col className="ProfileSecondaria" >
-                   <CardPersone/>
+                    <CardPersone />
                 </Col>
             </Row>
         </Container>
