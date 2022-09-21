@@ -46,7 +46,7 @@ const HomeComponent = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        setAllPosts(data.slice(-100, data.length - 5).reverse());
+        setAllPosts(data.slice(-100, data.length - 6).reverse());
       } else {
         alert("Error fetching results");
       }
@@ -69,7 +69,6 @@ const HomeComponent = () => {
             <LinkedinPost key={i} post={post} />
           ))
         }
-                {/* <LinkedinPost post={allPosts} /> */}
         </Col>
         <Col xs={3}>
         <CardPubblicità />
