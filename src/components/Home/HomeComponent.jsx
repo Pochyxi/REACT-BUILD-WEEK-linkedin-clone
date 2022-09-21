@@ -5,6 +5,7 @@ import CardProfiloHome from "./CardProfiloHome";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import LinkedinPost from "./LinkedinPost";
+import News from "../news/News";
 
 
 
@@ -25,11 +26,11 @@ const HomeComponent = () => {
 
   const deletePostWithoutImage = (arr) => {
     let arrDelete = []
-    for (let i = arr.length - 1 ; i > 1; i--) {
-      if (!typeof arr[i].user === 'object' ) {
-       arrDelete = arr.filter(item => item._id === arr[i]._id)
+    for (let i = arr.length - 1; i > 1; i--) {
+      if (!typeof arr[i].user === 'object') {
+        arrDelete = arr.filter(item => item._id === arr[i]._id)
+      }
     }
-  }
     return arrDelete
   }
 
@@ -60,18 +61,18 @@ const HomeComponent = () => {
     <Container>
       <Row className="justify-content-center flex-nowrap px-4 pt-3 pb-2">
         <Col xs={3}>
-        <CardProfiloHome/>
+          <CardProfiloHome />
         </Col>
         <Col xs={6}>
-        <CardCreaPost/>
-        {
-          allPosts.map((post, i) => (
-            <LinkedinPost key={i} post={post} />
-          ))
-        }
+          <CardCreaPost />
+          {
+            allPosts.map((post, i) => (
+              <LinkedinPost key={i} post={post} />
+            ))
+          }
         </Col>
         <Col xs={3}>
-        <CardPubblicità />
+          <News />
         </Col>
       </Row>
     </Container>
