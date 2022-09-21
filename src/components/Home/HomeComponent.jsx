@@ -5,6 +5,7 @@ import CardProfiloHome from "./CardProfiloHome";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import LinkedinPost from "./LinkedinPost";
+import News from "../news/News";
 
 
 
@@ -46,7 +47,7 @@ const HomeComponent = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        setAllPosts(data.slice(-100, data.length - 5).reverse());
+        setAllPosts(data.slice(-100, data.length - 6).reverse());
       } else {
         alert("Error fetching results");
       }
@@ -57,32 +58,23 @@ const HomeComponent = () => {
 
 
   return (
-    <Container className="container-lg-fluid">
-      <Row className="flex-column flex-lg-row justify-content-between flex-wrap px-4 pt-3 pb-2">
-        <Col xs={12} lg={9} className='d-flex flex-column flex-md-row justify-content-between'>
-          <Col xs={12} sm={12} md={3} lg={2} xl={2} className='fixs'>
-            <CardProfiloHome />
-          </Col >
-
-          <Col xs={12} sm={12} md={3} lg={2} xl={2}>
-          </Col>
-          <Col xs={12} sm={12} md={7} lg={7} xl={6}>
-            <CardCreaPost />
-            {
-              allPosts.map((post, i) => (
-                <LinkedinPost key={i} post={post} />
-              ))
-            }
-            {/* <LinkedinPost post={allPosts} /> */}
-          </Col>
+    <Container>
+      <Row className="justify-content-center flex-nowrap px-4 pt-3 pb-2">
+        <Col xs={3}>
+          <CardProfiloHome />
         </Col>
-        <Col>
-          <Col xs={3} >
-            <CardPubblicità />
-          </Col>
+        <Col xs={6}>
+          <CardCreaPost />
+          {
+            allPosts.map((post, i) => (
+              <LinkedinPost key={i} post={post} />
+            ))
+          }
+        </Col>
+        <Col xs={3}>
+          <News />
         </Col>
       </Row>
-
     </Container>
   );
 };
