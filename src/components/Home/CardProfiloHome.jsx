@@ -18,11 +18,7 @@ const CardProfiloHome = () => {
                 <p className="text-secondary">{user.area}{' '}<span className="text-primary">informazioni di contatto</span> </p>
             </Col>
             <Col xs={12} className='d-flex justify-content-start p-4'>
-                <Col className="CardProfileDisp" xs={8}>
-                    <h6 className="m-0">Disponibile a lavorare</h6>
-                    <p className="m-0">Ruoli di {user.title}</p>
-                    <p className="text-primary m-0">Vedi informazioni di contatto</p>
-                </Col>
+               
             </Col>
         </Col>
   )
