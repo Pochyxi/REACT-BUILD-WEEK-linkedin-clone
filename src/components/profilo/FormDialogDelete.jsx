@@ -1,15 +1,12 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Col } from 'react-bootstrap';
-import { BiPencil } from 'react-icons/bi'
-import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from '../../redux/actions/actions';
+import { useSelector } from 'react-redux';
 import ClearIcon from '@mui/icons-material/Clear';
 
 
