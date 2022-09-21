@@ -330,6 +330,8 @@
   border-bottom: 1px solid rgba(220, 220, 220, 0.497);
 }
 
-.cardFixed {
+@media screen and (min-width: 768px) {
+  .fixs {
   position: fixed;
+}
 }

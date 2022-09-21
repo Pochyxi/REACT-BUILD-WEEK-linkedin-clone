@@ -6,7 +6,7 @@ const CardProfiloHome = () => {
     const user = useSelector(state => state.user.user)
     return (
         <>
-            <Col className="CardProfileImages d-flex justify-content-center marginBottom" xs={12} >
+            <Col className="CardProfileImages d-flex justify-content-center" xs={12} >
                 <Col xs={12} className='HomeCardProfileCerchio justify-content-center d-flex align-items-end'>
                     <img className="img-fluid HomeCardProfileCerchioImg" src={user.image} alt="" />
                 </Col>
