@@ -329,4 +329,15 @@
   margin-left: 10px;
   width: 100%;
   border-radius: 20px;
+  text-align: start;
+}
+.rigaIconePost{
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: nowrap;
+}
+.CardPost{
+  border: 1px solid gainsboro;
+  border-radius: 10px;  
+  max-height: 8em ;
 }
