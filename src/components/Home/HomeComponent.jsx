@@ -1,20 +1,37 @@
 import { Col, Container, Row } from "react-bootstrap";
-import CardPost from "./CardPost";
 import CardPubblicità from "./CardPubblicità";
 import CardCreaPost from "./CardCreaPost";
 import CardProfiloHome from "./CardProfiloHome";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import LinkedinPost from "./LinkedinPost";
+
+
 
 const HomeComponent = () => {
 
   const user = useSelector(state => state.user.user)
   const token = useSelector(state => state.user.token)
-  const [allPosts, setAllPosts] = useState(null)
+  const [allPosts, setAllPosts] = useState([])
 
   useEffect(() => {
     fetchPosts()
   }, [])
+
+  useEffect(() => {
+    console.log(deletePostWithoutImage(allPosts));
+    console.log(allPosts);
+  }, [allPosts])
+
+  const deletePostWithoutImage = (arr) => {
+    let arrDelete = []
+    for (let i = arr.length - 1 ; i > 1; i--) {
+      if (!typeof arr[i].user === 'object' ) {
+       arrDelete = arr.filter(item => item._id === arr[i]._id)
+    }
+  }
+    return arrDelete
+  }
 
   const fetchPosts = async () => {
     const baseEndpoint = "//striveschool-api.herokuapp.com/api/posts/"
@@ -29,7 +46,7 @@ const HomeComponent = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        setAllPosts(data.slice(-50, data.length).reverse());
+        setAllPosts(data.slice(-100, data.length - 6).reverse());
       } else {
         alert("Error fetching results");
       }
@@ -48,9 +65,8 @@ const HomeComponent = () => {
         <Col xs={6}>
         <CardCreaPost/>
         {
-          allPosts &&
-          allPosts.map((post, index) => (
-            <CardPost key={index} post={post}/>
+          allPosts.map((post, i) => (
+            <LinkedinPost key={i} post={post} />
           ))
         }
         </Col>

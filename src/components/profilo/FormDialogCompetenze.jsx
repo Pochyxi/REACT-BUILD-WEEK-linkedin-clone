@@ -135,7 +135,6 @@ export default function FormDialogCompetenze({ experienceObj, setExperienceObj, 
                     <TextField
                         className='mt-4'
                         id="outlined-helperText"
-                        defaultValue="Default Value"
                         helperText="INIZIO"
                         type="date"
                         value={experienceObj.startDate}
@@ -147,7 +146,6 @@ export default function FormDialogCompetenze({ experienceObj, setExperienceObj, 
                     <TextField
                         className='mt-4'
                         id="outlined-helperText"
-                        defaultValue="Default Value"
                         helperText="FINE"
                         type="date"
                         value={experienceObj.endDate}

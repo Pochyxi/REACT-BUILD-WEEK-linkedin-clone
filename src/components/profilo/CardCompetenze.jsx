@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Col, ListGroup, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import FormDialogCompetenze from "./FormDialogCompetenze";
-import ClearIcon from '@mui/icons-material/Clear';
 import { useLocation } from "react-router-dom";
 import FormDialogDelete from "./FormDialogDelete";
 
@@ -95,7 +94,7 @@ const CardCompetenze = () => {
     "2022-09-20T19:45:13.097Z"))
 
   return (
-    <Col className="CardProfile">
+    <Col className="CardProfile mb-3">
       <Col xs={12} className="CardCompetenze mt-3">
         <FormDialogCompetenze addExperience={addExperience} experienceObj={experienceObj} setExperienceObj={setExperienceObj} setDeleteToggle={setDeleteToggle} deleteToggle={deleteToggle} />
         <ListGroup variant="flush">
