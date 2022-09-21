@@ -25,6 +25,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_TOKEN, SET_USER } from "../redux/actions/actions";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LinkedinNavbar = () => {
   const [formToggle, setFormToggle] = useState(false);
@@ -40,11 +41,13 @@ const LinkedinNavbar = () => {
   console.log(selector.name);
 
   return (
-    <Navbar className="NavBarLinkedin" bg="light">
+    <Navbar sticky="top" className="NavBarLinkedin" bg="light">
       <Container fluid className="NavBarLinkedin">
         <div className="NavbarDiv">
           <Navbar.Brand>
+            <Link to="/home">
             <BsLinkedin className="NavBarLogo" />{" "}
+            </Link>
           </Navbar.Brand>
           <Form className="d-flex NavbarForm align-self-start mt-1">
             <Form.Control
@@ -78,10 +81,12 @@ const LinkedinNavbar = () => {
                 </div>
               </Nav.Link>
               <Nav.Link>
+                <Link to="/home" className="text-decoration-none">
                 <div className="NavbarHover  d-flex flex-column align-items-center">
                   <ImHome3 className="NavBarAllLogo" />{" "}
                   <span className="NavBarSpan text-center">Home</span>
                 </div>
+                </Link>
               </Nav.Link>
               {selector.name && (
                 <NavDropdown
@@ -113,9 +118,11 @@ const LinkedinNavbar = () => {
                         <p>{selector.title}</p>
                       </div>
                     </div>
+                    <Link to="/profile">
                     <Button variant="outline-primary w-100">
                       Visualizza Profilo
                     </Button>
+                    </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action4">
                     <h6>Account</h6>
