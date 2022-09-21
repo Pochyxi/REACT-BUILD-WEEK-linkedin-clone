@@ -64,7 +64,12 @@ const HomeComponent = () => {
         </Col>
         <Col xs={6}>
         <CardCreaPost/>
-                <LinkedinPost post={allPosts} />
+        {
+          allPosts.map((post, i) => (
+            <LinkedinPost key={i} post={post} />
+          ))
+        }
+                {/* <LinkedinPost post={allPosts} /> */}
         </Col>
         <Col xs={3}>
         <CardPubblicità />

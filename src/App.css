@@ -271,3 +271,6 @@
 .CardCompetenzeImg {
   border-radius: 50%!important;
 }
+.PostUser{
+ max-width: 100%;
+}

@@ -80,14 +80,12 @@ const LinkedinNavbar = () => {
                   </span>
                 </div>
               </Nav.Link>
-              <Nav.Link>
-                <Link to="/home" className="text-decoration-none">
+                <Link to="/home" className="text-decoration-none nav-link">
                 <div className="NavbarHover  d-flex flex-column align-items-center">
                   <ImHome3 className="NavBarAllLogo" />{" "}
                   <span className="NavBarSpan text-center">Home</span>
                 </div>
                 </Link>
-              </Nav.Link>
               {selector.name && (
                 <NavDropdown
                   title={
