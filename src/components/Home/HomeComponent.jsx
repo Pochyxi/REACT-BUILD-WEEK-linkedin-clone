@@ -19,20 +19,6 @@ const HomeComponent = () => {
     fetchPosts()
   }, [])
 
-  useEffect(() => {
-    console.log(deletePostWithoutImage(allPosts));
-    console.log(allPosts);
-  }, [allPosts])
-
-  const deletePostWithoutImage = (arr) => {
-    let arrDelete = []
-    for (let i = arr.length - 1; i > 1; i--) {
-      if (!typeof arr[i].user === 'object') {
-        arrDelete = arr.filter(item => item._id === arr[i]._id)
-      }
-    }
-    return arrDelete
-  }
 
   const fetchPosts = async () => {
     const baseEndpoint = "//striveschool-api.herokuapp.com/api/posts/"

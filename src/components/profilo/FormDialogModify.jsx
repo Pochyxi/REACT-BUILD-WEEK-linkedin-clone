@@ -5,9 +5,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import ClearIcon from '@mui/icons-material/Clear';
 import { BiPencil } from 'react-icons/bi'
 import TextField from '@mui/material/TextField';
 

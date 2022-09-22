@@ -85,8 +85,9 @@ export default function FormDialogPost({ fetchPosts }) {
             <Button onClick={handleClickOpen} variant="outline-secondary" className="buttonPost" >
                 Crea Post
             </Button>
-
-            <Dialog open={open} onClose={handleClose}>
+            <Dialog
+                open={open}
+                onClose={handleClose}>
                 <DialogTitle>COMPETENZE</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
