@@ -57,7 +57,6 @@ const CardCompetenze = () => {
       console.log(error);
     }
   }
-
   const addExperience = async (obj) => {
     const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences"
 
@@ -120,14 +119,24 @@ const CardCompetenze = () => {
   return (
     <Col className="CardProfile mb-3">
       <Col xs={12} className="CardCompetenze mt-3">
-        <FormDialogCompetenze addExperience={addExperience} experienceObj={experienceObj} setExperienceObj={setExperienceObj} setDeleteToggle={setDeleteToggle} deleteToggle={deleteToggle} blobFile={blobFile} setBlobFile={setBlobFile} />
+        <FormDialogCompetenze
+          addExperience={addExperience}
+          experienceObj={experienceObj}
+          setExperienceObj={setExperienceObj}
+          setDeleteToggle={setDeleteToggle}
+          deleteToggle={deleteToggle}
+          blobFile={blobFile}
+          setBlobFile={setBlobFile} />
         <ListGroup variant="flush">
 
           {experiences?.map((experience, index) => {
             return (
               <ListGroup.Item className="d-flex justify-content-between p-0 mt-2" key={index}>
                 <Col className="mt-2" xs={3}>
-                  <img className="img-fluid CardCompetenzeImg" src={experience.image} alt="lorem picsum" />
+                  <img className="img-fluid CardCompetenzeImg" src={experience.image} alt="foto experience"
+                    style={{
+                      minWidth: '100%',
+                    }} />
                 </Col>
                 <Col xs={8}>
                   <Row>

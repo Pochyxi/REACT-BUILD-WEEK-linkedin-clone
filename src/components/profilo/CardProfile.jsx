@@ -67,8 +67,6 @@ const CardProfile = () => {
                     <Col xs={6}>
                         <BiPencil className="bg-light CardProfileImagesPenciBi" />
                     </Col>
-
-
                 </Col>
                 <Col xs={3} className='CardProfileCerchio d-flex align-items-end'>
                     <img className="img-fluid CardProfileCerchioImg" src={user.image} alt="" />
