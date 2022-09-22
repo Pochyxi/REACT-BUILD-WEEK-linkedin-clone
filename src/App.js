@@ -8,6 +8,7 @@ import MyFooter from "./components/footer/Footer";
 import Profile from "./components/profilo/Profile";
 import ModifyComponent from "./components/ModifyComponent";
 import HomeComponent from "./components/Home/HomeComponent";
+import ProfiliUtenti from "./components/ProfiliUtenti";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/modify" element={<ModifyComponent />} />
           <Route path="/home" element={<HomeComponent />} />
+          <Route path="/profili:userId" element={<ProfiliUtenti />} />
         </Routes>
       </Container>
       <MyFooter />
