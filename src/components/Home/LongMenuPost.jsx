@@ -5,6 +5,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import FormDialogModifyPost from './FormDialogModifyPost';
+import { Link } from 'react-router-dom';
 
 const ITEM_HEIGHT = 48;
 
@@ -44,6 +45,7 @@ export default function LongMenuPost(props) {
 
 
     console.log(props.post)
+    console.log( 'id',props.post.user._id);
     return (
         <div>
             <IconButton
@@ -74,9 +76,11 @@ export default function LongMenuPost(props) {
                     },
                 }}
             >
+                    <Link to={'/profili' + props.post.user._id}>
                 <MenuItem onClick={handleClose}>
                     Visualizza Profilo
                 </MenuItem>
+                    </Link>
                 {
                     props.post.user._id === user._id && (
                         <div>
