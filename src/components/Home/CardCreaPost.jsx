@@ -22,6 +22,7 @@ const CardCreaPost = ({ fetchPosts }) => {
             <FormDialogPost fetchPosts={fetchPosts} />
           </Col>
         </Row>
+    </Col>
         <Row className="rigaIconePost mt-3">
           <Col className="d-flex no-wrap">
             <ImageOutlinedIcon color="primary" /> <span className="text-secondary">Foto</span>
@@ -33,11 +34,10 @@ const CardCreaPost = ({ fetchPosts }) => {
             <EventIcon sx={{ color: 'orange' }} /> <span className="text-secondary">Evento</span>
           </Col>
           <Col className="d-flex no-wrap">
-            <NewspaperIcon sx={{ color: 'orangered' }} /> <span className="text-secondary">Scrivi un articolo</span>
+            <NewspaperIcon sx={{ color: 'orangered' }} /> <span className="text-secondary">Scrivi articolo</span>
           </Col>
         </Row>
       </Col>
-    </Col>
   );
 };
 

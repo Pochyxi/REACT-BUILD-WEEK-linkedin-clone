@@ -345,4 +345,15 @@
   position: sticky;
   top: 80px;
 }
+.buttonDialogPost{
+  border: none;
+  border-radius: 20px;
+  height: 50%;
+  color: #313335;
+  margin-right: 10px;
+}
+.CardPostButton{
+  border-radius: 20px;
+}
+
 
