@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginComponent from "./components/LoginComponent";
 import LinkedinNavbar from "./components/LinkedinNavBar";
-import MyFooter from "./components/footer/Footer";
+import Footer from "./components/footer/Footer";
 import MyCard from "./components/profilo/MyCard";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Route path="/profile" element={<MyCard />} />
         </Routes>
       </Container>
-      <MyFooter />
+      <Footer />
     </BrowserRouter>
   );
 }
