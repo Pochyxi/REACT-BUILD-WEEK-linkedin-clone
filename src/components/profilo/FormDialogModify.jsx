@@ -8,6 +8,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { useSelector } from 'react-redux';
 import { BiPencil } from 'react-icons/bi'
 import TextField from '@mui/material/TextField';
+import { Col } from 'react-bootstrap'
+import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
+
 
 
 
@@ -16,6 +19,8 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
     const token = useSelector(state => state.user.token)
     const [open, setOpen] = React.useState(false);
     const [experienceSingle, setExperienceSingle] = React.useState(experience)
+    const [blobFile, setBlobFile] = React.useState(null)
+
 
     const modifyExperience = async (obj) => {
         const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences/" + experience._id
@@ -34,7 +39,31 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
             if (response.ok) {
                 const data = await response.json();
                 fetchExperiences()
-                console.log(data);
+                fetchImg(data._id)
+            } else {
+                alert("Error fetching results");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const fetchImg = async (expId) => {
+
+        const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${expId}/picture`
+
+        try {
+            let formData = new FormData();
+            formData.append('experience', blobFile);
+
+            const response = await fetch(baseEndpoint, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            if (response.ok) {
+                fetchExperiences()
             } else {
                 alert("Error fetching results");
             }
@@ -146,6 +175,17 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
                     />
                 </DialogContent>
                 <DialogActions className='d-flex justify-content-between'>
+                    <Col xs={5}>
+                        <form encType="multipart/form-data" id='form'>
+                            <label htmlFor="inputMod"><ImageOutlinedIcon color={blobFile?.name.length > 0 ? 'primary' : '#86888A'} /></label>
+                            <input
+                                onChange={(e) => {
+                                    setBlobFile(e.target.files[0])
+
+                                }}
+                                style={{ display: 'none' }} type="file" id="inputMod" />
+                        </form>
+                    </Col>
                     <Button className='text-primary' onClick={() => {
                         handleClose()
                         setExperienceSingle(experience)

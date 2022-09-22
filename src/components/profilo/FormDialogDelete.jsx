@@ -12,7 +12,7 @@ import FormDialogModify from './FormDialogModify';
 
 
 
-export default function FormDialogDelete({ experience, fetchExperiences, deleteToggle }) {
+export default function FormDialogDelete({ experience, fetchExperiences, deleteToggle, blobFile, setBlobFile }) {
     const user = useSelector(state => state.user.user)
     const token = useSelector(state => state.user.token)
     const [open, setOpen] = React.useState(false);
@@ -60,7 +60,11 @@ export default function FormDialogDelete({ experience, fetchExperiences, deleteT
                             <ClearIcon className='me-3' />
                         </Col>
                         <Col xs={3}>
-                            <FormDialogModify experience={experience} fetchExperiences={fetchExperiences} deleteToggle={deleteToggle} />
+                            <FormDialogModify
+                                experience={experience}
+                                fetchExperiences={fetchExperiences}
+                                deleteToggle={deleteToggle}
+                            />
                         </Col>
                     </Col>
                 )

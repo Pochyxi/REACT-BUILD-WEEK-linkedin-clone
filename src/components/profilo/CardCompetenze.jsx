@@ -5,6 +5,7 @@ import FormDialogCompetenze from "./FormDialogCompetenze";
 import { useLocation } from "react-router-dom";
 import FormDialogDelete from "./FormDialogDelete";
 
+
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 
@@ -115,7 +116,7 @@ const CardCompetenze = () => {
       console.log(error);
     }
   }
-
+  console.log(experiences)
   return (
     <Col className="CardProfile mb-3">
       <Col xs={12} className="CardCompetenze mt-3">
@@ -154,7 +155,13 @@ const CardCompetenze = () => {
                   <Row className="justify-content-end text-danger">
                     {
                       location.pathname === '/modify' && (
-                        <FormDialogDelete experience={experience} fetchExperiences={fetchExperiences} deleteToggle={deleteToggle} />
+                        <FormDialogDelete
+                          experience={experience}
+                          fetchExperiences={fetchExperiences}
+                          deleteToggle={deleteToggle}
+                          blobFile={blobFile}
+                          setBlobFile={setBlobFile}
+                        />
                       )
                     }
 

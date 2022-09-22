@@ -6,6 +6,7 @@ import FormDialog from "./FormDialog"
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import { useEffect, useState } from "react"
 import { fetchUser } from "../../redux/actions/actions"
+import AlertComponent from "../AlertComponent"
 
 
 
@@ -14,6 +15,8 @@ const CardProfile = () => {
     const token = useSelector(state => state.user.token)
     const user = useSelector(state => state.user.user)
     const dispatch = useDispatch()
+    const [open, setOpen] = useState(false)
+    const [mess, setMess] = useState(' ')
 
     useEffect(() => {
         if (blobFile?.name.length > 0) {
@@ -42,16 +45,26 @@ const CardProfile = () => {
                 console.log('okok')
                 console.log(data);
             } else {
-                alert("Error fetching results");
+                setMess('Qualcosa è andato storto durante la richiesta')
+                handleClick()
             }
         } catch (error) {
+            setMess('Errore del server' + error.message)
+            handleClick()
             console.log(error);
         }
     }
 
+    const handleClick = () => {
+        setOpen(true);
+    };
+
+
+
 
     return (
         <Col className='CardProfile'>
+            <AlertComponent open={open} setOpen={setOpen} mess={mess} />
             <Col className="CardProfileImages" xs={12} >
                 <Col className="text-end d-flex justify-content-between align-items-center  CardProfileImagesPencil" xs={12}>
                     <Col xs={6} className='text-start'>

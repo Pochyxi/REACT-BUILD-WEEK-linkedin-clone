@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import AlertComponent from "./AlertComponent";
 import ProfiliUtentiCard from "./ProfiliUtentiCard";
 import ProfiliUtentiCompetenze from "./ProfiliUtentiCompetenze";
 import CardAziende from "./profilo/CardAziende";
