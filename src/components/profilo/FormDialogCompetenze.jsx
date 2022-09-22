@@ -10,9 +10,11 @@ import { BiPlus, BiPencil } from 'react-icons/bi'
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from 'react';
+import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 
 
-export default function FormDialogCompetenze({ experienceObj, setExperienceObj, addExperience, setDeleteToggle, deleteToggle }) {
+
+export default function FormDialogCompetenze({ experienceObj, setExperienceObj, addExperience, setDeleteToggle, deleteToggle, blobFile, setBlobFile }) {
     const user = useSelector(state => state.user.user)
     const location = useLocation()
     const token = useSelector(state => state.user.token)
@@ -53,8 +55,7 @@ export default function FormDialogCompetenze({ experienceObj, setExperienceObj, 
     const handleClose = () => {
         setOpen(false);
     };
-    console.log(experienceObj)
-    console.log(formValidation())
+
     return (
         <Col xs={12} className='d-flex justify-content-between align-items-center text-end mb-2'>
             <Col xs={4}>
@@ -155,7 +156,17 @@ export default function FormDialogCompetenze({ experienceObj, setExperienceObj, 
                         required
                     />
                 </DialogContent>
-                <DialogActions>
+                <DialogActions className='justify-content-evenly'>
+                    <Col xs={5}>
+                        <form encType="multipart/form-data" id='form'>
+                            <label htmlFor="input"><ImageOutlinedIcon color={blobFile?.name.length > 0 ? 'primary' : '#86888A'} /></label>
+                            <input
+                                onChange={(e) => {
+                                    setBlobFile(e.target.files[0])
+                                }}
+                                style={{ display: 'none' }} type="file" id="input" />
+                        </form>
+                    </Col>
                     <Button onClick={handleClose}>ANNULLA</Button>
                     <Button onClick={() => {
                         if (formValidation() === true) {

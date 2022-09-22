@@ -43,7 +43,6 @@ export default function LongMenuPost(props) {
     }
 
 
-    console.log(props.post)
     return (
         <div>
             <IconButton

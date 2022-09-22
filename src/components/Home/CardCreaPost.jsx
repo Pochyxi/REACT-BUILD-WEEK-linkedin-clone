@@ -7,6 +7,8 @@ import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import EventIcon from '@mui/icons-material/Event';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import FormDialogPost from "./FormDialogPost";
+import TextField from '@mui/material/TextField';
+import { IconButton } from '@mui/material';
 
 const CardCreaPost = ({ fetchPosts }) => {
   const user = useSelector((state) => state.user.user);
@@ -22,22 +24,22 @@ const CardCreaPost = ({ fetchPosts }) => {
             <FormDialogPost fetchPosts={fetchPosts} />
           </Col>
         </Row>
-    </Col>
-        <Row className="rigaIconePost mt-3">
-          <Col className="d-flex no-wrap">
-            <ImageOutlinedIcon color="primary" /> <span className="text-secondary">Foto</span>
-          </Col>
-          <Col className="d-flex no-wrap">
-            <SmartDisplayIcon color="success" /> <span className="text-secondary">Video</span>
-          </Col>
-          <Col className="d-flex no-wrap">
-            <EventIcon sx={{ color: 'orange' }} /> <span className="text-secondary">Evento</span>
-          </Col>
-          <Col className="d-flex no-wrap">
-            <NewspaperIcon sx={{ color: 'orangered' }} /> <span className="text-secondary">Scrivi articolo</span>
-          </Col>
-        </Row>
       </Col>
+      <Row className="rigaIconePost mt-3">
+        <Col className="d-flex no-wrap">
+          <ImageOutlinedIcon color="primary" /> <span className="text-secondary">Foto</span>
+        </Col>
+        <Col className="d-flex no-wrap">
+          <SmartDisplayIcon color="success" /> <span className="text-secondary">Video</span>
+        </Col>
+        <Col className="d-flex no-wrap">
+          <EventIcon sx={{ color: 'orange' }} /> <span className="text-secondary">Evento</span>
+        </Col>
+        <Col className="d-flex no-wrap">
+          <NewspaperIcon sx={{ color: 'orangered' }} /> <span className="text-secondary">Scrivi articolo</span>
+        </Col>
+      </Row>
+    </Col>
   );
 };
 

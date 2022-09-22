@@ -3,10 +3,9 @@ import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import FeedIcon from '@mui/icons-material/Feed';
@@ -19,6 +18,7 @@ export default function FormDialogPost({ fetchPosts }) {
     const token = useSelector(state => state.user.token)
     const user = useSelector(state => state.user.user)
     const [open, setOpen] = useState(false);
+    const [blobFile, setBlobFile] = useState(null)
     const [formObj, setFormObj] = useState({
         text: '',
     })
@@ -40,6 +40,7 @@ export default function FormDialogPost({ fetchPosts }) {
             });
             if (response.ok) {
                 const data = await response.json();
+                fetchImg(data._id)
                 setFormObj({
                     text: '',
                 })
@@ -77,6 +78,35 @@ export default function FormDialogPost({ fetchPosts }) {
         setOpen(false);
     };
 
+
+    const fetchImg = async (postId) => {
+
+
+
+        const baseEndpoint = `https://striveschool-api.herokuapp.com/api/posts/${postId}`
+
+        try {
+            let formData = new FormData();
+            formData.append('post', blobFile);
+            const response = await fetch(baseEndpoint, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            if (response.ok) {
+                fetchPosts()
+            } else {
+                alert("Error fetching results");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+
     return (
         <>
             <Button
@@ -86,7 +116,7 @@ export default function FormDialogPost({ fetchPosts }) {
             >
                 Avvia un Post
             </Button>
-            <Dialog fullWidth={"lg"} open={open} onClose={handleClose}>
+            <Dialog fullWidth={true} open={open} onClose={handleClose}>
                 <Col className="d-flex justify-content-between align-items-center">
                     <DialogTitle>Crea un post</DialogTitle>
                     <Button
@@ -128,7 +158,13 @@ export default function FormDialogPost({ fetchPosts }) {
                 </DialogContent>
                 <DialogActions>
                     <Col xs={10} className="d-flex justify-content-around">
-                        <ImageOutlinedIcon sx={{ color: '#86888A' }} />
+                        <form encType="multipart/form-data" id='form'>
+                            <label htmlFor="input"><ImageOutlinedIcon color={blobFile?.name.length > 0 ? 'primary' : '#86888A'} /></label>
+                            <input
+                                onChange={(e) => { setBlobFile(e.target.files[0]) }}
+                                style={{ display: 'none' }} type="file" id="input" />
+                        </form>
+                        {/* <ImageOutlinedIcon sx={{ color: '#86888A' }} /> */}
                         <SmartDisplayIcon sx={{ color: '#86888A' }} />
                         <FeedIcon sx={{ color: '#86888A' }} />
                         <BusinessCenterIcon sx={{ color: '#86888A' }} />

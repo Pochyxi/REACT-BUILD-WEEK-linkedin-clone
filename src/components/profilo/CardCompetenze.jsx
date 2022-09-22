@@ -14,6 +14,7 @@ const CardCompetenze = () => {
   const location = useLocation()
   const [experiences, setExperiences] = useState([])
   const token = useSelector(state => state.user.token)
+  const [blobFile, setBlobFile] = useState(null)
   const [experienceObj, setExperienceObj] = useState({
     description: '',
     area: '',
@@ -27,6 +28,7 @@ const CardCompetenze = () => {
     if (token) {
       fetchExperiences()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
 
   const dateCorrect = (string) => {
@@ -48,7 +50,6 @@ const CardCompetenze = () => {
       if (response.ok) {
         const data = await response.json();
         setExperiences(data);
-        console.log(data);
       } else {
         alert("Error fetching results");
       }
@@ -56,6 +57,7 @@ const CardCompetenze = () => {
       console.log(error);
     }
   }
+
   const addExperience = async (obj) => {
     const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences"
 
@@ -72,6 +74,7 @@ const CardCompetenze = () => {
       });
       if (response.ok) {
         const data = await response.json();
+        fetchImg(data._id)
         setExperienceObj({
           description: '',
           area: '',
@@ -81,7 +84,6 @@ const CardCompetenze = () => {
           endDate: '',
         })
         fetchExperiences()
-        console.log(data);
       } else {
         alert("Error fetching results");
       }
@@ -90,20 +92,42 @@ const CardCompetenze = () => {
     }
   }
 
-  console.log(dateCorrect(
-    "2022-09-20T19:45:13.097Z"))
+  const fetchImg = async (expId) => {
+
+    const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${expId}/picture`
+
+    try {
+      let formData = new FormData();
+      formData.append('experience', blobFile);
+
+      const response = await fetch(baseEndpoint, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.ok) {
+        fetchExperiences()
+      } else {
+        alert("Error fetching results");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <Col className="CardProfile mb-3">
       <Col xs={12} className="CardCompetenze mt-3">
-        <FormDialogCompetenze addExperience={addExperience} experienceObj={experienceObj} setExperienceObj={setExperienceObj} setDeleteToggle={setDeleteToggle} deleteToggle={deleteToggle} />
+        <FormDialogCompetenze addExperience={addExperience} experienceObj={experienceObj} setExperienceObj={setExperienceObj} setDeleteToggle={setDeleteToggle} deleteToggle={deleteToggle} blobFile={blobFile} setBlobFile={setBlobFile} />
         <ListGroup variant="flush">
 
           {experiences?.map((experience, index) => {
             return (
               <ListGroup.Item className="d-flex justify-content-between p-0 mt-2" key={index}>
                 <Col className="mt-2" xs={3}>
-                  <img className="img-fluid CardCompetenzeImg" src={`https://picsum.photos/id/${Math.floor(Math.random() * 200)}/500/500`} alt="lorem picsum" />
+                  <img className="img-fluid CardCompetenzeImg" src={experience.image} alt="lorem picsum" />
                 </Col>
                 <Col xs={8}>
                   <Row>

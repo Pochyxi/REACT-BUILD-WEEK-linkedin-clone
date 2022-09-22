@@ -10,13 +10,16 @@ import News from "../news/News";
 
 const HomeComponent = () => {
 
-  const user = useSelector(state => state.user.user)
   const token = useSelector(state => state.user.token)
   const [allPosts, setAllPosts] = useState([])
 
   useEffect(() => {
-    fetchPosts()
-  }, [])
+    if (token) {
+      fetchPosts()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token])
+
 
 
   const fetchPosts = async () => {
@@ -32,7 +35,6 @@ const HomeComponent = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        console.log('fetching posts')
         setAllPosts(data.slice(-50, data.length).reverse());
 
       } else {
@@ -42,7 +44,7 @@ const HomeComponent = () => {
       console.log(error);
     }
   }
-
+  console.log(token)
 
   return (
     <Container className="container-lg-fluid">
