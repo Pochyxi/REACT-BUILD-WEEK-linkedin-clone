@@ -13,8 +13,9 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import LongMenuPost from "./LongMenuPost";
 
-const LinkedinPost = ({ post }) => {
+const LinkedinPost = ({ post, fetchPosts }) => {
   const [expanded, setExpanded] = React.useState(false);
   const options = {
     weekday: "long",
@@ -59,7 +60,7 @@ const LinkedinPost = ({ post }) => {
             }
             action={
               <IconButton aria-label="settings">
-                <MoreVertIcon />
+                <LongMenuPost post={post} fetchPosts={fetchPosts} />
               </IconButton>
             }
             title={post.user.username + " - " + post.user.title}
