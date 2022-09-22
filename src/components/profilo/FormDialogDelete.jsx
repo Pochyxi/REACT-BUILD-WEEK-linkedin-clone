@@ -8,6 +8,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import ClearIcon from '@mui/icons-material/Clear';
+import { BiPencil } from 'react-icons/bi'
+import FormDialogModify from './FormDialogModify';
+
 
 
 export default function FormDialogDelete({ experience, fetchExperiences, deleteToggle }) {
@@ -50,9 +53,16 @@ export default function FormDialogDelete({ experience, fetchExperiences, deleteT
             {
                 deleteToggle && (
                     <Col xs={3}
-                        onClick={handleClickOpen}
-                        className='CardProfilePencil text-danger'>
-                        <ClearIcon />
+
+                        className='CardProfilePencil text-danger d-flex justify-content-between'>
+                        <Col
+                            onClick={handleClickOpen}
+                            xs={3}>
+                            <ClearIcon className='me-3' />
+                        </Col>
+                        <Col xs={3}>
+                            <FormDialogModify experience={experience} fetchExperiences={fetchExperiences} deleteToggle={deleteToggle} />
+                        </Col>
                     </Col>
                 )
             }
