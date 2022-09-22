@@ -355,5 +355,8 @@
 .CardPostButton{
   border-radius: 20px;
 }
-
+.cardPostImage{
+  width: 100%;
+  height: auto;
+}
 

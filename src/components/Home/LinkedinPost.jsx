@@ -4,6 +4,7 @@ import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
+import CardMedia from "@mui/material/CardMedia";
 import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
@@ -15,7 +16,12 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const LinkedinPost = ({ post }) => {
   const [expanded, setExpanded] = React.useState(false);
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -34,8 +40,12 @@ const LinkedinPost = ({ post }) => {
 
   const dateCorrect = (string) => {
     let date = new Date(string);
-    return date.toLocaleDateString(undefined, options).split(' ').slice(2, 4).join(' ')
-  }
+    return date
+      .toLocaleDateString(undefined, options)
+      .split(" ")
+      .slice(2, 4)
+      .join(" ");
+  };
 
   return (
     <>
@@ -43,7 +53,7 @@ const LinkedinPost = ({ post }) => {
         <Card className="mb-3">
           <CardHeader
             avatar={
-              <Avatar >
+              <Avatar>
                 <img className="PostUser" src={post.user.image} alt="user" />
               </Avatar>
             }
@@ -52,12 +62,23 @@ const LinkedinPost = ({ post }) => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={post.user.username + ' - ' + post.user.title} 
+            title={post.user.username + " - " + post.user.title}
             subheader={dateCorrect(post.updatedAt)}
           />
+          {
+            post.image && (
+              <CardMedia
+                className="cardPostImage"
+                component="img"
+                height="194"
+                image={post.image}
+                alt="image"
+              />
+            )
+          }
           <CardContent>
             <Typography variant="body2" color="text.secondary">
-             {post.text}
+              {post.text}
             </Typography>
           </CardContent>
           <CardActions disableSpacing>
