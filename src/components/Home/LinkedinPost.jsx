@@ -12,8 +12,9 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import LongMenuPost from "./LongMenuPost";
 
-const LinkedinPost = ({ post }) => {
+const LinkedinPost = ({ post, fetchPosts }) => {
   const [expanded, setExpanded] = React.useState(false);
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -48,16 +49,14 @@ const LinkedinPost = ({ post }) => {
               </Avatar>
             }
             action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
+              <LongMenuPost post={post} fetchPosts={fetchPosts} />
             }
-            title={post.user.username + ' - ' + post.user.title} 
+            title={post.user.username + ' - ' + post.user.title}
             subheader={dateCorrect(post.updatedAt)}
           />
           <CardContent>
             <Typography variant="body2" color="text.secondary">
-             {post.text}
+              {post.text}
             </Typography>
           </CardContent>
           <CardActions disableSpacing>

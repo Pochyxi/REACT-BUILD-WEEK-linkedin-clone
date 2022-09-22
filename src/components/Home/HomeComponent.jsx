@@ -56,7 +56,7 @@ const HomeComponent = () => {
             <CardCreaPost fetchPosts={fetchPosts} />
             {
               allPosts.map((post, i) => (
-                <LinkedinPost key={i} post={post} />
+                <LinkedinPost key={i} post={post} fetchPosts={fetchPosts} />
               ))
             }
             {/* <LinkedinPost post={allPosts} /> */}
