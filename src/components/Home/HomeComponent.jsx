@@ -1,5 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-import CardPubblicità from "./CardPubblicità";
 import CardCreaPost from "./CardCreaPost";
 import CardProfiloHome from "./CardProfiloHome";
 import { useEffect, useState } from "react";

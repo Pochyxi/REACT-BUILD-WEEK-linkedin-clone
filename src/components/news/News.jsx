@@ -24,9 +24,7 @@ function News() {
             {newsArticle("articolo demo demo demo demo", "visto da 100 persone e stimazzi")}
             {newsArticle("articolo demo demo demo demo", "1 giorno fa. 500 lettori")}
             {newsArticle("articolo demo demo demo demo", "prova prova prova prova")}
-            <div className='button'>
-                <p>Visualizza altro</p>
-            </div>
+            {newsArticle("articolo Guerra in Ucraina", "L'Europa in difficoltà")}
         </div>
 
 

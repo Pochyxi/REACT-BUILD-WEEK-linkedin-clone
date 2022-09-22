@@ -1,11 +1,11 @@
 .widgets {
     position: sticky;
     top: 80px;
-    flex: 0.2;
-    background-color: rgb(187, 225, 225); /* da fare bianco */
+    flex: 0.2; ; 
     border-radius: 10px;
     height: fit-content;
     padding-bottom: 10px;
+    border: 1px solid gainsboro;
 }
 
 .infoicon {
