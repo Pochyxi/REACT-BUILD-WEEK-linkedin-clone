@@ -11,17 +11,17 @@ const ProfiliUtenti = () => {
   const params = useParams();
   const token = useSelector((state) => state.user.token);
   const [user, setUser] = useState({});
-  const [experiences, setCompetenze] = useState([]);
+  const [competenze, setCompetenze] = useState([]);
 
   useEffect(() => {
     fetchUtent();
     fetchExperiences();
-    console.log(experiences);
+    console.log(competenze);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchUtent = async () => {
-    const baseEndpoint = `//striveschool-api.herokuapp.com/api/profile/${params.userId}`;
+    const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${params.userId}`;
     const header = {
       "Content-type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -44,7 +44,7 @@ const ProfiliUtenti = () => {
   };
 
   const fetchExperiences = async () => {
-    const baseEndpoint = `//striveschool-api.herokuapp.com/api/profile/${user._id}/experiences`;
+    const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${params.userId}/experiences`;
     const header = {
       "Content-type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ const ProfiliUtenti = () => {
       </Row>
       <Row className="justify-content-center align-items-start flex-column flex-md-row flex-nowrap px-4 pt-3 pb-2">
         <Col className="ProfilePrincipale">
-          <ProfiliUtentiCompetenze experiences={experiences} />
+          <ProfiliUtentiCompetenze experiences={competenze} />
         </Col>
         <Col className="ProfileSecondaria">
           <CardPersone />

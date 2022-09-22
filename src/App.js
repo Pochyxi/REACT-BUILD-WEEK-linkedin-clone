@@ -20,7 +20,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/modify" element={<ModifyComponent />} />
           <Route path="/home" element={<HomeComponent />} />
-          <Route path="/profili:userId" element={<ProfiliUtenti />} />
+          <Route path="/profili/:userId" element={<ProfiliUtenti />} />
         </Routes>
       </Container>
       <MyFooter />

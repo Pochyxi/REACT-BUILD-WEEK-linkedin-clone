@@ -45,7 +45,7 @@ export default function LongMenuPost(props) {
 
 
     console.log(props.post)
-    console.log( 'id',props.post.user._id);
+    console.log('id', props.post.user._id);
     return (
         <div>
             <IconButton
@@ -76,11 +76,11 @@ export default function LongMenuPost(props) {
                     },
                 }}
             >
-                    <Link to={'/profili' + props.post.user._id}>
-                <MenuItem onClick={handleClose}>
-                    Visualizza Profilo
-                </MenuItem>
-                    </Link>
+                <Link to={'/profili/' + props.post.user._id}>
+                    <MenuItem onClick={handleClose}>
+                        Visualizza Profilo
+                    </MenuItem>
+                </Link>
                 {
                     props.post.user._id === user._id && (
                         <div>
