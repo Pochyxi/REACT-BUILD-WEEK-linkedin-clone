@@ -9,25 +9,34 @@ import CardAziende from "./profilo/CardAziende";
 import CardPersone from "./profilo/CardPersone";
 
 const ProfiliUtenti = () => {
-  const params = useParams();
+
+  const params = useParams(); // Navigazione
+
+  // REDUX
   const token = useSelector((state) => state.user.token);
+  //----------------------------------------------------------------
+  //STATES
   const [user, setUser] = useState({});
   const [competenze, setCompetenze] = useState([]);
   const [open, setOpen] = useState(false)
   const [mess, setMess] = useState(' ')
+  //----------------------------------------------------------------
 
+  //USE EFFECT
   useEffect(() => {
     fetchUtent();
     fetchExperiences();
     window.scrollTo(0, 0)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  //----------------------------------------------------------------
 
-  const handleClick = () => {
+  // FUNZIONI
+  const handleClick = () => { // apre l'alert
     setOpen(true);
-};
+  };
 
-  const fetchUtent = async () => {
+  const fetchUtent = async () => { // ritorna il singolo utente richiesto
     const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${params.userId}`;
     const header = {
       "Content-type": "application/json",
@@ -47,13 +56,13 @@ const ProfiliUtenti = () => {
         handleClick()
       }
     } catch (error) {
-      setMess('Errore del server' +  error.message)
+      setMess('Errore del server' + error.message)
       handleClick()
       console.log(error);
     }
   };
 
-  const fetchExperiences = async () => {
+  const fetchExperiences = async () => { // ritorna le esperience dell'utente
     const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${params.userId}/experiences`;
     const header = {
       "Content-type": "application/json",
@@ -73,17 +82,19 @@ const ProfiliUtenti = () => {
         handleClick()
       }
     } catch (error) {
-      setMess('Errore del server' +  error.message)
+      setMess('Errore del server' + error.message)
       handleClick()
       console.log(error);
     }
   };
+  //----------------------------------------------------------------
 
+  //RENDER
   return (
     <Container fluid>
       <Row className="justify-content-center align-items-start  flex-column flex-md-row flex-nowrap px-4 pt-3 pb-2">
         <Col className="ProfilePrincipale">
-        <AlertComponent open={open} setOpen={setOpen} mess={mess} />
+          <AlertComponent open={open} setOpen={setOpen} mess={mess} />
           <ProfiliUtentiCard user={user} />
         </Col>
         <Col className="ProfileSecondaria">

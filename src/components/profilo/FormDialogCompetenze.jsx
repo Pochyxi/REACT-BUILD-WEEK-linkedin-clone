@@ -15,18 +15,25 @@ import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 
 
 export default function FormDialogCompetenze(props) {
+    //REDUX
     const user = useSelector(state => state.user.user)
-    const location = useLocation()
-    const token = useSelector(state => state.user.token)
+    // ----------------------------------------------------------------
+
+    const location = useLocation() // navigazione
+
+    // STATES 
     const [open, setOpen] = useState(false);
     const [formObj, setFormObj] = useState(user)
+    //----------------------------------------------------------------
 
-
+    // USE EFFECT 
     useEffect(() => {
         setFormObj(user)
     }, [user])
+    //----------------------------------------------------------------
 
-    const formValidation = () => {
+    //FUNZIONI
+    const formValidation = () => { // ritorna true se tutti i campi sono compilati
         let validation = false
         if (props.experienceObj.description.length > 0 &&
             props.experienceObj.area.length > 0 &&
@@ -38,7 +45,8 @@ export default function FormDialogCompetenze(props) {
         }
         return validation
     }
-    const handleExperience = (key, value) => {
+
+    const handleExperience = (key, value) => {// setta l'oggetto del form
         props.setExperienceObj(form => {
             return {
                 ...form,
@@ -48,15 +56,14 @@ export default function FormDialogCompetenze(props) {
         })
     }
 
-    const handleClickOpen = () => {
+    const handleClickOpen = () => { // apre il dialog 
         setOpen(true);
     };
 
-    const handleClose = () => {
+    const handleClose = () => { // chiude il dialog
         setOpen(false);
     };
 
-    console.log('sono blob', props.blobFile)
 
     return (
         <Col xs={12} className='d-flex justify-content-between align-items-center text-end mb-2'>

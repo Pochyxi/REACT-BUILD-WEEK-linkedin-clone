@@ -2,6 +2,8 @@ import React from "react";
 import { Button, Col } from "react-bootstrap";
 
 const CardAziende = () => {
+
+  //RENDER
   return (
     <Col xs={12} className="d-flex flex-column CardAziende mt-3 mt-md-0 justify-content-center align-items-start p-3">
       <Col xs={12}>

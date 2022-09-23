@@ -2,13 +2,17 @@ import { useEffect, useState } from 'react';
 import './News.css';
 
 function News() {
+    //STATES
     const [articles, setArticles] = useState([])
+    //----
 
+    //USE EFFECT
     useEffect(() => {
         fetchArticle()
     }, [])
+    //----------------------------------------------------------------
 
-    const fetchArticle = async () => {
+    const fetchArticle = async () => { // esegue la fetch degli articoli
         try {
             const response = await fetch("https://api.spaceflightnewsapi.net/v3/articles")
             if (response.ok) {
@@ -23,8 +27,7 @@ function News() {
         }
     }
 
-    console.log(articles)
-    const newsArticle = (heading, subtitle, url, key) => (
+    const newsArticle = (heading, subtitle, url, key) => ( // serve a fare il map nel return 
         <div key={key} className="widgetsArticle">
             <div className="widgetsArticleLeft">
             </div>
@@ -35,6 +38,8 @@ function News() {
         </div>
     )
 
+
+    //RENDER
     return (
         <div className="widgets my-2">
             <div className='widgetsHead'>

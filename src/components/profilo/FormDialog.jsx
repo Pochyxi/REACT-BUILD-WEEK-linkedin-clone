@@ -13,40 +13,27 @@ import { setUser } from '../../redux/actions/actions';
 import AlertComponent from "../AlertComponent"
 
 export default function FormDialog() {
+    //REDUX
     const user = useSelector(state => state.user.user)
-    const dispatch = useDispatch()
     const token = useSelector(state => state.user.token)
+    const dispatch = useDispatch()
+    //----------------------------------------------------------------
+
+    // STATES
     const [open, setOpen] = React.useState(false);
     const [formObj, setFormObj] = React.useState(user)
     const [opeN, setOpeN] = React.useState(false)
     const [mess, setMess] = React.useState(' ')
+    //----------------------------------------------------------------
 
+    // USE EFFECT 
     React.useEffect(() => {
         setFormObj(user)
     }, [user])
+    //---------------------------------------------------------------
 
-    const handleClick = () => {
-        setOpeN(true);
-    };
-
-    // const formValidation = () => {
-    //     let validation = false
-    //     if (!user === null) {
-
-    //     } else {
-    //         if (formObj?.area.length > 0 &&
-    //             formObj?.bio.length > 0 &&
-    //             formObj?.email.length > 0 &&
-    //             formObj?.surname.length > 0 &&
-    //             formObj?.title.length > 0 &&
-    //             formObj?.name.length > 0) {
-    //             validation = true
-    //         }
-    //     }
-
-    //     return validation
-    // }
-    const modifyUser = async (token, obj) => {
+    //FUNZIONI
+    const modifyUser = async (token, obj) => { // fetch per modificare i dati utente
         const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/"
         const header = {
             "Content-type": "application/json",
@@ -73,7 +60,13 @@ export default function FormDialog() {
             console.log(error);
         }
     }
-    const handleForm = (key, value) => {
+
+    const handleClick = () => { // apre l'allert
+        setOpeN(true);
+    };
+
+
+    const handleForm = (key, value) => { // modifica lo state sull'onchange degli inputs
         setFormObj(form => {
             return {
                 ...form,
@@ -83,15 +76,17 @@ export default function FormDialog() {
         })
     }
 
-    const handleClickOpen = () => {
+    const handleClickOpen = () => { // apre il dialog
         setOpen(true);
     };
 
-    const handleClose = () => {
+    const handleClose = () => { // chiude il dialog
         setOpen(false);
     };
+    // ----------------------------------------------------------------
 
 
+    // REMDER
     return (
         <Col xs={12} className='d-flex justify-content-end text-end p-3'>
             <Col xs={3}

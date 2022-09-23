@@ -3,7 +3,10 @@ import { useSelector } from 'react-redux'
 import { Col } from 'react-bootstrap'
 
 const CardProfiloHome = () => {
+    //REDUX
     const user = useSelector(state => state.user.user)
+
+    // RENDER
     return (
         <div className='position-sticky CardProfiloHome mb-2'>
             <Col className="CardProfileImages d-flex justify-content-center " xs={12} >

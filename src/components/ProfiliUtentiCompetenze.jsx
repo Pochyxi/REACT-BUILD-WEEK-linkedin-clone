@@ -10,7 +10,7 @@ const ProfiliUtentiCompetenze = ({ experiences }) => {
     day: "numeric",
   };
 
-  const dateCorrect = (string) => {
+  const dateCorrect = (string) => { // funzione per visualizzare la data formattata a dovere
     let date = new Date(string);
     return date
       .toLocaleDateString(undefined, options)
@@ -19,13 +19,14 @@ const ProfiliUtentiCompetenze = ({ experiences }) => {
       .join(" ");
   };
 
+  //RENDER
   return (
     <>
       {
         experiences.length > 0 && (
           <Col className="CardProfile mb-3">
             <Col xs={12} className="CardCompetenze mt-3">
-            <h4 className="text-dark">Competenze</h4>
+              <h4 className="text-dark">Competenze</h4>
               <ListGroup variant="flush">
                 {experiences?.map((experience, index) => {
                   return (
@@ -65,7 +66,6 @@ const ProfiliUtentiCompetenze = ({ experiences }) => {
               </ListGroup>
             </Col>
           </Col>
-
         )
       }
     </>

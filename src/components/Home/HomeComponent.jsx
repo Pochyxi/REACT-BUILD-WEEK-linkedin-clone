@@ -9,13 +9,17 @@ import { useNavigate } from "react-router-dom";
 import AlertComponent from "../AlertComponent"
 
 const HomeComponent = () => {
+  // REDUX
   const token = useSelector((state) => state.user.token);
-  const [allPosts, setAllPosts] = useState([]);
   const user = useSelector((state) => state.user.user);
+
+  // STATES
+  const [allPosts, setAllPosts] = useState([]);
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [mess, setMess] = useState(" ");
 
+  // USE EFFECT
   useEffect(() => {
     if (!user.name) {
       navigate("/");
@@ -38,11 +42,13 @@ const HomeComponent = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
+
+  //FUNZIONI
   const handleClick = () => {
     setOpen(true);
   };
 
-  const fetchPosts = async () => {
+  const fetchPosts = async () => { // ritorna gli ultimi 50 posts
     const baseEndpoint = "//striveschool-api.herokuapp.com/api/posts/";
     const header = {
       "Content-type": "application/json",
@@ -66,8 +72,8 @@ const HomeComponent = () => {
       console.log(error);
     }
   };
-  console.log(token);
 
+  // RENDER
   return (
     <Container className="container-lg-fluid HomeComponent">
       <Row className="flex-column flex-lg-row justify-content-between flex-wrap px-4 pt-3 pb-2">

@@ -11,30 +11,38 @@ import AlertComponent from "../AlertComponent"
 
 
 const CardProfile = ({ fotoBG, setToggleFetch }) => {
-    const [blobFile, setBlobFile] = useState(null)
-    const [blobFile2, setBlobFile2] = useState(null)
+    //REDUX
     const token = useSelector(state => state.user.token)
     const user = useSelector(state => state.user.user)
     const dispatch = useDispatch()
-    const [open, setOpen] = useState(false)
-    const [mess, setMess] = useState(' ')
-    const [toggleFoto, setToggleFoto] = useState(false)
+    // ----------------------------------------------------------------
 
-    useEffect(() => {
+    // STATES 
+    const [blobFile, setBlobFile] = useState(null) // serve per il formData
+    const [blobFile2, setBlobFile2] = useState(null)// serve per il formData
+    const [open, setOpen] = useState(false) // apre il messaggio di errore
+    const [mess, setMess] = useState(' ') // setta il messaggio di errore
+    const [toggleFoto, setToggleFoto] = useState(false)// toggle per far comparire il pulsante modifica foto profilo
+    //----------------------------------------------------------------
+
+    //USE EFFECT
+    useEffect(() => { // fetch per cambiare immagine profilo
         if (blobFile?.name.length > 0) {
             fetchImg()
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [blobFile])
 
-    useEffect(() => {
+    useEffect(() => { // uguale a quella di sopra solo che per il background
         if (blobFile2?.name.length > 0) {
             fetchBgImg(fotoBG._id)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [blobFile2])
+    //----------------------------------------------------------------
 
-    const fetchImg = async () => {
+    //FUNZIONI
+    const fetchImg = async () => { // fetch per modificare l'immagine di profilo
 
         const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/picture`
 
@@ -62,7 +70,7 @@ const CardProfile = ({ fotoBG, setToggleFetch }) => {
         }
     }
 
-    const fetchBgImg = async (expId) => {
+    const fetchBgImg = async (expId) => { // fetch per modificare l'immagine di background
 
         const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${expId}/picture`
 
@@ -87,13 +95,12 @@ const CardProfile = ({ fotoBG, setToggleFetch }) => {
         }
     }
 
-    const handleClick = () => {
+    const handleClick = () => { // funzione dell'allert
         setOpen(true);
     };
+    //----------------------------------------------------------------
 
-
-    console.log(blobFile2)
-
+    // RENDER 
     return (
         <Col className='CardProfile'>
             <AlertComponent open={open} setOpen={setOpen} mess={mess} />

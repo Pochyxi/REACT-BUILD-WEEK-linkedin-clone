@@ -16,15 +16,21 @@ import AlertComponent from "../AlertComponent"
 
 
 export default function FormDialogModify({ experience, fetchExperiences, deleteToggle }) {
+    //REDUX
     const user = useSelector(state => state.user.user)
     const token = useSelector(state => state.user.token)
+    //----
+
+    //STATES
     const [open, setOpen] = React.useState(false);
     const [experienceSingle, setExperienceSingle] = React.useState(experience)
     const [blobFile, setBlobFile] = React.useState(null)
     const [opeN, setOpeN] = React.useState(false)
     const [mess, setMess] = React.useState(' ')
+    //----------------------------------------------------------------
 
-    const formValidation = () => {
+    //FUNZIONI
+    const formValidation = () => { // ritorna true se tutti i campi del form sono compilati
         let validation = false
         if (experienceSingle.description.length > 0 &&
             experienceSingle.area.length > 0 &&
@@ -37,8 +43,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
         return validation
     }
 
-
-    const modifyExperience = async (obj) => {
+    const modifyExperience = async (obj) => { // fetch che modifica l'oggetto experience
         const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences/" + experience._id
 
         const header = {
@@ -63,8 +68,8 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
             console.log(error);
         }
     }
-    const fetchImg = async (expId) => {
 
+    const fetchImg = async (expId) => { // fetch per modificare di un'experience
         const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${expId}/picture`
 
         try {
@@ -91,7 +96,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
         }
     }
 
-    const handleExperience = (key, value) => {
+    const handleExperience = (key, value) => { // setta l'oggetto experience
         setExperienceSingle(form => {
             return {
                 ...form,
@@ -101,18 +106,20 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
         })
     }
 
-    const handleClick = () => {
+    const handleClick = () => { // apre l'alert
         setOpeN(true);
     };
 
-    const handleClickOpen = () => {
+    const handleClickOpen = () => { // apre il dialog
         setOpen(true);
     };
 
-    const handleClose = () => {
+    const handleClose = () => { // chiude il dialog
         setOpen(false);
     };
-    console.log(experience)
+    //----------------------------------------------------------------
+
+    //RENDER
     return (
         <>
             {

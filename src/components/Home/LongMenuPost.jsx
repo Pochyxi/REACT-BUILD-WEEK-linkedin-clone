@@ -11,12 +11,16 @@ import AlertComponent from "../AlertComponent"
 const ITEM_HEIGHT = 48;
 
 export default function LongMenuPost(props) {
+    //STATES
     const [anchorEl, setAnchorEl] = useState(null);
-    const token = useSelector(state => state.user.token)
-    const user = useSelector(state => state.user.user)
     const open = Boolean(anchorEl);
     const [opeN, setOpeN] = useState(false)
     const [mess, setMess] = useState(' ')
+
+    //REDUX
+    const token = useSelector(state => state.user.token)
+    const user = useSelector(state => state.user.user)
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -28,7 +32,7 @@ export default function LongMenuPost(props) {
         setOpeN(true);
     };
 
-    const deletePost = async () => {
+    const deletePost = async () => { // fetch per eliminare un post
         const baseEndpoint = `https://striveschool-api.herokuapp.com/api/posts/${props.post._id}`
         const header = {
             "Content-type": "application/json",
@@ -52,9 +56,11 @@ export default function LongMenuPost(props) {
             console.log(error);
         }
     }
+
+    // RENDER
     return (
         <div>
-             <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
+            <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
             <IconButton
                 aria-label="more"
                 id="long-button"
@@ -100,10 +106,8 @@ export default function LongMenuPost(props) {
                                 Elimina
                             </MenuItem>
                         </div>
-
                     )
                 }
-
             </Menu>
         </div>
     );

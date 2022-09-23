@@ -6,7 +6,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useSelector } from 'react-redux';
-import { BiPencil } from 'react-icons/bi'
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import AlertComponent from "../AlertComponent"
@@ -15,16 +14,20 @@ import AlertComponent from "../AlertComponent"
 
 
 export default function FormDialogModifyPost({ post, fetchPosts }) {
-    const user = useSelector(state => state.user.user)
+    //REDUX
     const token = useSelector(state => state.user.token)
+    //----------------------------------------------------------------
+    // STATES
     const [open, setOpen] = React.useState(false);
     const [opeN, setOpeN] = React.useState(false)
     const [mess, setMess] = React.useState(' ')
     const [postSingle, setPostSingle] = React.useState({
         text: post.text
     })
+    //----------------------------------------------------------------
 
-    const modifyPost = async (obj) => {
+    //FUNZIONI
+    const modifyPost = async (obj) => { // fetch per modificare il post
         const baseEndpoint = `https://striveschool-api.herokuapp.com/api/posts/${post._id}`
 
         const header = {
@@ -53,7 +56,7 @@ export default function FormDialogModifyPost({ post, fetchPosts }) {
         }
     }
 
-    const formValidation = () => {
+    const formValidation = () => { // ritorna true se il campo text è compilato
         let validation = false
         if (postSingle.text.length > 0) {
             validation = true
@@ -61,7 +64,7 @@ export default function FormDialogModifyPost({ post, fetchPosts }) {
         return validation
     }
 
-    const handlePost = (key, value) => {
+    const handlePost = (key, value) => { // modifica l'oggetto postSingle
         setPostSingle(form => {
             return {
                 ...form,
@@ -70,18 +73,20 @@ export default function FormDialogModifyPost({ post, fetchPosts }) {
 
         })
     }
-    const handleClick = () => {
+    const handleClick = () => { // apre l'alert
         setOpeN(true);
     };
 
-    const handleClickOpen = () => {
+    const handleClickOpen = () => { // apre il dialog
         setOpen(true);
     };
 
-    const handleClose = () => {
+    const handleClose = () => { // chiude il dialog
         setOpen(false);
     };
-    console.log(post)
+    //---------------------------------------------------------------
+
+    // RENDER
     return (
         <div>
             <MenuItem onClick={handleClickOpen}>

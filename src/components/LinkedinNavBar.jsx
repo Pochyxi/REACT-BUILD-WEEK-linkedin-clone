@@ -28,25 +28,31 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const LinkedinNavbar = () => {
+  //STATES
   const [formToggle, setFormToggle] = useState(false);
   const [show, setShow] = useState(false);
+  //----------------------------------------------------------------
 
+  //FUNZIONI
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  //---
 
+  //REDUX
   const dispatch = useDispatch()
   const selector = useSelector((state) => state.user.user);
-  const navigate = useNavigate()
+  //----------------------------------------------------------------
 
-  console.log(selector.name);
+  const navigate = useNavigate() // Navigazione
 
+  // RENDER
   return (
     <Navbar sticky="top" className="NavBarLinkedin" bg="light">
       <Container fluid className="NavBarLinkedin">
         <div className="NavbarDiv">
           <Navbar.Brand>
             <Link to="/home">
-            <BsLinkedin className="NavBarLogo" />{" "}
+              <BsLinkedin className="NavBarLogo" />{" "}
             </Link>
           </Navbar.Brand>
           <Form className="d-flex NavbarForm align-self-start mt-1">
@@ -80,12 +86,12 @@ const LinkedinNavbar = () => {
                   </span>
                 </div>
               </Nav.Link>
-                <Link to="/home" className="text-decoration-none nav-link">
+              <Link to="/home" className="text-decoration-none nav-link">
                 <div className="NavbarHover  d-flex flex-column align-items-center">
                   <ImHome3 className="NavBarAllLogo" />{" "}
                   <span className="NavBarSpan text-center">Home</span>
                 </div>
-                </Link>
+              </Link>
               {selector.name && (
                 <NavDropdown
                   title={
@@ -117,8 +123,8 @@ const LinkedinNavbar = () => {
                       </div>
                     </div>
                     <Button
-                     onClick={() => navigate('/profile')}
-                     variant="outline-primary w-100" className="ButtonDropDownNav">
+                      onClick={() => navigate('/profile')}
+                      variant="outline-primary w-100" className="ButtonDropDownNav">
                       Visualizza Profilo
                     </Button>
                   </NavDropdown.Item>

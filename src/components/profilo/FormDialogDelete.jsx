@@ -13,14 +13,20 @@ import AlertComponent from "../AlertComponent"
 
 
 
-export default function FormDialogDelete({ experience, fetchExperiences, deleteToggle, blobFile, setBlobFile }) {
+export default function FormDialogDelete({ experience, fetchExperiences, deleteToggle }) {
+    // REDUX
     const user = useSelector(state => state.user.user)
     const token = useSelector(state => state.user.token)
+    //----
+
+    //STATES
     const [open, setOpen] = React.useState(false);
     const [opeN, setOpeN] = React.useState(false)
     const [mess, setMess] = React.useState(' ')
+    //----------------------------------------------------------------
 
-    const deleteExperience = async () => {
+    // FUNZIONI
+    const deleteExperience = async () => { // fetch che elimina una experience
         const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${experience._id}`
         const header = {
             "Content-type": "application/json",
@@ -45,18 +51,20 @@ export default function FormDialogDelete({ experience, fetchExperiences, deleteT
         }
     }
 
-    const handleClick = () => {
+    const handleClick = () => { // apre l'alert
         setOpeN(true);
     };
 
-    const handleClickOpen = () => {
+    const handleClickOpen = () => { // apre il dialog
         setOpen(true);
     };
 
-    const handleClose = () => {
+    const handleClose = () => { // chiude il dialog
         setOpen(false);
     };
-    console.log(token)
+    //-----
+
+    // RENDER
     return (
         <Col xs={12} className='d-flex justify-content-end text-end p-3'>
             <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />

@@ -16,8 +16,11 @@ import AlertComponent from "../AlertComponent"
 
 
 export default function FormDialogPost({ fetchPosts }) {
+    //REDUX
     const token = useSelector(state => state.user.token)
     const user = useSelector(state => state.user.user)
+
+    //STATES
     const [open, setOpen] = useState(false);
     const [blobFile, setBlobFile] = useState(null)
     const [formObj, setFormObj] = useState({
@@ -26,8 +29,8 @@ export default function FormDialogPost({ fetchPosts }) {
     const [opeN, setOpeN] = useState(false)
     const [mess, setMess] = useState(' ')
 
-
-    const addPost = async (obj) => {
+    // FUNZIONI
+    const addPost = async (obj) => { // fetch per postare
         const baseEndpoint = "https://striveschool-api.herokuapp.com/api/posts/"
 
         const header = {
@@ -59,7 +62,8 @@ export default function FormDialogPost({ fetchPosts }) {
             console.log(error);
         }
     }
-    const handleForm = (key, value) => {
+
+    const handleForm = (key, value) => { // modifica l'oggetto form
         setFormObj(form => {
             return {
                 ...form,
@@ -68,7 +72,8 @@ export default function FormDialogPost({ fetchPosts }) {
 
         })
     }
-    const formValidation = () => {
+
+    const formValidation = () => { // true se text è compilato
         let validation = false
         if (formObj.text.length > 0) {
             validation = true
@@ -89,10 +94,7 @@ export default function FormDialogPost({ fetchPosts }) {
     };
 
 
-    const fetchImg = async (postId) => {
-
-
-
+    const fetchImg = async (postId) => { // modificare l'immagine del post
         const baseEndpoint = `https://striveschool-api.herokuapp.com/api/posts/${postId}`
 
         try {
@@ -119,10 +121,10 @@ export default function FormDialogPost({ fetchPosts }) {
     }
 
 
-
+    // RENDER
     return (
         <>
-          <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
+            <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
             <Button
                 onClick={handleClickOpen}
                 variant="outline-secondary"

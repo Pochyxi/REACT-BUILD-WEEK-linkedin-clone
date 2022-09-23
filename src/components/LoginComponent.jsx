@@ -5,8 +5,12 @@ import { useNavigate } from "react-router-dom"
 import { fetchUser } from "../redux/actions/actions"
 
 const LoginComponent = () => {
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
+
+    const navigate = useNavigate()//navigazione
+
+    const dispatch = useDispatch()// REDUX
+
+    //RENDER
     return (
         <Container fluid>
             <Row className="d-flex flex-column flex-lg-row justify-content-between">

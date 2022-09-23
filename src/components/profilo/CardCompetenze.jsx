@@ -10,15 +10,24 @@ const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric
 
 
 const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
+  // REDUX
   const user = useSelector(state => state.user.user)
-  const [deleteToggle, setDeleteToggle] = useState(false)
-  const location = useLocation()
-  const [experiences, setExperiences] = useState([])
   const token = useSelector(state => state.user.token)
-  const [blobFile, setBlobFile] = useState(null)
-  const [open, setOpen] = useState(false)
-  const [mess, setMess] = useState(' ')
-  const [experienceObj, setExperienceObj] = useState({
+  // ---------------------------------------------------------------
+
+
+  // ---------------------------------------------------------------
+  const location = useLocation() // navigazione
+  // ---------------------------------------------------------------
+
+
+  // USESTATE
+  const [experiences, setExperiences] = useState([]) // Array di oggetti esperienze
+  const [deleteToggle, setDeleteToggle] = useState(false) // toggle
+  const [open, setOpen] = useState(false) // toggle
+  const [mess, setMess] = useState(' ') // messaggio dell'allert
+  const [blobFile, setBlobFile] = useState(null) // utile per il formData
+  const [experienceObj, setExperienceObj] = useState({ // oggetto per la compilazione del form
     description: '',
     area: '',
     role: '',
@@ -26,33 +35,37 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
     startDate: '',
     endDate: '',
   })
+  // ----------------------------------------------------------------
 
-  useEffect(() => {
+
+  // USE EFFECT
+  useEffect(() => { // considera se effettuare una fetch oppure no
     if (toggleFetch === true) {
       fetchExperiences()
       console.log('toggleFetch')
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggleFetch])
 
-  useEffect(() => {
+  useEffect(() => { // fa la fetch solo se il token "esiste"
     if (token) {
       fetchExperiences()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
 
-  const dateCorrect = (string) => {
+
+  // FUNZIONI
+  const dateCorrect = (string) => { // modifica la stringa brutta del server e ne ritorna una migliore
     let date = new Date(string);
     return date.toLocaleDateString(undefined, options).split(' ').slice(2, 4).join(' ')
   }
 
-  const handleClick = () => {
+  const handleClick = () => { // apre il messaggio di errore
     setOpen(true);
   };
 
-  const fetchExperiences = async () => {
+  const fetchExperiences = async () => { // richiede la lista delle esperienze utente
     const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences"
     const header = {
       "Content-type": "application/json",
@@ -95,7 +108,8 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
       console.log(error);
     }
   }
-  const addExperience = async (obj) => {
+
+  const addExperience = async (obj) => { // fetch che aggiunge una nuova experience
     const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences"
 
     const header = {
@@ -133,7 +147,7 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
   }
 
 
-  const fetchImg = async (expId) => {
+  const fetchImg = async (expId) => { // fetch che aggiunge un'immagine ad una experience 
 
     const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${expId}/picture`
 
@@ -161,7 +175,8 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
       console.log(error);
     }
   }
-  console.log(experiences)
+
+  // RENDER
   return (
     <Col className="CardProfile mb-3">
       <AlertComponent open={open} setOpen={setOpen} mess={mess} />
@@ -179,7 +194,7 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
           {experiences?.map((experience, index) => {
             return (
               <ListGroup.Item className={experience.company === 'fotoBG' ? "d-flex justify-content-between p-0 mt-2 d-none" : "d-flex justify-content-between p-0 mt-2"} key={index}>
-                <Col className="ColImgCompetenze d-flex justify-content-center align-items-start p-1" xs={3}>
+                <Col className="ColImgCompetenze d-flex justify-content-center align-items-start p-1" xs={6}>
                   {
                     experience.image && (
                       <img className="img-fluid CardCompetenzeImg" src={experience.image} alt='foto experience' />
@@ -187,7 +202,7 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
                   }
 
                 </Col>
-                <Col xs={8}>
+                <Col xs={6}>
                   <Row>
                     <h3>{experience.company.toUpperCase()} {experience.area}</h3>
                   </Row>

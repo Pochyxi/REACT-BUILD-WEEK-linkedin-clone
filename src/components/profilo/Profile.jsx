@@ -8,11 +8,18 @@ import CardPersone from "./CardPersone"
 import CardProfile from "./CardProfile"
 
 const Profile = () => {
+    //REDUX 
     const user = useSelector(state => state.user.user)
-    const navigate = useNavigate()
+    //----
+
+    const navigate = useNavigate() //Navigazione
+
+    // STATES
     const [fotoBG, setFotoBG] = useState(null)
     const [toggleFetch, setToggleFetch] = useState(false)
+    //----------------------------------------------------------------
 
+    //USE EFFECT
     useEffect(() => {
         if (!user.name) {
             navigate('/')
@@ -20,13 +27,9 @@ const Profile = () => {
         window.scrollTo(0, 0)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+    //----------------------------------------------------------------
 
-
-    console.log(toggleFetch)
-
-
-
-    // console.log('user', user.name)
+    //RENDER
     return (
         <Container fluid>
             <Row className="justify-content-center align-items-start  flex-column flex-md-row flex-nowrap px-4 pt-3 pb-2">

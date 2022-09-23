@@ -16,15 +16,17 @@ import LongMenuPost from "./LongMenuPost";
 import { useNavigate } from "react-router-dom";
 
 const LinkedinPost = ({ post, fetchPosts }) => {
+  //STATES
   const [expanded, setExpanded] = React.useState(false);
-  const options = {
+
+  const navigate = useNavigate(); // navigazione
+
+  const options = { // optzioni per la formattazione toLocaleDateString
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
   };
-
-  const navigate = useNavigate();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -50,13 +52,14 @@ const LinkedinPost = ({ post, fetchPosts }) => {
       .join(" ");
   };
 
+  // RENDER
   return (
     <>
       {post.user && (
         <Card className="mb-3">
           <CardHeader
             className="CardHeaderPost"
-            style={{cursor: 'pointer'}}
+            style={{ cursor: 'pointer' }}
             onClick={() => navigate('/profili/' + post.user._id)}
             avatar={
               <Avatar>
