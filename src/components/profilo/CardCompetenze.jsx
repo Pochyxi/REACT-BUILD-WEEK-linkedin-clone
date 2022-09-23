@@ -133,7 +133,7 @@ const CardCompetenze = () => {
           {experiences?.map((experience, index) => {
             return (
               <ListGroup.Item className="d-flex justify-content-between p-0 mt-2" key={index}>
-                <Col className="mt-2" xs={3}>
+                <Col className="d-flex justify-content-center align-items-center p-1" xs={3}>
                   <img className="img-fluid CardCompetenzeImg" src={experience.image} alt="foto experience"
                     style={{
                       minWidth: '100%',
