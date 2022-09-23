@@ -1,28 +1,53 @@
+import { useEffect, useState } from 'react';
 import './News.css';
 
 function News() {
+    const [articles, setArticles] = useState([])
 
-    const newsArticle = (heading, subtitle) => (
+    useEffect(() => {
+        fetchArticle()
+    }, [])
+
+    const fetchArticle = async () => {
+        try {
+            const response = await fetch("https://api.spaceflightnewsapi.net/v3/articles")
+            if (response.ok) {
+                const json = await response.json()
+                console.log(json)
+                setArticles(json)
+            }
+
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    console.log(articles)
+    const newsArticle = (heading, subtitle, url) => (
         <div className="widgetsArticle">
             <div className="widgetsArticleLeft">
             </div>
             <div className="widgetsArticleRight">
-                <h4>{heading}</h4>
-                <p>{subtitle}</p>
-
+                <li>{heading}</li>
+                <p className='mt-2'>{subtitle} - <a className='text-success' href={url} target='_blank' rel='noreferrer'>GO</a></p>
             </div>
         </div>
     )
 
     return (
-        <div className="widgets">
+        <div className="widgets my-2">
             <div className='widgetsHead'>
                 <h2>LinkedIn News</h2>
             </div>
-            {newsArticle("articolo demo demo demo demo", "visto da 100 persone e stimazzi")}
-            {newsArticle("articolo demo demo demo demo", "1 giorno fa. 500 lettori")}
-            {newsArticle("articolo demo demo demo demo", "prova prova prova prova")}
-            {newsArticle("articolo Guerra in Ucraina", "L'Europa in difficoltà")}
+            <div className='scrollThis my-2'>
+                {
+                    articles.map(article => (
+                        newsArticle(article.title, article.summary, article.url)
+                    ))
+                }
+            </div>
+
         </div>
 
 

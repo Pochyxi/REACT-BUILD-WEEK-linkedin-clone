@@ -17,7 +17,7 @@ const ProfiliUtenti = () => {
   useEffect(() => {
     fetchUtent();
     fetchExperiences();
-    console.log(competenze);
+    window.scrollTo(0, 0)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

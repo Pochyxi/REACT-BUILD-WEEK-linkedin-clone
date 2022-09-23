@@ -1,3 +1,6 @@
+.TheBody {
+  background-color: #f3f2ef;
+}
 
 /* PAGINA LOGIN  */
 
@@ -60,6 +63,8 @@
   display: flex!important;
   justify-content: space-around!important;
   align-items: center!important;
+  background-color: white;
+  padding: 0;
 }
 .NavbarForm{
   height: 40px !important;
@@ -340,6 +345,7 @@
   border: 1px solid gainsboro;
   border-radius: 10px;  
   max-height: 8em ;
+  background-color: white;
 }
 .position-sticky {
   position: sticky;
@@ -360,3 +366,11 @@
   height: auto;
 }
 
+.CardProfiloHome {
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  background-color: white;
+}
+.borderBottom {
+  border-bottom: 1px solid gainsboro;
+}

@@ -6,6 +6,9 @@
     height: fit-content;
     padding-bottom: 10px;
     border: 1px solid gainsboro;
+    background-color: white;
+    max-height: 60vh;
+    overflow: auto;
 }
 
 .infoicon {

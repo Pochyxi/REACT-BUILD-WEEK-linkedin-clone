@@ -5,13 +5,13 @@ import { Col } from 'react-bootstrap'
 const CardProfiloHome = () => {
     const user = useSelector(state => state.user.user)
     return (
-        <div className='position-sticky'>
-            <Col className="CardProfileImages d-flex justify-content-center" xs={12} >
+        <div className='position-sticky CardProfiloHome'>
+            <Col className="CardProfileImages d-flex justify-content-center " xs={12} >
                 <Col xs={12} className='HomeCardProfileCerchio justify-content-center d-flex align-items-end'>
                     <img className="img-fluid HomeCardProfileCerchioImg" src={user.image} alt="" />
                 </Col>
             </Col>
-            <Col xs={12} className='CardProfileText text-center mt-5 marginBottom'>
+            <Col xs={12} className='CardProfileText text-center mt-5 marginBottom borderBottom'>
                 <h5>{user.name} {user.surname}</h5>
                 <p>{user.title}</p>
                 <p className="text-secondary d-none d-md-flex">{user.area}</p>

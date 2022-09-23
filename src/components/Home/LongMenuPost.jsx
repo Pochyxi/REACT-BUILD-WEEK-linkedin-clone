@@ -42,10 +42,6 @@ export default function LongMenuPost(props) {
             console.log(error);
         }
     }
-
-
-    console.log(props.post)
-    console.log('id', props.post.user._id);
     return (
         <div>
             <IconButton

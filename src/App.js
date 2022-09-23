@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <LinkedinNavbar />
-      <Container fluid className="p-0">
+      <Container fluid className="p-0 TheBody">
         <Routes>
           <Route path="/" element={<LoginComponent />} />
           <Route path="/profile" element={<Profile />} />
