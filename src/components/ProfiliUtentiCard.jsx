@@ -33,8 +33,16 @@ const ProfiliUtentiCard = ({ user }) => {
           <span className="text-primary">informazioni di contatto</span>{" "}
         </p>
       </Col>
+      <Col xs={10} className="d-flex justify-content-start p-4">
+      <Col xs={5} sm={3} md={5} xl={3}>
+      <Button className="CardProfileButton1 " variant="primary">Messaggio</Button>
+      </Col>
+      <Col xs={4}>
+      <Button className="CardProfileButton2 " variant="secondary">Altro</Button>
+      </Col>
+      </Col>
       <Col xs={12} className="d-flex justify-content-start p-4">
-        <Col className="CardProfileDisp" xs={8}>
+        <Col className="CardProfileDisp" xs={12}>
           <h6 className="m-0">Disponibile a lavorare</h6>
           <p className="m-0">Ruoli di {user.title}</p>
           <p className="text-primary m-0">Vedi informazioni di contatto</p>

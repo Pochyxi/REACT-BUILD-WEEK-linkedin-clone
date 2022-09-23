@@ -25,6 +25,7 @@ const ProfiliUtentiCompetenze = ({ experiences }) => {
         experiences.length > 0 && (
           <Col className="CardProfile mb-3">
             <Col xs={12} className="CardCompetenze mt-3">
+            <h4 className="text-dark">Competenze</h4>
               <ListGroup variant="flush">
                 {experiences?.map((experience, index) => {
                   return (
