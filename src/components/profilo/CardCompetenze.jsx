@@ -132,7 +132,6 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
     }
   }
 
-  // console.log(experiences?.find(exp => exp.company === 'fotoBG'))
 
   const fetchImg = async (expId) => {
 

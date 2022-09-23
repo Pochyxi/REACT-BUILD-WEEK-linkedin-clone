@@ -15,11 +15,20 @@
     background-position: center;
   }
 }
+
 .loginText {
   color: #8f5849;
   font-size: 5rem;
   font-weight: 200;
   line-height: 1.1;
+}
+@media screen and (max-width: 500px) {
+  .loginText {
+    color: #8f5849;
+    font-size: 3rem;
+    font-weight: 200;
+    line-height: 1.1;
+  }
 }
 
 .loginUser {

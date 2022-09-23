@@ -5,7 +5,7 @@ import { Col } from 'react-bootstrap'
 const CardProfiloHome = () => {
     const user = useSelector(state => state.user.user)
     return (
-        <div className='position-sticky CardProfiloHome'>
+        <div className='position-sticky CardProfiloHome mb-2'>
             <Col className="CardProfileImages d-flex justify-content-center " xs={12} >
                 <Col xs={12} className='HomeCardProfileCerchio justify-content-center d-flex align-items-end'>
                     <img className="img-fluid HomeCardProfileCerchioImg" src={user.image} alt="" />
