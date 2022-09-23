@@ -42,7 +42,6 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
   useEffect(() => { // considera se effettuare una fetch oppure no
     if (toggleFetch === true) {
       fetchExperiences()
-      console.log('toggleFetch')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggleFetch])
@@ -81,7 +80,6 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
 
         setExperiences(data);
         setToggleFetch(false)
-        console.log(data.find(exp => exp.company === 'fotoBG') === undefined)
 
         if (data.find(exp => exp.company === 'fotoBG') === undefined) {
           addExperience({
