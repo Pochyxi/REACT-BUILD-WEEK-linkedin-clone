@@ -388,3 +388,7 @@
 .CardHeaderPost:hover{
   color: #0068a0 !important;
 }
+.ButtonDropDownNav{
+  padding: 0;
+  border-radius: 20px;
+}
