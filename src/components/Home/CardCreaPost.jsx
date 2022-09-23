@@ -8,11 +8,10 @@ import EventIcon from '@mui/icons-material/Event';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import FormDialogPost from "./FormDialogPost";
 
+
 const CardCreaPost = ({ fetchPosts }) => {
-  //REDUX
   const user = useSelector((state) => state.user.user);
 
-  //RENDER
   return (
     <Col className="CardPost mb-3 ">
       <Col xs={12} className="CardCompetenze mt-3">
