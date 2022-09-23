@@ -1,9 +1,10 @@
 
 .generalCont {
-  padding-left: 1rem;
   line-height: 1.8rem;
   font-weight: bold;
   color: #00000099;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .clear {
@@ -109,6 +110,7 @@ select {
 .pnc {
   width: 8.5rem;
 }
+
 
 @media only screen and (max-width: 427px) {
 

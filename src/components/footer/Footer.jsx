@@ -55,7 +55,7 @@ const Footer = () => {
       <div className='lingua'>
         <span>Seleziona lingua</span>
                         <div>
-                            <select name="lingua" id="">
+                            <select name="lingua" id="lingua">
                                 <option value="italiano">italiano</option>
                                 <option value="italiano">inglese</option>
                                 <option value="italiano">francese</option>
