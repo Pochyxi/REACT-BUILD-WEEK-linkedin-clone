@@ -6,7 +6,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <div className='generalCont'>
-        <div>
+        <div className='titleLink'>
         <h4>LINKEDIN</h4>
         </div>
     <div className='body'>

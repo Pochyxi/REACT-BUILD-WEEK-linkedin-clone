@@ -22,7 +22,7 @@
     text-align: left;
     font-size: 12px;
 }
-div > h4 {
+.titleLink > h4 {
     width: 100%;
     text-align: left;
     color: rgb(0, 170, 255);
@@ -41,16 +41,16 @@ div > h4 {
     grid-template-columns: auto auto;
   }
 
-  li {
+ .iconSec li {
     list-style: none;
     line-height: 2rem;
     font-size: 0.7rem;
 }
-ul {
+ .iconSec ul {
     padding: 0;
 }
 
-svg {
+.iconSec svg {
     width: 1.5rem;
     height: 1.5rem;
     float: left;
@@ -105,9 +105,7 @@ select {
     float: right;
     padding-left: -3rem;
 }
-div > p {
-    text-align: left;
-}
+
 
 
 @media only screen and (max-width: 427px) {
