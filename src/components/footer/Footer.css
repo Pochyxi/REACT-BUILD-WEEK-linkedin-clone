@@ -23,11 +23,11 @@
     text-align: left;
     font-size: 12px;
 }
-div > h4 {
+/* div > h4 {
     width: 100%;
     text-align: left;
     color: rgb(0, 170, 255);
-}
+} */
 
 .grid-container1 {
     width: 40vw;
@@ -42,30 +42,30 @@ div > h4 {
     grid-template-columns: auto auto;
   }
 
-  li {
+  /* /* li {
     list-style: none;
     line-height: 2rem;
     font-size: 0.7rem;
-}
+} */
 ul {
     padding: 0;
 }
 
-svg {
+/* svg {
     width: 1.5rem;
     height: 1.5rem;
     float: left;
     margin-right: 0.5rem;
-}
+} */
 
 .iconSec li {
     line-height: 1rem;
 }
 
-select {
+/* select {
     width: 100%;
     height: 2rem;
-}
+} */ 
 
 .svgLink {
     font-size: 1.5rem;
@@ -106,9 +106,9 @@ select {
     float: right;
     padding-left: -3rem;
 }
-div > p {
+/* div > p {
     text-align: left;
-}
+} */
 
 
 @media only screen and (max-width: 427px) {
