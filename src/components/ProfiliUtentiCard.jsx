@@ -34,7 +34,7 @@ const ProfiliUtentiCard = ({ user }) => {
         </p>
       </Col>
       <Col xs={10} className="d-flex justify-content-start p-4">
-      <Col xs={5} sm={3} md={5} xl={3}>
+      <Col xs={6} sm={3} md={5} xl={3}>
       <Button className="CardProfileButton1 " variant="primary">Messaggio</Button>
       </Col>
       <Col xs={4}>
