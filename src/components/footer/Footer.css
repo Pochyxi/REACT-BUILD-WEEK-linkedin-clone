@@ -1,16 +1,15 @@
 
 .generalCont {
-  padding-left: 1rem;
   line-height: 1.8rem;
   font-weight: bold;
   color: #00000099;
+  width: 80vw;
   margin: 0 auto;
 }
 
 .clear {
   font-weight: lighter;
   font-size: 12px;
-  margin: 0;
 }
 
 .violet {
@@ -108,9 +107,14 @@ select {
     padding-left: -3rem;
 }
 
+.pnc {
+  width: 8.5rem;
+}
 
 
 @media only screen and (max-width: 427px) {
+
+    
       .body {
         display: flex;
         flex-direction: column;
@@ -126,10 +130,12 @@ select {
         width: 100vw;
         padding-top: 3rem;
       }
+    
+  
 }
 
 
-@media only screen and (min-width: 328px) {
+@media only screen and (min-width: 428px) {
  .body {
   flex-direction: row;
  }
