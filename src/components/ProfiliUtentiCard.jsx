@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Col } from "react-bootstrap";
-import { BsThreeDots } from "react-icons/bs";
 import { BiPencil } from 'react-icons/bi'
 
 const ProfiliUtentiCard = ({ user }) => {

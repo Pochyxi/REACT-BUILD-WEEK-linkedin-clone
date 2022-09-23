@@ -13,6 +13,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import LongMenuPost from "./LongMenuPost";
+import { useNavigate } from "react-router-dom";
 
 const LinkedinPost = ({ post, fetchPosts }) => {
   const [expanded, setExpanded] = React.useState(false);
@@ -22,6 +23,8 @@ const LinkedinPost = ({ post, fetchPosts }) => {
     month: "long",
     day: "numeric",
   };
+
+  const navigate = useNavigate();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -52,6 +55,9 @@ const LinkedinPost = ({ post, fetchPosts }) => {
       {post.user && (
         <Card className="mb-3">
           <CardHeader
+            className="CardHeaderPost"
+            style={{cursor: 'pointer'}}
+            onClick={() => navigate('/profili/' + post.user._id)}
             avatar={
               <Avatar>
                 <img className="PostUser" src={post.user.image} alt="user" />
@@ -65,17 +71,15 @@ const LinkedinPost = ({ post, fetchPosts }) => {
             title={post.user.username + " - " + post.user.title}
             subheader={dateCorrect(post.updatedAt)}
           />
-          {
-            post.image && (
-              <CardMedia
-                className="cardPostImage"
-                component="img"
-                height="194"
-                image={post.image}
-                alt="image"
-              />
-            )
-          }
+          {post.image && (
+            <CardMedia
+              className="cardPostImage"
+              component="img"
+              height="194"
+              image={post.image}
+              alt="image"
+            />
+          )}
           <CardContent>
             <Typography variant="body2" color="text.secondary">
               {post.text}
