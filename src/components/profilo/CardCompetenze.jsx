@@ -50,7 +50,7 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
 
   const handleClick = () => {
     setOpen(true);
-};
+  };
 
   const fetchExperiences = async () => {
     const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences"
@@ -65,8 +65,9 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
       });
       if (response.ok) {
         const data = await response.json();
+
         setExperiences(data);
-        setFotoBG(data.find(exp => exp.company === 'fotoBG'))
+        setToggleFetch(false)
         console.log(data.find(exp => exp.company === 'fotoBG') === undefined)
 
         if (data.find(exp => exp.company === 'fotoBG') === undefined) {
@@ -78,14 +79,18 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
             startDate: '2022-01-10T00:00:00.000Z',
             endDate: '2022-09-22T19:49:06.558Z',
           })
+        } else {
+          setFotoBG(data.find(exp => exp.company === 'fotoBG'))
         }
-        setToggleFetch(false)
+
+
+
       } else {
         setMess('Qualcosa è andato storto durante la richiesta')
         handleClick()
       }
     } catch (error) {
-      setMess('Errore del server' + error.message)
+      setMess('Errore del server ' + error.message)
       handleClick()
       console.log(error);
     }
@@ -160,7 +165,7 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
   console.log(experiences)
   return (
     <Col className="CardProfile mb-3">
-        <AlertComponent open={open} setOpen={setOpen} mess={mess} />
+      <AlertComponent open={open} setOpen={setOpen} mess={mess} />
       <Col xs={12} className="CardCompetenze mt-3">
         <FormDialogCompetenze
           addExperience={addExperience}
@@ -175,8 +180,13 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
           {experiences?.map((experience, index) => {
             return (
               <ListGroup.Item className={experience.company === 'fotoBG' ? "d-flex justify-content-between p-0 mt-2 d-none" : "d-flex justify-content-between p-0 mt-2"} key={index}>
-                <Col className="d-flex justify-content-center align-items-start p-1" xs={3}>
-                  <img className="img-fluid CardCompetenzeImg" src={experience.image} alt="foto experience" />
+                <Col className="ColImgCompetenze d-flex justify-content-center align-items-start p-1" xs={3}>
+                  {
+                    experience.image && (
+                      <img className="img-fluid CardCompetenzeImg" src={experience.image} alt='foto experience' />
+                    )
+                  }
+
                 </Col>
                 <Col xs={8}>
                   <Row>

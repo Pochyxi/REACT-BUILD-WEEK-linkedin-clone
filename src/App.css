@@ -14,7 +14,6 @@
   @media screen and (max-width: 768px) {
     .loginLogoCol {
       background-position: center;
-
     }
   }
 .loginText {
@@ -159,7 +158,7 @@
 /* SEZIONE PROFILO  */
 
 .ProfilePrincipale {
-    width: 450px;
+    width: 500px;
     flex: none;
 }
 
@@ -173,34 +172,35 @@
     border-radius: 10px; 
 }
 
-@media screen and (max-width: 768px) {
-  .ProfilePrincipale {
-    width: 100%;
-    
-}
-  .ProfileSecondaria {
-    width: 100%;
-}
-}
-@media screen and (min-width: 1100px) {
-  .ProfilePrincipale {
-    width: 550px;
-    
-}
-  .ProfileSecondaria {
-    width: 350px;
-}
-}
+    @media screen and (max-width: 765px) { /*SOTTO 765PX*/
+      .ProfilePrincipale {
+        width: 100%;
+        
+    }
+      .ProfileSecondaria {
+        width: 100%;
+    }
+    }
 
-@media screen and (min-width: 1100px) {
-  .ProfilePrincipale {
-    width: 650px;
-    
-}
-  .ProfileSecondaria {
-    width: 450px;
-}
-}
+    @media screen and (min-width: 1100px) {
+      .ProfilePrincipale {
+        width: 700px;
+        
+      }
+      .ProfileSecondaria {
+        width: 350px;
+      }
+    }
+    @media screen and (min-width: 1500px) {
+      .ProfilePrincipale {
+        width: 900px;
+        
+      }
+      .ProfileSecondaria {
+        width: 450px;
+      }
+    }
+
 .CardProfile {
     min-height: 50vh;
     border: 1px solid gainsboro;
@@ -210,7 +210,7 @@
 
 .CardProfileImages {
     background-image: linear-gradient(to right, #0077B5, #0068a0 );
-    height: 100px;
+    height: 150px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;  
     padding: 1em;
@@ -222,7 +222,7 @@
     position: relative;
     left: 20px;
     background-color: white;
-    top: -20px;
+    top: 30px;
     padding: 3px;
 }
 .CardProfileCerchioImg {
@@ -300,10 +300,14 @@
   width: 90%;
   margin: 0 auto;
 }
-
+.ColImgCompetenze {
+  min-height: 300px;
+}
 .CardCompetenzeImg {
   border-radius: 50%!important;
   min-width: 100%;
+  min-height: 50%;
+  
 }
 .CardAziende {
   border: 1px solid gainsboro;

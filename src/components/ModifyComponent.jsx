@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import CardCompetenze from './profilo/CardCompetenze'
 import CardAziende from './profilo/CardAziende';
@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 const ModifyComponent = () => {
   const user = useSelector(state => state.user.user)
   const navigate = useNavigate()
+  const [fotoBG, setFotoBG] = useState(null)
+  const [toggleFetch, setToggleFetch] = useState(false)
 
   useEffect(() => {
     if (!user.name) {
@@ -20,9 +22,9 @@ const ModifyComponent = () => {
 
   return (
     <Container fluid>
-      <Row className="justify-content-center flex-nowrap px-4 pt-3 pb-2">
+      <Row className="justify-content-center align-items-start  flex-column flex-md-row flex-nowrap px-4 pt-3 pb-2">
         <Col className="ProfilePrincipale" >
-          <CardCompetenze />
+          <CardCompetenze setFotoBG={setFotoBG} toggleFetch={toggleFetch} setToggleFetch={setToggleFetch} />
         </Col>
         <Col className='ProfileSecondaria'>
           <CardAziende />
