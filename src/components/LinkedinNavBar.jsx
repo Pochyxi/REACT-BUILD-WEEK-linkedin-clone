@@ -117,7 +117,7 @@ const LinkedinNavbar = () => {
                       </div>
                     </div>
                     <Link to="/profile">
-                    <Button variant="outline-primary w-100">
+                    <Button variant="outline-primary w-100" className="ButtonDropDownNav">
                       Visualizza Profilo
                     </Button>
                     </Link>
