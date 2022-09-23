@@ -3,7 +3,7 @@
   line-height: 1.8rem;
   font-weight: bold;
   color: #00000099;
-  width: 80vw;
+  width: 78vw;
   margin: 0 auto;
 }
 
@@ -112,7 +112,7 @@ select {
 }
 
 
-@media only screen and (max-width: 427px) {
+@media only screen and (max-width: 640px) {
 
     
       .body {
@@ -122,7 +122,7 @@ select {
       .grid-container1 {
         display: grid;
         grid-template-columns: auto auto;
-        width: 100vw;
+        width: 90vw;
       }
       .grid-container2 {
         display: grid;
@@ -130,7 +130,9 @@ select {
         width: 100vw;
         padding-top: 3rem;
       }
-    
+    #lingua {
+      width: 80%;
+    }
   
 }
 
