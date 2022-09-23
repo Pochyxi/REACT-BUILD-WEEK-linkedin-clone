@@ -25,18 +25,18 @@ const CardCreaPost = ({ fetchPosts }) => {
           </Col>
         </Row>
       </Col>
-      <Row className="rigaIconePost mt-3">
+      <Row className="rigaIconePost mt-3 pb-4">
         <Col className="d-flex no-wrap">
-          <ImageOutlinedIcon color="primary" /> <span className="text-secondary">Foto</span>
+          <ImageOutlinedIcon color="primary" /> <span className="NavBarSpan text-secondary">Foto</span>
         </Col>
         <Col className="d-flex no-wrap">
-          <SmartDisplayIcon color="success" /> <span className="text-secondary">Video</span>
+          <SmartDisplayIcon color="success" /> <span className="NavBarSpan text-secondary">Video</span>
         </Col>
         <Col className="d-flex no-wrap">
-          <EventIcon sx={{ color: 'orange' }} /> <span className="text-secondary">Evento</span>
+          <EventIcon sx={{ color: 'orange' }} /> <span className="NavBarSpan text-secondary">Evento</span>
         </Col>
         <Col className="d-flex no-wrap">
-          <NewspaperIcon sx={{ color: 'orangered' }} /> <span className="text-secondary">Scrivi articolo</span>
+          <NewspaperIcon sx={{ color: 'orangered' }} /> <span className="NavBarSpan text-secondary">Scrivi articolo</span>
         </Col>
       </Row>
     </Col>

@@ -4,18 +4,17 @@
 
 /* PAGINA LOGIN  */
 
-
 .loginLogoCol {
   background-image: url(https://static-exp1.licdn.com/aero-v1/sc/h/dxf91zhqd2z6b0bwg85ktm5s4);
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center left;
 }
-  @media screen and (max-width: 768px) {
-    .loginLogoCol {
-      background-position: center;
-    }
+@media screen and (max-width: 768px) {
+  .loginLogoCol {
+    background-position: center;
   }
+}
 .loginText {
   color: #8f5849;
   font-size: 5rem;
@@ -29,7 +28,7 @@
   border: 1px solid #0a66c2;
   border-radius: 50%;
   height: 100px;
-  width: 100px!important;
+  width: 100px !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,262 +40,257 @@
 .loginUser:hover {
   color: #fff;
   background-color: #0a66c2;
-  box-shadow: 0px 2px 10px  #0a66c2;
+  box-shadow: 0px 2px 10px #0a66c2;
 }
 
 /* --------------------------------------- */
 
-
 /* NAVBAR */
 
 .NavBarLogo {
-  color:#0077B5 ;
+  color: #0077b5;
   height: 41px;
   width: 41px;
 }
-.NavBarAllLogo{
+.NavBarAllLogo {
   height: 25px;
   width: 25px;
-} 
+}
 .NavBarLinkedin {
-  display: flex!important;
-  justify-content: space-around!important;
-  align-items: center!important;
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: center !important;
   background-color: white;
   padding: 0;
 }
-.NavbarForm{
+.NavbarForm {
   height: 40px !important;
 }
-.NavbarUser{
+.NavbarUser {
   width: 25px;
   height: 25px;
   border-radius: 20px;
 }
-.dropdown-list{
+.dropdown-list {
   list-style: none;
 }
-#navbarScrollingDropdown::after{
-  content: ''!important;
-  
+#navbarScrollingDropdown::after {
+  content: "" !important;
 }
-.dropdown-toggle::after{
-  content: ''!important;
-  border-top: 0!important;
+.dropdown-toggle::after {
+  content: "" !important;
+  border-top: 0 !important;
 }
-.nav-link{
+.nav-link {
   display: flex;
 }
-.NavbarDiv{
+.NavbarDiv {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
 }
-@media  screen and (max-width: 700px) {
-  .NavBarSpan{
+@media screen and (max-width: 700px) {
+  .NavBarSpan {
     display: none;
   }
 }
 @media screen and (max-width: 460px) {
-  .NavBarAllLogo{
+  .NavBarAllLogo {
     width: 20px;
     height: 20px;
   }
-  .NavBarLogo{
+  .NavBarLogo {
     width: 25px;
     height: 25px;
   }
 }
-.NavBarList{
-  color: #86888A;
+.NavBarList {
+  color: #86888a;
 }
-.NavBarList:hover{
+.NavBarList:hover {
   color: #313335;
 }
-.NavbarUserList{
+.NavbarUserList {
   width: 60px;
   height: 60px;
   margin-right: 6px;
   border-radius: 30px;
 }
-.NavbarHover{
-  color: #86888A;
+.NavbarHover {
+  color: #86888a;
 }
-.NavbarHover:hover{
+.NavbarHover:hover {
   color: #313335 !important;
 }
-.CanvassDiv{
+.CanvassDiv {
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.canvassCardDiv{
+.canvassCardDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px solid #dddee0;
   border-radius: 10px;
-  color: #86888A;
+  color: #86888a;
 }
-.canvassCardDiv:hover{
+.canvassCardDiv:hover {
   color: #313335;
 }
-.NavBarAllLogoCanvass{
+.NavBarAllLogoCanvass {
   height: 40px;
   width: 40px;
-  color: #0077B5;
+  color: #0077b5;
 }
-.canvassSmaller{
+.canvassSmaller {
   font-size: 12px;
-  color: #86888A;
+  color: #86888a;
 }
 
 /* ----------------------- */
 
-
 /* SEZIONE PROFILO  */
 
 .ProfilePrincipale {
-    width: 500px;
-    flex: none;
+  width: 500px;
+  flex: none;
 }
-
 
 .ProfileSecondaria {
-    width: 250px;
-    flex: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 10px; 
+  width: 250px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
 }
 
-    @media screen and (max-width: 765px) { /*SOTTO 765PX*/
-      .ProfilePrincipale {
-        width: 100%;
-        
-    }
-      .ProfileSecondaria {
-        width: 100%;
-    }
-    }
+@media screen and (max-width: 765px) {
+  /*SOTTO 765PX*/
+  .ProfilePrincipale {
+    width: 100%;
+  }
+  .ProfileSecondaria {
+    width: 100%;
+  }
+}
 
-    @media screen and (min-width: 1100px) {
-      .ProfilePrincipale {
-        width: 700px;
-        
-      }
-      .ProfileSecondaria {
-        width: 350px;
-      }
-    }
-    @media screen and (min-width: 1500px) {
-      .ProfilePrincipale {
-        width: 900px;
-        
-      }
-      .ProfileSecondaria {
-        width: 450px;
-      }
-    }
+@media screen and (min-width: 1100px) {
+  .ProfilePrincipale {
+    width: 700px;
+  }
+  .ProfileSecondaria {
+    width: 350px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .ProfilePrincipale {
+    width: 900px;
+  }
+  .ProfileSecondaria {
+    width: 450px;
+  }
+}
 
 .CardProfile {
-    min-height: 50vh;
-    border: 1px solid gainsboro;
-    border-radius: 10px;  
-    background-color: white;
+  min-height: 50vh;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .CardProfileImages {
-    background-image: linear-gradient(to right, #0077B5, #0068a0 );
-    height: 150px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;  
-    padding: 1em;
+  background-image: linear-gradient(to right, #0077b5, #0068a0);
+  height: 150px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 1em;
 }
 .CardProfileCerchio {
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
-    position: relative;
-    left: 20px;
-    background-color: white;
-    top: 30px;
-    padding: 3px;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  position: relative;
+  left: 20px;
+  background-color: white;
+  top: 30px;
+  padding: 3px;
 }
 .CardProfileCerchioImg {
-    border-radius: 50%;
-    height: 100%;
+  border-radius: 50%;
+  height: 100%;
 }
 
 .CardProfileText {
-    padding: 0px 20px 10px;
+  padding: 0px 20px 10px;
 }
 
-.CardProfileButton1, .CardProfileButton2, .CardProfileButton3 {
-    line-height: 1.2;
-    font-weight: 600;
-    border-radius: 20px;
+.CardProfileButton1,
+.CardProfileButton2,
+.CardProfileButton3 {
+  line-height: 1.2;
+  font-weight: 600;
+  border-radius: 20px;
 }
 
 .CardProfileButton1 {
-    background-color: #0a66c2!important;
+  background-color: #0a66c2 !important;
 }
 
 .CardProfileButton2 {
-    background-color: #ffffff!important;
-    color: #0077B5;
-    outline: 1px solid #0077B5;
+  background-color: #ffffff !important;
+  color: #0077b5;
+  outline: 1px solid #0077b5;
 }
 .CardProfileButton2:hover {
-    border: 2px solid #0068a0!important;
-    color: #0077B5!important;
-    background-color: #0076b51f!important;
+  border: 2px solid #0068a0 !important;
+  color: #0077b5 !important;
+  background-color: #0076b51f !important;
 }
 .CardProfileButton3 {
-    height: 35px;
-    width: 35px;
-    font-size: .7rem;
-    font-weight: bold;
-    border-radius: 50%;
-    border: 1px solid rgb(63, 63, 63);
+  height: 35px;
+  width: 35px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 1px solid rgb(63, 63, 63);
 }
 
 .CardProfileDisp {
-    background-color: rgba(128, 128, 128, 0.221);
-    border-radius: 15px;
-    padding: 1em;
-    font-size: .8rem;
+  background-color: rgba(128, 128, 128, 0.221);
+  border-radius: 15px;
+  padding: 1em;
+  font-size: 0.8rem;
 }
 .CardProfilePencil {
-    font-size: 1.5rem;
-    cursor: pointer;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
-.CardProfilePencil2{
+.CardProfilePencil2 {
   font-size: 1.8rem;
   margin-right: 10px;
   cursor: pointer;
-
 }
 .CardProfileImagesPencil {
-    color: #0077B5;
+  color: #0077b5;
 }
 
 .CardProfileImagesPenciBi {
-    border-radius: 50%;
-    padding: 2px;
+  border-radius: 50%;
+  padding: 2px;
 }
-.CardAziendaButton{
+.CardAziendaButton {
   border-radius: 15px;
   padding: 3px 25px;
 }
-.CardAziendap{
-  color: #86888A;
+.CardAziendap {
+  color: #86888a;
   font-size: 12px;
   margin-left: 3px;
 }
-.CardCompetenze{
+.CardCompetenze {
   width: 90%;
   margin: 0 auto;
 }
@@ -304,10 +298,9 @@
   min-height: 300px;
 }
 .CardCompetenzeImg {
-  border-radius: 50%!important;
+  border-radius: 50% !important;
   min-width: 100%;
   min-height: 50%;
-  
 }
 .CardAziende {
   border: 1px solid gainsboro;
@@ -337,42 +330,43 @@
   height: 100%;
   border-radius: 50%;
 }
-.PostUser{
+.PostUser {
   width: 100%;
   height: 100%;
 }
-.buttonPost{
+.buttonPost {
   margin-left: 10px;
   width: 100%;
   border-radius: 20px;
   text-align: start;
 }
-.rigaIconePost{
+.rigaIconePost {
+  margin: 0 auto;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   flex-wrap: nowrap;
 }
-.CardPost{
+.CardPost {
   border: 1px solid gainsboro;
-  border-radius: 10px;  
-  max-height: 8em ;
+  border-radius: 10px;
+  max-height: 8em;
   background-color: white;
 }
 .position-sticky {
   position: sticky;
   top: 80px;
 }
-.buttonDialogPost{
+.buttonDialogPost {
   border: none;
   border-radius: 20px;
   height: 50%;
   color: #313335;
   margin-right: 10px;
 }
-.CardPostButton{
+.CardPostButton {
   border-radius: 20px;
 }
-.cardPostImage{
+.cardPostImage {
   width: 100%;
   height: auto;
 }
@@ -385,10 +379,10 @@
 .borderBottom {
   border-bottom: 1px solid gainsboro;
 }
-.CardHeaderPost:hover{
+.CardHeaderPost:hover {
   color: #0068a0 !important;
 }
-.ButtonDropDownNav{
+.ButtonDropDownNav {
   padding: 0;
   border-radius: 20px;
 }
