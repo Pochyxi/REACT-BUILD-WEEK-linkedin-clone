@@ -10,6 +10,7 @@ import { Col } from 'react-bootstrap';
 import { BiPencil } from 'react-icons/bi'
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../../redux/actions/actions';
+import AlertComponent from "../AlertComponent"
 
 export default function FormDialog() {
     const user = useSelector(state => state.user.user)
@@ -17,10 +18,16 @@ export default function FormDialog() {
     const token = useSelector(state => state.user.token)
     const [open, setOpen] = React.useState(false);
     const [formObj, setFormObj] = React.useState(user)
+    const [opeN, setOpeN] = React.useState(false)
+    const [mess, setMess] = React.useState(' ')
 
     React.useEffect(() => {
         setFormObj(user)
     }, [user])
+
+    const handleClick = () => {
+        setOpeN(true);
+    };
 
     const formValidation = () => {
         let validation = false
@@ -53,9 +60,12 @@ export default function FormDialog() {
                 dispatch(setUser(data));
                 console.log(data);
             } else {
-                alert("Error fetching results");
+                setMess('Qualcosa è andato storto durante la modifica, riprovare grazie')
+                handleClick()
             }
         } catch (error) {
+            setMess('Errore del server' + error.message)
+            handleClick()
             console.log(error);
         }
     }
@@ -85,6 +95,7 @@ export default function FormDialog() {
                 className='CardProfilePencil text-secondary'>
                 <BiPencil />
             </Col>
+            <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>PROFILO</DialogTitle>
                 <DialogContent>

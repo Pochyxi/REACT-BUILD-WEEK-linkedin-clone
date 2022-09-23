@@ -13,6 +13,8 @@ const ProfiliUtenti = () => {
   const token = useSelector((state) => state.user.token);
   const [user, setUser] = useState({});
   const [competenze, setCompetenze] = useState([]);
+  const [open, setOpen] = useState(false)
+  const [mess, setMess] = useState(' ')
 
   useEffect(() => {
     fetchUtent();
@@ -20,6 +22,10 @@ const ProfiliUtenti = () => {
     window.scrollTo(0, 0)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const handleClick = () => {
+    setOpen(true);
+};
 
   const fetchUtent = async () => {
     const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${params.userId}`;
@@ -37,9 +43,12 @@ const ProfiliUtenti = () => {
         setUser(data);
         console.log(data);
       } else {
-        alert("Error fetching results");
+        setMess('Qualcosa è andato storto durante il caricamento')
+        handleClick()
       }
     } catch (error) {
+      setMess('Errore del server' +  error.message)
+      handleClick()
       console.log(error);
     }
   };
@@ -60,9 +69,12 @@ const ProfiliUtenti = () => {
         setCompetenze(data);
         console.log(data);
       } else {
-        alert("Error fetching results");
+        setMess('Qualcosa è andato storto durante il caricamento')
+        handleClick()
       }
     } catch (error) {
+      setMess('Errore del server' +  error.message)
+      handleClick()
       console.log(error);
     }
   };
@@ -71,6 +83,7 @@ const ProfiliUtenti = () => {
     <Container fluid>
       <Row className="justify-content-center align-items-start  flex-column flex-md-row flex-nowrap px-4 pt-3 pb-2">
         <Col className="ProfilePrincipale">
+        <AlertComponent open={open} setOpen={setOpen} mess={mess} />
           <ProfiliUtentiCard user={user} />
         </Col>
         <Col className="ProfileSecondaria">

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import FormDialogCompetenze from "./FormDialogCompetenze";
 import { useLocation } from "react-router-dom";
 import FormDialogDelete from "./FormDialogDelete";
-
+import AlertComponent from "../AlertComponent"
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -16,6 +16,8 @@ const CardCompetenze = () => {
   const [experiences, setExperiences] = useState([])
   const token = useSelector(state => state.user.token)
   const [blobFile, setBlobFile] = useState(null)
+  const [open, setOpen] = useState(false)
+  const [mess, setMess] = useState(' ')
   const [experienceObj, setExperienceObj] = useState({
     description: '',
     area: '',
@@ -37,6 +39,10 @@ const CardCompetenze = () => {
     return date.toLocaleDateString(undefined, options).split(' ').slice(2, 4).join(' ')
   }
 
+  const handleClick = () => {
+    setOpen(true);
+};
+
   const fetchExperiences = async () => {
     const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences"
     const header = {
@@ -52,9 +58,12 @@ const CardCompetenze = () => {
         const data = await response.json();
         setExperiences(data);
       } else {
-        alert("Error fetching results");
+        setMess('Qualcosa è andato storto durante la richiesta')
+        handleClick()
       }
     } catch (error) {
+      setMess('Errore del server' + error.message)
+      handleClick()
       console.log(error);
     }
   }
@@ -85,9 +94,12 @@ const CardCompetenze = () => {
         })
         fetchExperiences()
       } else {
-        alert("Error fetching results");
+        setMess('Qualcosa è andato storto durante la creazione')
+        handleClick()
       }
     } catch (error) {
+      setMess('Errore del server' + error.message)
+      handleClick()
       console.log(error);
     }
   }
@@ -110,15 +122,19 @@ const CardCompetenze = () => {
       if (response.ok) {
         fetchExperiences()
       } else {
-        alert("Error fetching results");
+        setMess('Qualcosa è andato storto durante il caricamento dell\'immagine')
+        handleClick()
       }
     } catch (error) {
+      setMess('Errore del server' + error.message)
+      handleClick()
       console.log(error);
     }
   }
   console.log(experiences)
   return (
     <Col className="CardProfile mb-3">
+        <AlertComponent open={open} setOpen={setOpen} mess={mess} />
       <Col xs={12} className="CardCompetenze mt-3">
         <FormDialogCompetenze
           addExperience={addExperience}

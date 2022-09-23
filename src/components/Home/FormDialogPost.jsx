@@ -12,6 +12,7 @@ import FeedIcon from '@mui/icons-material/Feed';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import BarChartIcon from '@mui/icons-material/BarChart';
+import AlertComponent from "../AlertComponent"
 
 
 export default function FormDialogPost({ fetchPosts }) {
@@ -22,6 +23,8 @@ export default function FormDialogPost({ fetchPosts }) {
     const [formObj, setFormObj] = useState({
         text: '',
     })
+    const [opeN, setOpeN] = useState(false)
+    const [mess, setMess] = useState(' ')
 
 
     const addPost = async (obj) => {
@@ -47,9 +50,12 @@ export default function FormDialogPost({ fetchPosts }) {
                 fetchPosts()
                 console.log(data);
             } else {
-                alert("Error fetching results");
+                setMess('Qualcosa è andato storto durante la modifica, riprovare grazie')
+                handleClick()
             }
         } catch (error) {
+            setMess('Errore del server' + error.message)
+            handleClick()
             console.log(error);
         }
     }
@@ -69,6 +75,10 @@ export default function FormDialogPost({ fetchPosts }) {
         }
         return validation
     }
+
+    const handleClick = () => {
+        setOpeN(true);
+    };
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -98,9 +108,12 @@ export default function FormDialogPost({ fetchPosts }) {
             if (response.ok) {
                 fetchPosts()
             } else {
-                alert("Error fetching results");
+                setMess('Qualcosa è andato storto durante la richiesta')
+                handleClick()
             }
         } catch (error) {
+            setMess('Errore del server' + error.message)
+            handleClick()
             console.log(error);
         }
     }
@@ -109,6 +122,7 @@ export default function FormDialogPost({ fetchPosts }) {
 
     return (
         <>
+          <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
             <Button
                 onClick={handleClickOpen}
                 variant="outline-secondary"
