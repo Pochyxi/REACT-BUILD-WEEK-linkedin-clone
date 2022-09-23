@@ -10,6 +10,7 @@ import { BiPencil } from 'react-icons/bi'
 import TextField from '@mui/material/TextField';
 import { Col } from 'react-bootstrap'
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
+import AlertComponent from "../AlertComponent"
 
 
 
@@ -20,6 +21,8 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
     const [open, setOpen] = React.useState(false);
     const [experienceSingle, setExperienceSingle] = React.useState(experience)
     const [blobFile, setBlobFile] = React.useState(null)
+    const [opeN, setOpeN] = React.useState(false)
+    const [mess, setMess] = React.useState(' ')
 
     const formValidation = () => {
         let validation = false
@@ -78,9 +81,12 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
             if (response.ok) {
                 fetchExperiences()
             } else {
-                alert("Error fetching results");
+                setMess('Qualcosa è andato storto durante la modifca, riprovare grazie')
+                handleClick()
             }
         } catch (error) {
+            setMess('Errore del server' + error.message)
+            handleClick()
             console.log(error);
         }
     }
@@ -94,6 +100,10 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
 
         })
     }
+
+    const handleClick = () => {
+        setOpeN(true);
+    };
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -114,6 +124,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
             }
 
             <Dialog open={open} onClose={handleClose}>
+            <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
                 <DialogTitle className='text-dark text-center'>MODIFICA COMPETENZA</DialogTitle>
                 <DialogContent>
                     <DialogContentText className='text-center'>

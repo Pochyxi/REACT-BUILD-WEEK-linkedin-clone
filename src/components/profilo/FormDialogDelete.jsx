@@ -9,6 +9,7 @@ import { Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import ClearIcon from '@mui/icons-material/Clear';
 import FormDialogModify from './FormDialogModify';
+import AlertComponent from "../AlertComponent"
 
 
 
@@ -16,6 +17,8 @@ export default function FormDialogDelete({ experience, fetchExperiences, deleteT
     const user = useSelector(state => state.user.user)
     const token = useSelector(state => state.user.token)
     const [open, setOpen] = React.useState(false);
+    const [opeN, setOpeN] = React.useState(false)
+    const [mess, setMess] = React.useState(' ')
 
     const deleteExperience = async () => {
         const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${experience._id}`
@@ -32,12 +35,19 @@ export default function FormDialogDelete({ experience, fetchExperiences, deleteT
             if (response.ok) {
                 fetchExperiences()
             } else {
-                alert("Error fetching results");
+                setMess('Qualcosa è andato storto durante l\'eliminazione')
+                handleClick()
             }
         } catch (error) {
+            setMess('Errore del server' + error.message)
+            handleClick()
             console.log(error);
         }
     }
+
+    const handleClick = () => {
+        setOpeN(true);
+    };
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -49,6 +59,7 @@ export default function FormDialogDelete({ experience, fetchExperiences, deleteT
     console.log(token)
     return (
         <Col xs={12} className='d-flex justify-content-end text-end p-3'>
+            <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
             {
                 deleteToggle && (
                     <Col xs={3}

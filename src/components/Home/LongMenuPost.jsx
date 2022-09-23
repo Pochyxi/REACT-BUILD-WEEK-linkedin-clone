@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import FormDialogModifyPost from './FormDialogModifyPost';
 import { Link } from 'react-router-dom';
+import AlertComponent from "../AlertComponent"
 
 const ITEM_HEIGHT = 48;
 
@@ -14,11 +15,17 @@ export default function LongMenuPost(props) {
     const token = useSelector(state => state.user.token)
     const user = useSelector(state => state.user.user)
     const open = Boolean(anchorEl);
+    const [opeN, setOpeN] = useState(false)
+    const [mess, setMess] = useState(' ')
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
+    };
+
+    const handleClicK = () => {
+        setOpeN(true);
     };
 
     const deletePost = async () => {
@@ -36,14 +43,18 @@ export default function LongMenuPost(props) {
             if (response.ok) {
                 props.fetchPosts()
             } else {
-                alert("Error fetching results");
+                setMess('Qualcosa è andato storto durante la richiesta')
+                handleClicK()
             }
         } catch (error) {
+            setMess('Errore del server' + error.message)
+            handleClicK()
             console.log(error);
         }
     }
     return (
         <div>
+             <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
             <IconButton
                 aria-label="more"
                 id="long-button"
@@ -72,7 +83,7 @@ export default function LongMenuPost(props) {
                     },
                 }}
             >
-                <Link to={'/profili/' + props.post.user._id}>
+                <Link className='text-decoration-none' to={'/profili/' + props.post.user._id}>
                     <MenuItem onClick={handleClose}>
                         Visualizza Profilo
                     </MenuItem>

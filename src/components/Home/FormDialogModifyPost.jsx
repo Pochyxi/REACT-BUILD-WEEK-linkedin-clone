@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { BiPencil } from 'react-icons/bi'
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
+import AlertComponent from "../AlertComponent"
 
 
 
@@ -17,6 +18,8 @@ export default function FormDialogModifyPost({ post, fetchPosts }) {
     const user = useSelector(state => state.user.user)
     const token = useSelector(state => state.user.token)
     const [open, setOpen] = React.useState(false);
+    const [opeN, setOpeN] = React.useState(false)
+    const [mess, setMess] = React.useState(' ')
     const [postSingle, setPostSingle] = React.useState({
         text: post.text
     })
@@ -40,9 +43,12 @@ export default function FormDialogModifyPost({ post, fetchPosts }) {
                 fetchPosts()
                 console.log(data);
             } else {
-                alert("Error fetching results");
+                setMess('Qualcosa è andato storto durante la modifica, riprovare grazie.')
+                handleClick()
             }
         } catch (error) {
+            setMess('Errore del server' + error.message)
+            handleClick()
             console.log(error);
         }
     }
@@ -64,6 +70,9 @@ export default function FormDialogModifyPost({ post, fetchPosts }) {
 
         })
     }
+    const handleClick = () => {
+        setOpeN(true);
+    };
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -78,7 +87,7 @@ export default function FormDialogModifyPost({ post, fetchPosts }) {
             <MenuItem onClick={handleClickOpen}>
                 Modifica
             </MenuItem>
-
+            <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle className='text-dark text-center'>MODIFICA COMPETENZA</DialogTitle>
                 <DialogContent>
