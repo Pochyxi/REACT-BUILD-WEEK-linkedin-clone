@@ -17,7 +17,6 @@ function News() {
             const response = await fetch("https://api.spaceflightnewsapi.net/v3/articles")
             if (response.ok) {
                 const json = await response.json()
-                console.log(json)
                 setArticles(json)
             }
 
