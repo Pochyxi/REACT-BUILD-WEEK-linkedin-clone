@@ -173,7 +173,8 @@ export default function FormDialogPost({ fetchPosts }) {
                     </Col>
                     <Col xs={2} >
                         <Button
-                            className="CardPostButton"
+                            className={!formValidation() ? "CardPostButton btn-primary text-secondary" : "CardPostButton btn-primary text-light"}
+                            disabled={!formValidation()}
                             variant="outline-secondary"
                             onClick={() => {
                                 if (formValidation() === true) {
