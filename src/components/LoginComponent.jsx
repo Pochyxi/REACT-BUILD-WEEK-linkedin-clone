@@ -15,8 +15,11 @@ const LoginComponent = () => {
                     <Row className="pt-5 text-center justify-content-between">
                         <Col
                             onClick={() => {
+                                setTimeout(() => {
+                                    navigate('/home')
+                                }, 500);
                                 dispatch(fetchUser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MWFhZjZkNzlhNTAwMTUwOTAyZWIiLCJpYXQiOjE2NjM1NzI2NTUsImV4cCI6MTY2NDc4MjI1NX0.Ds060cYZ_bHxEDSMxED7ORVkIVrU34tLYtwc_4RtJMk'))
-                                navigate('/home')
+
                             }}
                             xs={3}
                             className="loginUser">
@@ -25,8 +28,11 @@ const LoginComponent = () => {
                         </Col>
                         <Col
                             onClick={() => {
+                                setTimeout(() => {
+                                    navigate('/home')
+                                }, 500);
                                 dispatch(fetchUser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MWE3ZjZkNzlhNTAwMTUwOTAyZWEiLCJpYXQiOjE2NjM1NzI2MDgsImV4cCI6MTY2NDc4MjIwOH0.2hdtXjC--6_rLMvlCzuIUbqOMYhPbOsWfYRrh1XiEis'))
-                                navigate('/home')
+
                             }}
                             xs={3}
                             className="loginUser">
@@ -35,8 +41,11 @@ const LoginComponent = () => {
                         </Col>
                         <Col
                             onClick={() => {
+                                setTimeout(() => {
+                                    navigate('/home')
+                                }, 500);
                                 dispatch(fetchUser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MjJhNjZkNzlhNTAwMTUwOTAyZjEiLCJpYXQiOjE2NjM1NzQ2OTQsImV4cCI6MTY2NDc4NDI5NH0.ezK-E4uTEw3clUOKEVsiGo9Vvd_MWFTaScyrrTu1IF4'));
-                                navigate('/home')
+
                             }}
                             xs={3}
                             className="loginUser">

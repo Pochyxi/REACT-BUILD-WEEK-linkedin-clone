@@ -29,23 +29,23 @@ export default function FormDialog() {
         setOpeN(true);
     };
 
-    const formValidation = () => {
-        let validation = false
-        if (!user === null) {
+    // const formValidation = () => {
+    //     let validation = false
+    //     if (!user === null) {
 
-        } else {
-            if (formObj?.area.length > 0 &&
-                formObj?.bio.length > 0 &&
-                formObj?.email.length > 0 &&
-                formObj?.surname.length > 0 &&
-                formObj?.title.length > 0 &&
-                formObj?.name.length > 0) {
-                validation = true
-            }
-        }
+    //     } else {
+    //         if (formObj?.area.length > 0 &&
+    //             formObj?.bio.length > 0 &&
+    //             formObj?.email.length > 0 &&
+    //             formObj?.surname.length > 0 &&
+    //             formObj?.title.length > 0 &&
+    //             formObj?.name.length > 0) {
+    //             validation = true
+    //         }
+    //     }
 
-        return validation
-    }
+    //     return validation
+    // }
     const modifyUser = async (token, obj) => {
         const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/"
         const header = {
@@ -184,16 +184,21 @@ export default function FormDialog() {
                         handleClose()
                         setFormObj(user)
                     }}>ANNULLA</Button>
-                    <Button
-                        className={formValidation() ? 'text-primary' : 'text-secondary'}
-                        disabled={!formValidation()}
-                        onClick={() => {
-                            if (formValidation() === true) {
-                                handleClose()
-                                modifyUser(token, formObj);
-                            }
+                    {
+                        formObj && (
+                            <Button
+                                className='text-primary'
+                                // disabled={!formValidation()}
+                                onClick={() => {
+                                    // if (formValidation() === true) {
+                                    handleClose()
+                                    modifyUser(token, formObj);
+                                    // }
 
-                        }}>CONFERMA</Button>
+                                }}>CONFERMA</Button>
+                        )
+                    }
+
                 </DialogActions>
             </Dialog>
         </Col>
