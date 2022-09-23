@@ -141,6 +141,7 @@ const CardProfile = ({ fotoBG, setToggleFetch }) => {
                         onClick={() => { setToggleFoto(!toggleFoto) }}
                         className="img-fluid CardProfileCerchioImg"
                         src={user.image}
+                        style={{ cursor: 'pointer' }}
                         alt="profilo" />
                 </Col>
             </Col>
