@@ -1,7 +1,19 @@
-body {
-    padding: 0 5rem;
+
+.generalCont {
+  padding-left: 1rem;
+  line-height: 1.8rem;
+  font-weight: bold;
+  color: #00000099;
 }
 
+.clear {
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.violet {
+  color: #8344CC99;
+}
 
 .body {
     align-items: center;
@@ -23,23 +35,11 @@ div > h4 {
  }
 
   .grid-container2 {
-    width: 20vw;
-    margin-top: -2rem;
+    width: 40vw;
+    margin-top: -2.3rem;
+    display: grid;
+    grid-template-columns: auto auto;
   }
-
-
-
-  .grid-container3 {
-    width: 20vw;
-    padding: 0;
-    margin: 0;
-  }
-
-  .grid-container3 > p {
-    margin-top: -2rem;
-  }
-
-
 
   li {
     list-style: none;
@@ -53,7 +53,8 @@ ul {
 svg {
     width: 1.5rem;
     height: 1.5rem;
-    float: left
+    float: left;
+    margin-right: 0.5rem;
 }
 
 .iconSec li {
@@ -77,6 +78,10 @@ select {
     display: inline-block;
     cursor: pointer;
   }
+
+.dropdown svg {
+  margin-right: 0rem;
+}  
   
 .dropdown-content {
     display: none;
@@ -94,40 +99,74 @@ select {
     display: block;}
     
 .dropdown svg {
-    float: right;
     width: 1rem;
     height: 1rem;
     margin-top: 0.5rem;
+    float: right;
+    padding-left: -3rem;
 }
 div > p {
     text-align: left;
 }
 
 
-@media only screen and (max-width: 991px) {
-    .body {
-        flex-direction: column;
-    }
-    .grid-container1 {
-        width: 100vw;
-        display: grid;
-        grid-template-columns: auto auto ;
-     }
+@media only screen and (max-width: 427px) {
 
-     .grid-container2 {
+    
+      .body {
+        display: flex;
+        flex-direction: column;
+      }
+      .grid-container1 {
+        display: grid;
+        grid-template-columns: auto auto;
         width: 100vw;
-        margin-top: 0.5rem;
       }
-    
-      .grid-container3 {
+      .grid-container2 {
+        display: grid;
+        grid-template-columns: auto;
         width: 100vw;
-    
+        padding-top: 3rem;
       }
-      .grid-container3 > p {
-        margin-top: 0.5rem;
-      }
-    body {
-        padding: 0;
-    }
     
+  
 }
+
+
+@media only screen and (min-width: 428px) {
+ .body {
+  flex-direction: row;
+ }
+ .grid-container1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 50vw;
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: auto;
+  width: 40vw;
+} 
+
+}
+
+@media only screen and (min-width: 641px) {
+  .body {
+   flex-direction: row;
+  }
+  .grid-container1 {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   width: 50vw;
+ }
+ 
+ .grid-container2 {
+   display: grid;
+   grid-template-columns: auto auto;
+   width: 25vw;
+ } 
+ .lingua {
+  margin-top: -0.5rem;
+ }
+ }
