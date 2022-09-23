@@ -116,11 +116,11 @@ const LinkedinNavbar = () => {
                         <p>{selector.title}</p>
                       </div>
                     </div>
-                    <Link to="/profile">
-                    <Button variant="outline-primary w-100" className="ButtonDropDownNav">
+                    <Button
+                     onClick={() => navigate('/profile')}
+                     variant="outline-primary w-100" className="ButtonDropDownNav">
                       Visualizza Profilo
                     </Button>
-                    </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action4">
                     <h6>Account</h6>
