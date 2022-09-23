@@ -47,6 +47,14 @@ export default function FormDialogModifyPost({ post, fetchPosts }) {
         }
     }
 
+    const formValidation = () => {
+        let validation = false
+        if (postSingle.text.length > 0) {
+            validation = true
+        }
+        return validation
+    }
+
     const handlePost = (key, value) => {
         setPostSingle(form => {
             return {
@@ -99,7 +107,8 @@ export default function FormDialogModifyPost({ post, fetchPosts }) {
                         })
                     }}>ANNULLA</Button>
                     <Button
-                        className='text-success'
+                        className={formValidation() ? 'text-success' : 'text-secondary'}
+                        disabled={!formValidation()}
                         onClick={() => {
                             handleClose()
                             modifyPost(postSingle)

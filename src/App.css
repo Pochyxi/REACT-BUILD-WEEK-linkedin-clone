@@ -303,6 +303,7 @@
 
 .CardCompetenzeImg {
   border-radius: 50%!important;
+  min-width: 100%;
 }
 .CardAziende {
   border: 1px solid gainsboro;

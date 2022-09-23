@@ -24,8 +24,8 @@ function News() {
     }
 
     console.log(articles)
-    const newsArticle = (heading, subtitle, url) => (
-        <div className="widgetsArticle">
+    const newsArticle = (heading, subtitle, url, key) => (
+        <div key={key} className="widgetsArticle">
             <div className="widgetsArticleLeft">
             </div>
             <div className="widgetsArticleRight">
@@ -43,7 +43,7 @@ function News() {
             <div className='scrollThis my-2'>
                 {
                     articles.map(article => (
-                        newsArticle(article.title, article.summary, article.url)
+                        newsArticle(article.title, article.summary, article.url, article.id)
                     ))
                 }
             </div>

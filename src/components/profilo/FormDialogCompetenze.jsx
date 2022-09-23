@@ -171,13 +171,15 @@ export default function FormDialogCompetenze(props) {
                         </form>
                     </Col>
                     <Button onClick={handleClose}>ANNULLA</Button>
-                    <Button onClick={() => {
-                        if (formValidation() === true) {
-                            handleClose()
-                            props.addExperience(props.experienceObj)
-                        }
+                    <Button
+                        disabled={!formValidation()}
+                        onClick={() => {
+                            if (formValidation() === true) {
+                                handleClose()
+                                props.addExperience(props.experienceObj)
+                            }
 
-                    }}>CONFERMA</Button>
+                        }}>CONFERMA</Button>
                 </DialogActions>
             </Dialog>
         </Col>

@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
@@ -10,6 +10,8 @@ import CardProfile from "./CardProfile"
 const Profile = () => {
     const user = useSelector(state => state.user.user)
     const navigate = useNavigate()
+    const [fotoBG, setFotoBG] = useState(null)
+    const [toggleFetch, setToggleFetch] = useState(false)
 
     useEffect(() => {
         if (!user.name) {
@@ -20,7 +22,7 @@ const Profile = () => {
     }, [])
 
 
-
+    console.log(toggleFetch)
 
 
 
@@ -29,7 +31,7 @@ const Profile = () => {
         <Container fluid>
             <Row className="justify-content-center align-items-start  flex-column flex-md-row flex-nowrap px-4 pt-3 pb-2">
                 <Col className="ProfilePrincipale" >
-                    <CardProfile />
+                    <CardProfile fotoBG={fotoBG} setToggleFetch={setToggleFetch} />
                 </Col>
                 <Col className="ProfileSecondaria" >
                     <CardAziende />
@@ -37,7 +39,7 @@ const Profile = () => {
             </Row>
             <Row className="justify-content-center align-items-start flex-column flex-md-row flex-nowrap px-4 pt-3 pb-2">
                 <Col className="ProfilePrincipale" >
-                    <CardCompetenze />
+                    <CardCompetenze setFotoBG={setFotoBG} toggleFetch={toggleFetch} setToggleFetch={setToggleFetch} />
                 </Col>
                 <Col className="ProfileSecondaria" >
                     <CardPersone />
