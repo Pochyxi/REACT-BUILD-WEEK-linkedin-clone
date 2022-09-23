@@ -57,7 +57,6 @@ const LinkedinPost = ({ post, fetchPosts }) => {
           <CardHeader
             className="CardHeaderPost"
             style={{cursor: 'pointer'}}
-            onClick={() => navigate('/profili/' + post.user._id)}
             avatar={
               <Avatar>
                 <img className="PostUser" src={post.user.image} alt="user" />
@@ -68,7 +67,9 @@ const LinkedinPost = ({ post, fetchPosts }) => {
                 <LongMenuPost post={post} fetchPosts={fetchPosts} />
               </IconButton>
             }
-            title={post.user.username + " - " + post.user.title}
+          /*   <Link to= '/profili/' + post.user._id> */
+            title={ post.user.username + " - " + post.user.title}
+            /* onClick={() => navigate('/profili/' + post.user._id)} */
             subheader={dateCorrect(post.updatedAt)}
           />
           {post.image && (

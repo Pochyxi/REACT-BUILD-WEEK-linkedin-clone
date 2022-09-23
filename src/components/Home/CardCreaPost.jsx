@@ -7,8 +7,7 @@ import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import EventIcon from '@mui/icons-material/Event';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import FormDialogPost from "./FormDialogPost";
-import TextField from '@mui/material/TextField';
-import { IconButton } from '@mui/material';
+
 
 const CardCreaPost = ({ fetchPosts }) => {
   const user = useSelector((state) => state.user.user);
