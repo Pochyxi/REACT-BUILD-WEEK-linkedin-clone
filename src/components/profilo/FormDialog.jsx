@@ -32,6 +32,8 @@ export default function FormDialog() {
     const formValidation = () => {
         let validation = false
         if (!user === null) {
+
+        } else {
             if (formObj?.area.length > 0 &&
                 formObj?.bio.length > 0 &&
                 formObj?.email.length > 0 &&

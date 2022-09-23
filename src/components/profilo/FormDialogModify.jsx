@@ -124,7 +124,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
             }
 
             <Dialog open={open} onClose={handleClose}>
-            <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
+                <AlertComponent open={opeN} setOpen={setOpeN} mess={mess} />
                 <DialogTitle className='text-dark text-center'>MODIFICA COMPETENZA</DialogTitle>
                 <DialogContent>
                     <DialogContentText className='text-center'>
@@ -216,7 +216,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
                         setExperienceSingle(experience)
                     }}>ANNULLA</Button>
                     <Button
-                        disabled={!formValidation()}
+                        disabled={formValidation()}
                         className={formValidation() ? 'text-success' : 'text-secondary'}
                         onClick={() => {
                             handleClose()
