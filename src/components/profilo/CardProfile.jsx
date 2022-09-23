@@ -17,6 +17,7 @@ const CardProfile = () => {
     const dispatch = useDispatch()
     const [open, setOpen] = useState(false)
     const [mess, setMess] = useState(' ')
+    const [toggleFoto, setToggleFoto] = useState(false)
 
     useEffect(() => {
         if (blobFile?.name.length > 0) {
@@ -66,24 +67,32 @@ const CardProfile = () => {
         <Col className='CardProfile'>
             <AlertComponent open={open} setOpen={setOpen} mess={mess} />
             <Col className="CardProfileImages" xs={12} >
-                <Col className="text-end d-flex justify-content-between align-items-center  CardProfileImagesPencil" xs={12}>
-                    <Col xs={6} className='text-start'>
-                        <form encType="multipart/form-data" id='form'>
-                            <label htmlFor="input"><ImageOutlinedIcon className="text-dark" /></label>
-                            <input
-                                onChange={(e) => {
-                                    setBlobFile(e.target.files[0])
-                                }}
-                                style={{ display: 'none' }} type="file" id="input" />
-                        </form>
-                    </Col>
-                    <Col xs={6}>
-                        <BiPencil className="bg-light CardProfileImagesPenciBi" />
+                <Col className={toggleFoto ? "text-end d-flex justify-content-between align-items-center  CardProfileImagesPencil" : "text-end d-flex justify-content-end align-items-center  CardProfileImagesPencil"} xs={12}>
+                    {
+                        toggleFoto && (
+                            <Col xs={6} className='text-start'>
+                                <form encType="multipart/form-data" id='form'>
+                                    <label htmlFor="input"><ImageOutlinedIcon className="text-light" /></label>
+                                    <input
+                                        onChange={(e) => {
+                                            setBlobFile(e.target.files[0])
+                                        }}
+                                        style={{ display: 'none' }} type="file" id="input" />
+                                </form>
+                            </Col>
+                        )
+                    }
+
+                    <Col xs={6} className='colPencil'>
+                        <BiPencil className="bg-light text-primary CardProfileImagesPenciBi" />
                     </Col>
                 </Col>
                 <Col xs={3} className='CardProfileCerchio d-flex align-items-end'>
-                    <img className="img-fluid CardProfileCerchioImg" src={user.image} alt="" />
-
+                    <img
+                        onClick={() => { setToggleFoto(!toggleFoto) }}
+                        className="img-fluid CardProfileCerchioImg"
+                        src={user.image}
+                        alt="profilo" />
                 </Col>
             </Col>
             <FormDialog />
