@@ -10,8 +10,9 @@ import AlertComponent from "../AlertComponent"
 
 
 
-const CardProfile = () => {
+const CardProfile = ({ fotoBG, setToggleFetch }) => {
     const [blobFile, setBlobFile] = useState(null)
+    const [blobFile2, setBlobFile2] = useState(null)
     const token = useSelector(state => state.user.token)
     const user = useSelector(state => state.user.user)
     const dispatch = useDispatch()
@@ -25,6 +26,13 @@ const CardProfile = () => {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [blobFile])
+
+    useEffect(() => {
+        if (blobFile2?.name.length > 0) {
+            fetchBgImg(fotoBG._id)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [blobFile2])
 
     const fetchImg = async () => {
 
@@ -41,10 +49,8 @@ const CardProfile = () => {
                 },
             });
             if (response.ok) {
-                const data = await response.json();
                 dispatch(fetchUser(token))
-                console.log('okok')
-                console.log(data);
+                setToggleFoto(false)
             } else {
                 setMess('Qualcosa è andato storto durante la richiesta')
                 handleClick()
@@ -56,35 +62,78 @@ const CardProfile = () => {
         }
     }
 
+    const fetchBgImg = async (expId) => {
+
+        const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${expId}/picture`
+
+        try {
+            let formData = new FormData();
+            formData.append('experience', blobFile2);
+
+            const response = await fetch(baseEndpoint, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            if (response.ok) {
+                setToggleFetch(true)
+            } else {
+                alert("Error fetching results");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const handleClick = () => {
         setOpen(true);
     };
 
 
-
+    console.log(blobFile2)
 
     return (
         <Col className='CardProfile'>
             <AlertComponent open={open} setOpen={setOpen} mess={mess} />
-            <Col className="CardProfileImages" xs={12} >
+            <Col
+                style={{
+                    backgroundImage: 'url(' + fotoBG?.image + ')',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+                className="CardProfileImages"
+                xs={12}
+            >
                 <Col className={toggleFoto ? "text-end d-flex justify-content-between align-items-center  CardProfileImagesPencil" : "text-end d-flex justify-content-end align-items-center  CardProfileImagesPencil"} xs={12}>
                     {
                         toggleFoto && (
                             <Col xs={6} className='text-start'>
                                 <form encType="multipart/form-data" id='form'>
-                                    <label htmlFor="input"><ImageOutlinedIcon className="text-light" /></label>
+                                    <label htmlFor="inputMod"><ImageOutlinedIcon className="text-light" /></label>
                                     <input
                                         onChange={(e) => {
                                             setBlobFile(e.target.files[0])
                                         }}
-                                        style={{ display: 'none' }} type="file" id="input" />
+                                        style={{ display: 'none' }} type="file" id="inputMod" />
                                 </form>
                             </Col>
                         )
                     }
 
                     <Col xs={6} className='colPencil'>
-                        <BiPencil className="bg-light text-primary CardProfileImagesPenciBi" />
+                        <form encType="multipart/form-data" id='form'>
+                            <label htmlFor="inputBg"><BiPencil className="bg-light text-primary CardProfileImagesPenciBi" /></label>
+                            <input
+                                onChange={(e) => {
+                                    setBlobFile2(e.target.files[0])
+
+                                }}
+                                style={{ display: 'none' }} type="file" id="inputBg" />
+                        </form>
+
                     </Col>
                 </Col>
                 <Col xs={3} className='CardProfileCerchio d-flex align-items-end'>

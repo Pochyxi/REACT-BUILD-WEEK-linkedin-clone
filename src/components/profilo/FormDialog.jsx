@@ -31,15 +31,17 @@ export default function FormDialog() {
 
     const formValidation = () => {
         let validation = false
-        if (formObj.area.length > 0 &&
-            formObj.bio.length > 0 &&
-            formObj.email.length > 0 &&
-            formObj.image.length > 0 &&
-            formObj.surname.length > 0 &&
-            formObj.title.length > 0 &&
-            formObj.name.length > 0) {
-            validation = true
+        if (!user === null) {
+            if (formObj?.area.length > 0 &&
+                formObj?.bio.length > 0 &&
+                formObj?.email.length > 0 &&
+                formObj?.surname.length > 0 &&
+                formObj?.title.length > 0 &&
+                formObj?.name.length > 0) {
+                validation = true
+            }
         }
+
         return validation
     }
     const modifyUser = async (token, obj) => {
@@ -174,28 +176,22 @@ export default function FormDialog() {
                         variant="standard"
                         required
                     />
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        id="name"
-                        label="image"
-                        type="text"
-                        value={formObj.image}
-                        onChange={(e) => { handleForm('image', e.target.value); }}
-                        fullWidth
-                        variant="standard"
-                        required
-                    />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>ANNULLA</Button>
                     <Button onClick={() => {
-                        if (formValidation() === true) {
-                            handleClose()
-                            modifyUser(token, formObj);
-                        }
+                        handleClose()
+                        setFormObj(user)
+                    }}>ANNULLA</Button>
+                    <Button
+                        className={formValidation() ? 'text-primary' : 'text-secondary'}
+                        disabled={!formValidation()}
+                        onClick={() => {
+                            if (formValidation() === true) {
+                                handleClose()
+                                modifyUser(token, formObj);
+                            }
 
-                    }}>CONFERMA</Button>
+                        }}>CONFERMA</Button>
                 </DialogActions>
             </Dialog>
         </Col>

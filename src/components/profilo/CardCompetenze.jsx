@@ -9,7 +9,7 @@ import AlertComponent from "../AlertComponent"
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 
-const CardCompetenze = () => {
+const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
   const user = useSelector(state => state.user.user)
   const [deleteToggle, setDeleteToggle] = useState(false)
   const location = useLocation()
@@ -26,6 +26,15 @@ const CardCompetenze = () => {
     startDate: '',
     endDate: '',
   })
+
+  useEffect(() => {
+    if (toggleFetch === true) {
+      fetchExperiences()
+      console.log('toggleFetch')
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [toggleFetch])
 
   useEffect(() => {
     if (token) {
@@ -57,6 +66,20 @@ const CardCompetenze = () => {
       if (response.ok) {
         const data = await response.json();
         setExperiences(data);
+        setFotoBG(data.find(exp => exp.company === 'fotoBG'))
+        console.log(data.find(exp => exp.company === 'fotoBG') === undefined)
+
+        if (data.find(exp => exp.company === 'fotoBG') === undefined) {
+          addExperience({
+            description: 'fotoBG',
+            area: 'fotoBG',
+            role: 'fotoBG',
+            company: 'fotoBG',
+            startDate: '2022-01-10T00:00:00.000Z',
+            endDate: '2022-09-22T19:49:06.558Z',
+          })
+        }
+        setToggleFetch(false)
       } else {
         setMess('Qualcosa è andato storto durante la richiesta')
         handleClick()
@@ -104,6 +127,8 @@ const CardCompetenze = () => {
     }
   }
 
+  // console.log(experiences?.find(exp => exp.company === 'fotoBG'))
+
   const fetchImg = async (expId) => {
 
     const baseEndpoint = `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences/${expId}/picture`
@@ -121,6 +146,7 @@ const CardCompetenze = () => {
       });
       if (response.ok) {
         fetchExperiences()
+
       } else {
         setMess('Qualcosa è andato storto durante il caricamento dell\'immagine')
         handleClick()
@@ -148,12 +174,9 @@ const CardCompetenze = () => {
 
           {experiences?.map((experience, index) => {
             return (
-              <ListGroup.Item className="d-flex justify-content-between p-0 mt-2" key={index}>
-                <Col className="d-flex justify-content-center align-items-center p-1" xs={3}>
-                  <img className="img-fluid CardCompetenzeImg" src={experience.image} alt="foto experience"
-                    style={{
-                      minWidth: '100%',
-                    }} />
+              <ListGroup.Item className={experience.company === 'fotoBG' ? "d-flex justify-content-between p-0 mt-2 d-none" : "d-flex justify-content-between p-0 mt-2"} key={index}>
+                <Col className="d-flex justify-content-center align-items-start p-1" xs={3}>
+                  <img className="img-fluid CardCompetenzeImg" src={experience.image} alt="foto experience" />
                 </Col>
                 <Col xs={8}>
                   <Row>

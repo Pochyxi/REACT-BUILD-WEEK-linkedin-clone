@@ -24,6 +24,19 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
     const [opeN, setOpeN] = React.useState(false)
     const [mess, setMess] = React.useState(' ')
 
+    const formValidation = () => {
+        let validation = false
+        if (experienceSingle.description.length > 0 &&
+            experienceSingle.area.length > 0 &&
+            experienceSingle.role.length > 0 &&
+            experienceSingle.company.length > 0 &&
+            experienceSingle.startDate.length > 0 &&
+            experienceSingle.endDate.length > 0) {
+            validation = true
+        }
+        return validation
+    }
+
 
     const modifyExperience = async (obj) => {
         const baseEndpoint = "https://striveschool-api.herokuapp.com/api/profile/" + user._id + "/experiences/" + experience._id
@@ -105,6 +118,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
             {
                 deleteToggle && (
                     <BiPencil
+                        className='text-primary'
                         onClick={handleClickOpen} />
                 )
             }
@@ -185,7 +199,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
                         required
                     />
                 </DialogContent>
-                <DialogActions className='d-flex justify-content-between'>
+                <DialogActions className='d-flex justify-content-between p-4'>
                     <Col xs={5}>
                         <form encType="multipart/form-data" id='form'>
                             <label htmlFor="inputMod"><ImageOutlinedIcon color={blobFile?.name.length > 0 ? 'primary' : '#86888A'} /></label>
@@ -202,7 +216,8 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
                         setExperienceSingle(experience)
                     }}>ANNULLA</Button>
                     <Button
-                        className='text-success'
+                        disabled={!formValidation()}
+                        className={formValidation() ? 'text-success' : 'text-secondary'}
                         onClick={() => {
                             handleClose()
                             modifyExperience(experienceSingle);
