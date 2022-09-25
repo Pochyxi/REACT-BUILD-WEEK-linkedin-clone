@@ -53,6 +53,12 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
 
+  useEffect(() => {
+    if (location.pathname === '/modify') {
+      setDeleteToggle(true)
+    }
+  }, [])
+
 
   // FUNZIONI
   const dateCorrect = (string) => { // modifica la stringa brutta del server e ne ritorna una migliore
@@ -200,7 +206,7 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
                   }
 
                 </Col>
-                <Col xs={6}>
+                <Col xs={6} className='d-flex flex-column justify-content-between'>
                   <Row>
                     <h3>{experience.company.toUpperCase()} {experience.area}</h3>
                   </Row>
@@ -219,6 +225,7 @@ const CardCompetenze = ({ setFotoBG, toggleFetch, setToggleFetch }) => {
                         <FormDialogDelete
                           experience={experience}
                           fetchExperiences={fetchExperiences}
+                          setDeleteToggle={setDeleteToggle}
                           deleteToggle={deleteToggle}
                           blobFile={blobFile}
                           setBlobFile={setBlobFile}

@@ -29,6 +29,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
     const [mess, setMess] = React.useState(' ')
     //----------------------------------------------------------------
 
+
     //FUNZIONI
     const formValidation = () => { // ritorna true se tutti i campi del form sono compilati
         let validation = false
@@ -223,7 +224,7 @@ export default function FormDialogModify({ experience, fetchExperiences, deleteT
                         setExperienceSingle(experience)
                     }}>ANNULLA</Button>
                     <Button
-                        disabled={formValidation()}
+                        disabled={!formValidation()}
                         className={formValidation() ? 'text-success' : 'text-secondary'}
                         onClick={() => {
                             handleClose()

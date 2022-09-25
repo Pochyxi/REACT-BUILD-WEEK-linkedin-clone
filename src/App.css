@@ -308,9 +308,17 @@
 }
 .CardCompetenzeImg {
   border-radius: 50% !important;
-  min-width: 100%;
-  min-height: 50%;
+  width: 120px;
+  height: 120px;
 }
+
+   @media screen and (min-width: 768px) {
+    .CardCompetenzeImg {
+      width: 150px;
+      height: 150px;
+    }
+   } 
+
 .CardAziende {
   border: 1px solid gainsboro;
   border-radius: 10px;
