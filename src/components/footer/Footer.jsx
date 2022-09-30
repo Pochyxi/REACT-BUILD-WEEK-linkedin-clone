@@ -1,76 +1,52 @@
 import React from 'react';
 import './Footer.css';
-import { BsChevronCompactDown } from "react-icons/bs";
-import { BsFillGearFill } from "react-icons/bs";
-import { BsInfoCircleFill } from "react-icons/bs";
+import { Col , Container , Row } from "react-bootstrap";
 
 
 
 
 const Footer = () => {
     return (
-        <div className='generalCont'>
-            <div className='titleLink'>
-                <h4>LINKEDIN</h4>
-            </div>
-            <div className='body'>
-                <div className="grid-container1">
-                    <div>Informazioni</div>
-                    <div>Accessbilità</div>
-                    <div>Talent solution</div>
-                    <div>Linee guida della community</div>
-                    <div>Carriera</div>
-                    <div>Soluzioni d marketing</div>
-                    <span className="dropdown">
-                        <div className='pnc'>Privacy e condizioni<BsChevronCompactDown /></div>
-                        <span className="dropdown-content">
-                            <p>Informativa sulla privacy</p>
-                            <p>Contatto di licenza</p>
-                            <p>Informativa sui cookie</p>
-                            <p>Informativa sul copyright</p>
-                        </span>
-                    </span>
-                    <div>Opzioni di annuncio</div>
-                    <div>Pubblicità</div>
-                    <div>Sales solutions</div>
-                    <div>Mobile</div>
-                    <div>Piccole imprese</div>
-                    <div>Centro sicurezza</div>
+        <Container fluid>
+            <Row className={''}>
+                <div className='titleLink'>
+                    <h4>LINKEDIN</h4>
                 </div>
+            </Row>
+            <Row className={"d-flex flex-column flex-sm-row justify-content-between"}>
+                <Col xs={12} md={6} className={"d-flex flex-wrap justify-content-between"} >
+                    <Col>
+                        <p>Informazioni</p>
+                        <p>Talent solutions</p>
+                        <p>Carriera</p>
+                        <p>Privacy e condizioni</p>
+                        <p>Pubblicità</p>
+                        <p>Mobile</p>
+                        <p>Centro sicurezza</p>
+                    </Col>
+                    <Col xs={6} md={8} className={"d-flex flex-column flex-md-row justify-content-between"}>
+                        <Col xs={12} md={6} className={"m-1"}>
+                            <p>Accessibilità</p>
+                            <p>Linee guida della community</p>
+                            <p>Soluzioni di marketing</p>
+                        </Col>
+                        <Col xs={12} md={6} className={"m-1"}>
+                            <p>Opzioni di annuncio</p>
+                            <p>Sales Solutions</p>
+                            <p>Piccole imprese</p>
+                        </Col>
+                    </Col>
+                </Col>
+                <Col xs={12} sm={6} className={"d-flex flex-column ps-5"}>
+                        <p>Domande?</p>
+                        <p>Visita il nostro centro assistenza</p>
+                        <p>Gestisci il tuo account e la tua privacy</p>
+                        <p>Vai alle impostazioni</p>
+                </Col>
+            </Row>
+            <small>Linkedin corporation &copy; 2022</small>
+        </Container>
 
-                <div className="grid-container2">
-                    <div className="iconSec">
-                        <ul><BsInfoCircleFill />
-                            <li className='violet'>Domande?</li>
-                            <li className='clear'>Visita il nostro Centro assistenza</li>
-                        </ul>
-                        <ul><BsFillGearFill />
-                            <li>Gestisci il tup account e la tua privacy</li>
-                            <li className='clear'>Vai alle impostazioni</li>
-                        </ul>
-                    </div>
-
-
-
-                    <div className='lingua'>
-                        <span>Seleziona lingua</span>
-                        <div>
-                            <select name="lingua" id="lingua">
-                                <option value="italiano">italiano</option>
-                                <option value="italiano">inglese</option>
-                                <option value="italiano">francese</option>
-                            </select>
-                        </div>
-
-
-
-
-                    </div>
-                </div>
-
-            </div>
-            <p className='clear'>LinkedIn Corporation &copy;2022</p>
-        </div>
     );
 }
 
