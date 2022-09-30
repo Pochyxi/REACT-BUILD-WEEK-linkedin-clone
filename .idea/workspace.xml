@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="intellij">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="footer work" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +80,7 @@
       <workItem from="1664402159873" duration="1977000" />
       <workItem from="1664404168992" duration="130000" />
       <workItem from="1664404370712" duration="4000" />
-      <workItem from="1664569763942" duration="3980000" />
+      <workItem from="1664569763942" duration="4068000" />
     </task>
     <task id="LOCAL-00001" summary="intellij">
       <created>1664401172415</created>
@@ -93,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664401172415</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="footer work">
+      <created>1664573813829</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664573813829</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,7 +115,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="intellij" />
-    <option name="LAST_COMMIT_MESSAGE" value="intellij" />
+    <MESSAGE value="footer work" />
+    <option name="LAST_COMMIT_MESSAGE" value="footer work" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
