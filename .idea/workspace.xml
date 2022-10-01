@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="footer work">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="footer work" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +105,7 @@
       <workItem from="1664580198025" duration="52000" />
       <workItem from="1664580268168" duration="32000" />
       <workItem from="1664581363555" duration="2352000" />
-      <workItem from="1664628448098" duration="4194000" />
+      <workItem from="1664628448098" duration="4828000" />
     </task>
     <task id="LOCAL-00001" summary="intellij">
       <created>1664401172415</created>
@@ -125,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664573813829</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="footer work">
+      <created>1664633642108</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664633642108</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
