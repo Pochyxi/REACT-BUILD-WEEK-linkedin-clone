@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="footer work" />
+    <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="footer work">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.css" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,6 +87,30 @@
       <workItem from="1664404168992" duration="130000" />
       <workItem from="1664404370712" duration="4000" />
       <workItem from="1664569763942" duration="4068000" />
+      <workItem from="1664579129931" duration="17000" />
+      <workItem from="1664579266931" duration="6000" />
+      <workItem from="1664579292598" duration="10000" />
+      <workItem from="1664579309710" duration="12000" />
+      <workItem from="1664579373742" duration="4000" />
+      <workItem from="1664579399309" duration="10000" />
+      <workItem from="1664579433896" duration="7000" />
+      <workItem from="1664579464079" duration="5000" />
+      <workItem from="1664579478771" duration="7000" />
+      <workItem from="1664579504773" duration="15000" />
+      <workItem from="1664579531246" duration="9000" />
+      <workItem from="1664579546493" duration="7000" />
+      <workItem from="1664579561282" duration="12000" />
+      <workItem from="1664579675783" duration="27000" />
+      <workItem from="1664579719174" duration="5000" />
+      <workItem from="1664579733745" duration="15000" />
+      <workItem from="1664579758127" duration="32000" />
+      <workItem from="1664579808816" duration="13000" />
+      <workItem from="1664579976404" duration="16000" />
+      <workItem from="1664580079675" duration="4000" />
+      <workItem from="1664580091594" duration="18000" />
+      <workItem from="1664580198025" duration="52000" />
+      <workItem from="1664580268168" duration="32000" />
+      <workItem from="1664581363555" duration="943000" />
     </task>
     <task id="LOCAL-00001" summary="intellij">
       <created>1664401172415</created>
