@@ -406,3 +406,44 @@
 ul {
   padding: 0;
 }
+/************************FOOTER ************************/
+.titleLink {
+  color: #0a66c2;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.inIcon {
+  transform: scale(2);
+  position: relative;
+  left: 10px;
+}
+
+.footerSecondaRow {
+  font-weight: 600;
+}
+.footerTestoSecondario {
+  font-weight: 400;
+}
+
+.footerDomande,
+.footerGestisci {
+  font-size: 1.2rem;
+}
+.footerIconGestisci,
+.footerIconDomande {
+  transform: scale(1.5);
+}
+.footerDrop {
+  background-color: transparent!important;
+  border: none;
+  color: gray;
+  padding: 0;
+  font-weight: 600;
+}
+.footerDrop:focus {
+  color:#0a66c2 !important;
+}
+.footerDropMenu {
+  font-weight: bold;
+}
