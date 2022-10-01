@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="footer work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +106,7 @@
       <workItem from="1664580091594" duration="18000" />
       <workItem from="1664580198025" duration="52000" />
       <workItem from="1664580268168" duration="32000" />
-      <workItem from="1664581363555" duration="943000" />
+      <workItem from="1664581363555" duration="2352000" />
     </task>
     <task id="LOCAL-00001" summary="intellij">
       <created>1664401172415</created>
