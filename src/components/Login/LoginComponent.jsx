@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import { FaUserAlt } from 'react-icons/fa'
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { fetchUser } from "../redux/actions/actions"
+import { fetchUser } from "../../redux/actions/actions"
 
 const LoginComponent = () => {
 

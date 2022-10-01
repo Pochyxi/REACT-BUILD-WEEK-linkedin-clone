@@ -10,7 +10,7 @@ import { BiPencil } from 'react-icons/bi'
 import TextField from '@mui/material/TextField';
 import { Col } from 'react-bootstrap'
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "./AlertComponent"
 
 
 

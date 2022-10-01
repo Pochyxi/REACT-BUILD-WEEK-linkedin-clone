@@ -12,7 +12,7 @@ import FeedIcon from '@mui/icons-material/Feed';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import BarChartIcon from '@mui/icons-material/BarChart';
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "../profilo/AlertComponent"
 
 
 export default function FormDialogPost({ fetchPosts }) {

@@ -6,7 +6,7 @@ import FormDialog from "./FormDialog"
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import { useEffect, useState } from "react"
 import { fetchUser } from "../../redux/actions/actions"
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "./AlertComponent"
 
 
 

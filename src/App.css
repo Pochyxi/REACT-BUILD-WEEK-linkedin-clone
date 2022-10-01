@@ -230,6 +230,7 @@
 .CardProfileCerchioImg {
   border-radius: 50%;
   height: 100%;
+  width: 100%;
 }
 
 .CardProfileText {
@@ -345,6 +346,7 @@
 
 .HomeCardProfileCerchioImg {
   height: 100%;
+  width: 100%;
   border-radius: 50%;
 }
 .PostUser {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import CardCompetenze from './profilo/CardCompetenze'
-import CardAziende from './profilo/CardAziende';
+import CardCompetenze from './CardCompetenze'
+import CardAziende from './CardAziende';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 

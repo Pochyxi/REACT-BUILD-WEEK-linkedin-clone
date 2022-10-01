@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="footer work" />
+    <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="footer work">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AlertComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/AlertComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/FormDialogModifyPost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/FormDialogModifyPost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/FormDialogPost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/FormDialogPost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/HomeComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/HomeComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/LongMenuPost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/LongMenuPost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LinkedinNavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/LinkedinNavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModifyComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/ModifyComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfiliUtenti.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/ProfiliUtenti.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfiliUtentiCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/ProfiliUtentiCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfiliUtentiCompetenze.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/ProfiliUtentiCompetenze.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profilo/CardCompetenze.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/CardCompetenze.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profilo/CardProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/CardProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profilo/FormDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/FormDialog.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profilo/FormDialogDelete.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/FormDialogDelete.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profilo/FormDialogModify.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/FormDialogModify.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,8 +74,15 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/NavBar" />
+      <recent name="$PROJECT_DIR$/src/components/Login" />
+      <recent name="$PROJECT_DIR$/src/components/profilo" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="ProfiliUtenti.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/ProfiliUtenti.jsx" working-dir="$PROJECT_DIR$/src/components">
+    <configuration name="ProfiliUtenti.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/profilo/ProfiliUtenti.jsx" working-dir="$PROJECT_DIR$/src/components">
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -105,7 +133,8 @@
       <workItem from="1664580198025" duration="52000" />
       <workItem from="1664580268168" duration="32000" />
       <workItem from="1664581363555" duration="2352000" />
-      <workItem from="1664628448098" duration="4828000" />
+      <workItem from="1664628448098" duration="4938000" />
+      <workItem from="1664633777590" duration="670000" />
     </task>
     <task id="LOCAL-00001" summary="intellij">
       <created>1664401172415</created>
@@ -128,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664633642108</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="footer work">
+      <created>1664633661724</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664633661724</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import FormDialogModifyPost from './FormDialogModifyPost';
 import { Link } from 'react-router-dom';
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "../profilo/AlertComponent"
 
 const ITEM_HEIGHT = 48;
 

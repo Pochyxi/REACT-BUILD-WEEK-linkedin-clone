@@ -9,6 +9,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 
 const Footer = () => {
+
     return (
         <Container fluid className={"text-secondary"}>
             <Row className={''}>

@@ -8,7 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "../profilo/AlertComponent"
 
 
 

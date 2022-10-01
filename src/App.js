@@ -2,12 +2,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LoginComponent from "./components/LoginComponent";
-import LinkedinNavbar from "./components/LinkedinNavBar";
+import LoginComponent from "./components/Login/LoginComponent";
+import LinkedinNavbar from "./components/NavBar/LinkedinNavBar";
 import Profile from "./components/profilo/Profile";
-import ModifyComponent from "./components/ModifyComponent";
+import ModifyComponent from "./components/profilo/ModifyComponent";
 import HomeComponent from "./components/Home/HomeComponent";
-import ProfiliUtenti from "./components/ProfiliUtenti";
+import ProfiliUtenti from "./components/profilo/ProfiliUtenti";
 import Footer from "./components/footer/Footer";
 
 function App() {

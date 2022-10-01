@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import FormDialogCompetenze from "./FormDialogCompetenze";
 import { useLocation } from "react-router-dom";
 import FormDialogDelete from "./FormDialogDelete";
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "./AlertComponent"
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 

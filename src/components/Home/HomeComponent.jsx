@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import LinkedinPost from "./LinkedinPost";
 import News from "../news/News";
 import { useNavigate } from "react-router-dom";
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "../profilo/AlertComponent"
 
 const HomeComponent = () => {
   // REDUX

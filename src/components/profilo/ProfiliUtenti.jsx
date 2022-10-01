@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import AlertComponent from "./AlertComponent";
 import ProfiliUtentiCard from "./ProfiliUtentiCard";
 import ProfiliUtentiCompetenze from "./ProfiliUtentiCompetenze";
-import CardAziende from "./profilo/CardAziende";
-import CardPersone from "./profilo/CardPersone";
+import CardAziende from "./CardAziende";
+import CardPersone from "./CardPersone";
 
 const ProfiliUtenti = () => {
 

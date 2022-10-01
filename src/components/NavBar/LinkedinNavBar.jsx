@@ -23,7 +23,7 @@ import { FaMoneyBillWave } from "react-icons/fa";
 import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useDispatch, useSelector } from "react-redux";
-import { SET_TOKEN, SET_USER } from "../redux/actions/actions";
+import { SET_TOKEN, SET_USER } from "../../redux/actions/actions";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 

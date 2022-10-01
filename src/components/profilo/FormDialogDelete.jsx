@@ -9,7 +9,7 @@ import { Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import ClearIcon from '@mui/icons-material/Clear';
 import FormDialogModify from './FormDialogModify';
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "./AlertComponent"
 
 
 

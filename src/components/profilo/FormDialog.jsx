@@ -10,7 +10,7 @@ import { Col } from 'react-bootstrap';
 import { BiPencil } from 'react-icons/bi'
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../../redux/actions/actions';
-import AlertComponent from "../AlertComponent"
+import AlertComponent from "./AlertComponent"
 
 export default function FormDialog() {
     //REDUX
