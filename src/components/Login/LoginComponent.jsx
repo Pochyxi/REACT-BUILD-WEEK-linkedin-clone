@@ -22,7 +22,7 @@ const LoginComponent = () => {
                                 setTimeout(() => {
                                     navigate('/home')
                                 }, 500);
-                                dispatch(fetchUser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MWFhZjZkNzlhNTAwMTUwOTAyZWIiLCJpYXQiOjE2NjM1NzI2NTUsImV4cCI6MTY2NDc4MjI1NX0.Ds060cYZ_bHxEDSMxED7ORVkIVrU34tLYtwc_4RtJMk'))
+                                dispatch(fetchUser(process.env.REACT_APP_ADIENERTOKEN));
 
                             }}
                             xs={3}
@@ -35,7 +35,7 @@ const LoginComponent = () => {
                                 setTimeout(() => {
                                     navigate('/home')
                                 }, 500);
-                                dispatch(fetchUser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MWE3ZjZkNzlhNTAwMTUwOTAyZWEiLCJpYXQiOjE2NjM1NzI2MDgsImV4cCI6MTY2NDc4MjIwOH0.2hdtXjC--6_rLMvlCzuIUbqOMYhPbOsWfYRrh1XiEis'))
+                                dispatch(fetchUser(process.env.REACT_APP_MANUELTOKEN));
 
                             }}
                             xs={3}
@@ -48,7 +48,7 @@ const LoginComponent = () => {
                                 setTimeout(() => {
                                     navigate('/home')
                                 }, 500);
-                                dispatch(fetchUser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MjJhNjZkNzlhNTAwMTUwOTAyZjEiLCJpYXQiOjE2NjM1NzQ2OTQsImV4cCI6MTY2NDc4NDI5NH0.ezK-E4uTEw3clUOKEVsiGo9Vvd_MWFTaScyrrTu1IF4'));
+                                dispatch(fetchUser(process.env.REACT_APP_RUBENTOKEN));
 
                             }}
                             xs={3}

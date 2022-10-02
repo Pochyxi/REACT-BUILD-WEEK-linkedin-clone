@@ -244,6 +244,14 @@
   font-weight: 600;
   border-radius: 20px;
 }
+@media screen and (max-width: 400px) {
+  .CardProfileButton1,
+  .CardProfileButton2,
+  .CardProfileButton3 {
+    font-size: .7rem;
+  }
+}
+
 
 .CardProfileButton1 {
   background-color: #0a66c2 !important;

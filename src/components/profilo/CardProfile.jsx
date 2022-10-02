@@ -158,12 +158,12 @@ const CardProfile = ({ fotoBG, setToggleFetch }) => {
                 <p>{user.title}</p>
                 <p className="text-secondary">{user.area}{' '}<span className="text-primary">informazioni di contatto</span> </p>
             </Col>
-            <Col xs={12} className='d-flex justify-content-evenly '>
+            <Col xs={12} className='d-flex justify-content-between px-2'>
                 <Col xs={4} sm={3} md={3}>
                     <Button variant='primary CardProfileButton1' >Disponibile per</Button>
                 </Col>
                 <Col xs={4} sm={5} md={5}>
-                    <Button variant='light' className="text-primari CardProfileButton2" >Aggiungi sezione del profilo</Button>
+                    <Button variant='light' className="text-primary CardProfileButton2" >Aggiungi sezione del profilo</Button>
                 </Col>
                 <Col xs={2} sm={3} md={2}>
                     <Button variant='light' className="text-secondary CardProfileButton3" ><BsThreeDots /></Button>
