@@ -37,7 +37,7 @@ const ProfiliUtentiCompetenze = ({ experiences }) => {
                       <Col className="mt-2" xs={3}>
                         <img
                           className="img-fluid CardCompetenzeImg"
-                          src={experiences.image}
+                          src={experience.image}
                           alt=""
                         />
                       </Col>
