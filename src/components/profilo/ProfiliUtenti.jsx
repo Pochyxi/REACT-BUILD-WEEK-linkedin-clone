@@ -20,12 +20,13 @@ const ProfiliUtenti = () => {
     const [ competenze , setCompetenze ] = useState ( [] );
     const [ open , setOpen ] = useState ( false )
     const [ mess , setMess ] = useState ( ' ' )
+
     //----------------------------------------------------------------
 
     //USE EFFECT
     useEffect ( () => {
-        fetchUtent ();
-        fetchExperiences ();
+        fetchUtent ()
+        fetchExperiences ()
         window.scrollTo ( 0 , 0 )
         // eslint-disable-next-line react-hooks/exhaustive-deps
     } , [] );

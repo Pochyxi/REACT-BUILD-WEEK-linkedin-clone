@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ece1a2c-2027-47cc-8df7-4464118a2aab" name="Changes" comment="footer work">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profilo/ProfiliUtenti.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profilo/ProfiliUtenti.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,8 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;
   }
 }</component>
   <component name="ReactDesignerToolWindowState">
@@ -138,6 +139,14 @@
       <workItem from="1664703888410" duration="233000" />
       <workItem from="1664704138603" duration="2032000" />
       <workItem from="1664706386935" duration="2297000" />
+      <workItem from="1664795351622" duration="432000" />
+      <workItem from="1664795856631" duration="8000" />
+      <workItem from="1664795894160" duration="5000" />
+      <workItem from="1664795917010" duration="8000" />
+      <workItem from="1664795940819" duration="7000" />
+      <workItem from="1664795968293" duration="8000" />
+      <workItem from="1664795985538" duration="4000" />
+      <workItem from="1664795996800" duration="65000" />
     </task>
     <task id="LOCAL-00001" summary="intellij">
       <created>1664401172415</created>
